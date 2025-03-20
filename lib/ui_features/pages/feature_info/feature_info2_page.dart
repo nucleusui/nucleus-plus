@@ -63,7 +63,7 @@ class _FeatureInfo2PageState extends State<FeatureInfo2Page> {
             CupertinoSwitch(
               value: isActive,
               onChanged: (value) => setState(() => isActive = value),
-              activeColor: AppColors.getColor(ColorKey.primary60),
+              activeTrackColor: AppColors.getColor(ColorKey.primary60),
             ),
           ]),
           const SizedBox(height: 16),

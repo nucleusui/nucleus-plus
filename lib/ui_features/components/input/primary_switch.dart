@@ -19,7 +19,7 @@ class PrimarySwitch extends StatelessWidget {
       child: CupertinoSwitch(
         value: value,
         onChanged: onChanged,
-        activeColor: AppColors.getColor(ColorKey.primary60),
+        activeTrackColor: AppColors.getColor(ColorKey.primary60),
       ),
     );
   }

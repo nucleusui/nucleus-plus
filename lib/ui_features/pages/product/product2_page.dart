@@ -97,7 +97,7 @@ class _Product2PageState extends State<Product2Page> {
                       AssetPaths.icCircleFill,
                       width: 8,
                       color: Colors.white
-                          .withOpacity(index == currentIndex ? 1 : 0.5),
+                          .withValues(alpha: index == currentIndex ? 1 : .5),
                     );
                   }).toList(),
                 ),

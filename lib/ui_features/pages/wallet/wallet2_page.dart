@@ -65,7 +65,7 @@ class _Wallet2PageState extends State<Wallet2Page> {
                       TextSpan(
                         text: ' of \$30.00',
                         style: AssetStyles.h2.copyWith(
-                          color: Colors.white.withOpacity(.5),
+                          color: Colors.white.withValues(alpha: .5),
                         ),
                       ),
                     ],

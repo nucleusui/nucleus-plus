@@ -39,7 +39,7 @@ class IconRoundedButton extends StatelessWidget {
           color: color,
           border: Border.all(
             color: borderColor ??
-                AppColors.getColor(ColorKey.grey100).withOpacity(0.2),
+                AppColors.getColor(ColorKey.grey100).withValues(alpha: .2),
           ),
         ),
         child: Center(

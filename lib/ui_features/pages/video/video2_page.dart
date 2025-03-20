@@ -79,7 +79,7 @@ class _Video2PageState extends State<Video2Page> {
                       alignment: Alignment.center,
                       color: _controller.value.isPlaying
                           ? Colors.transparent
-                          : Colors.black.withOpacity(0.5),
+                          : Colors.black.withValues(alpha: .5),
                       child: const PrimaryAssetImage(
                         AssetPaths.icPlayFill,
                         width: 40,

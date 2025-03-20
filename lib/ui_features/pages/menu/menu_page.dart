@@ -107,7 +107,7 @@ class _MenuPageState extends State<MenuPage> {
                         color: active
                             ? AppColors.getColor(ColorKey.primary60)
                             : AppColors.getColor(ColorKey.grey100)
-                                .withOpacity(.8),
+                                .withValues(alpha: .8),
                       ),
                     ),
                   ),

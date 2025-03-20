@@ -4,7 +4,7 @@ import 'package:nucles_app/config/config.dart';
 final darkNotifier = ValueNotifier<bool>(false);
 final theme = ThemeData(
   fontFamily: 'PlusJakartaSans',
-  colorScheme: const ColorScheme.light(background: Colors.white),
+  colorScheme: const ColorScheme.light(surface: Colors.white),
   bottomSheetTheme: const BottomSheetThemeData(surfaceTintColor: Colors.white),
   textTheme: const TextTheme(
     displaySmall: AssetStyles.pSm,
@@ -23,7 +23,7 @@ final darkTheme = ThemeData(
   brightness: Brightness.dark,
   fontFamily: 'PlusJakartaSans',
   colorScheme: ColorScheme.dark(
-    background: AppColors.getColor(ColorKey.background),
+    surface: AppColors.getColor(ColorKey.background),
   ),
   bottomSheetTheme: BottomSheetThemeData(
     surfaceTintColor: AppColors.getColor(ColorKey.background),

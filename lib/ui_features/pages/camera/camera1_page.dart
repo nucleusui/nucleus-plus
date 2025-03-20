@@ -169,7 +169,7 @@ class __BottomBarActionState extends State<_BottomBarAction> {
                     color: Colors.white,
                     border: Border.all(
                       width: 1.5,
-                      color: Colors.black.withOpacity(0.5),
+                      color: Colors.black.withValues(alpha: .5),
                     ),
                   ),
                 ),
