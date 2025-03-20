@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -18,41 +19,107 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Billing & Cash Flow System">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="nucles_app">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <meta name="apple-mobile-web-app-title" content="skillscaper">
+  <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.ico" />
 
-  <title>Nucleus Plus Apps</title>
+  <title>Nucleus Plus</title>
   <link rel="manifest" href="manifest.json">
 
+  <!-- Styles for the splash screen -->
+  <style>
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .container {
+        background-color: #121212;
+      }
+      .progress-bar {
+        background-color: #333333 !important;
+      }
+      .progress-bar-fill {
+        background-color: #ffffff !important;
+      }
+    }
+
+    .indicator {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .progress-bar {
+      width: 100px;
+      height: 5px;
+      background-color: #f3f3f3;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      transform: translateZ(0);
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0%;
+      }
+
+      100% {
+        width: 100%;
+      }
+    }
+
+    .progress-bar-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: #46494b;
+      border-radius: 4px;
+      animation: progress 2s ease-in-out forwards;
+      transform: translateZ(0);
+    }
+  </style>
+
+<body style="overflow: hidden; margin: 0;">
+  <div id="loading_indicator" class="container">
+    <img class="indicator" src="./icons/Icon-512.png" />
+    <div class="progress-bar">
+      <div class="progress-bar-fill" style="width: 50%;"></div>
+    </div>
+  </div>
+  
+  <script src="flutter_bootstrap.js?version=1.0.0+1" async></script>
   <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-</head>
-<body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        }
-      }).then(function(engineInitializer) {
-        return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
-        return appRunner.runApp();
-      });
-    });
+    window.onload = function () {
+      setTimeout(() => {
+        var loadingIndicator = document.getElementById('loading_indicator');
+        if (loadingIndicator) loadingIndicator.remove()
+      }, 10000);
+    }
   </script>
 </body>
+
 </html>
