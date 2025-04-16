@@ -54,3 +54,4 @@ firebase.json
 
 # Other
 .git-old
+/android/app/.cxx/*
