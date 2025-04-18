@@ -100,12 +100,12 @@ class _Invite1PageState extends State<Invite1Page> {
                 replacement: Button.primary(
                   label: 'Add',
                   buttonSize: ButtonSize.small,
-                  onTap: () => setState(() => e.value = !e.value),
+                  onPressed: () => setState(() => e.value = !e.value),
                 ),
                 child: Button.secondary(
                   label: 'Added',
                   buttonSize: ButtonSize.small,
-                  onTap: () => setState(() => e.value = !e.value),
+                  onPressed: () => setState(() => e.value = !e.value),
                 ),
               ),
             ]),

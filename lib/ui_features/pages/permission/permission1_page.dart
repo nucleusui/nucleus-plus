@@ -29,7 +29,7 @@ class _Permission1PageState extends State<Permission1Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -121,7 +121,7 @@ class _Permission1PageState extends State<Permission1Page> {
           Button.primary(
             label: 'Allow notifications',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
         ]),

@@ -30,13 +30,13 @@ class Welcome3Page extends StatelessWidget {
               Button.primary(
                 label: 'Get started',
                 buttonSize: ButtonSize.full,
-                onTap: () {},
+                onPressed: () {},
               ),
               const SizedBox(height: 12),
               Button.ghost(
                 label: 'Log in',
                 buttonSize: ButtonSize.full,
-                onTap: () {},
+                onPressed: () {},
               ),
             ],
           ),

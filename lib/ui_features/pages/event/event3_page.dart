@@ -56,7 +56,7 @@ class _Event3PageState extends State<Event3Page> {
             Button.primary(
               label: 'Reserve a Spot',
               buttonSize: ButtonSize.full,
-              onTap: () {},
+              onPressed: () {},
             ),
             const SizedBox(height: 24),
             ...[

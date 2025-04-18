@@ -29,7 +29,7 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -108,7 +108,7 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
           Button.primary(
             label: 'Get Started',
             buttonSize: ButtonSize.full,
-            onTap: () {},
+            onPressed: () {},
           ),
           const SizedBox(height: 16),
         ]),

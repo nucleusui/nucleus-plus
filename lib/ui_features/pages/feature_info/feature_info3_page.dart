@@ -28,7 +28,7 @@ class _FeatureInfo3PageState extends State<FeatureInfo3Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -71,13 +71,13 @@ class _FeatureInfo3PageState extends State<FeatureInfo3Page> {
               Button.primary(
                 label: 'Get Started',
                 buttonSize: ButtonSize.full,
-                onTap: () {},
+                onPressed: () {},
               ),
               const SizedBox(height: 16),
               Button.secondary(
                 label: 'Maybe Later',
                 buttonSize: ButtonSize.full,
-                onTap: () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context),
               ),
             ],
           ),

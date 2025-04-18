@@ -30,7 +30,7 @@ class _Filter2PageState extends State<Filter2Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -110,7 +110,7 @@ class _Filter2PageState extends State<Filter2Page> {
               child: Button.primary(
                 label: 'Show 785 results',
                 buttonSize: ButtonSize.full,
-                onTap: () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ]),

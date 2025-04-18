@@ -41,7 +41,7 @@ class Welcome4Page extends StatelessWidget {
                   child: Button.secondary(
                     label: 'Log in',
                     buttonSize: ButtonSize.large,
-                    onTap: () {},
+                    onPressed: () {},
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -49,7 +49,7 @@ class Welcome4Page extends StatelessWidget {
                   child: Button.primary(
                     label: 'Get started',
                     buttonSize: ButtonSize.large,
-                    onTap: () {},
+                    onPressed: () {},
                   ),
                 ),
               ]),

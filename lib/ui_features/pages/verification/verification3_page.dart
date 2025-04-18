@@ -37,13 +37,13 @@ class Verification3Page extends StatelessWidget {
           Button.primary(
             label: 'Open my email',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
           Button.secondary(
             label: 'Resend verification',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ]),
       ),

@@ -30,7 +30,7 @@ class _Profile1PageState extends State<Profile1Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );

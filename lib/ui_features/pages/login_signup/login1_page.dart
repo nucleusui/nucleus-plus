@@ -15,7 +15,7 @@ class Login1Page extends StatelessWidget {
       appBar: const PrimaryAppBar(),
       floatingActionButton: Button.primary(
         icon: UniversalImage(AssetPaths.icArrowRight),
-        onTap: () {},
+        onPressed: () {},
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),

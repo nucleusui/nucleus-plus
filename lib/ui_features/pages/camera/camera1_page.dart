@@ -107,7 +107,7 @@ class _Camera1PageState extends State<Camera1Page> {
           width: 12,
           color: Colors.white,
         ),
-        onTap: () {},
+        onPressed: () {},
       ),
     );
   }

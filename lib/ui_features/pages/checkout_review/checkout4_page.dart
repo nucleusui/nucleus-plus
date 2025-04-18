@@ -152,7 +152,7 @@ class _Checkout4PageState extends State<Checkout4Page> {
         child: Button.primary(
           label: 'Continue to Checkout',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );

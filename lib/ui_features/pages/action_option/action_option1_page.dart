@@ -36,7 +36,7 @@ class _ActionOption1PageState extends State<ActionOption1Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -82,7 +82,7 @@ class _ActionOption1PageState extends State<ActionOption1Page> {
           Button.ghost(
             label: 'Cancel',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ]),
       ),

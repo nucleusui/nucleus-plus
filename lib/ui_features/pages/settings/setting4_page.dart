@@ -57,7 +57,7 @@ class _Setting4PageState extends State<Setting4Page> {
             Button.secondary(
               label: 'Edit',
               buttonSize: ButtonSize.small,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ]),
         ),
@@ -72,11 +72,11 @@ class _Setting4PageState extends State<Setting4Page> {
                 visible: active,
                 replacement: Button.outline(
                   label: e,
-                  onTap: () => setState(() => status = e),
+                  onPressed: () => setState(() => status = e),
                 ),
                 child: Button.primary(
                   label: e,
-                  onTap: () => setState(() => status = e),
+                  onPressed: () => setState(() => status = e),
                 ),
               );
             }).toList(),

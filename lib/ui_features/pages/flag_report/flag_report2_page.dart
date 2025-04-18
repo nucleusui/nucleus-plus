@@ -53,7 +53,7 @@ class _FlagReport2PageState extends State<FlagReport2Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -108,13 +108,13 @@ class _FlagReport2PageState extends State<FlagReport2Page> {
           Button.primary(
             label: 'Report',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
           Button.secondary(
             label: 'Cancel',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
           SizedBox(height: screenHeight(context) / 4),
         ]),

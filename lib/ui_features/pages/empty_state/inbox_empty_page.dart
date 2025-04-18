@@ -29,7 +29,7 @@ class _InboxEmptyPageState extends State<InboxEmptyPage> {
           Button.ghost(
             label: 'Action',
             padding: EdgeInsets.zero,
-            onTap: () {},
+            onPressed: () {},
           ),
         ],
       ),
@@ -53,7 +53,7 @@ class _InboxEmptyPageState extends State<InboxEmptyPage> {
             child: Button.primary(
               label: 'Start a Message',
               buttonSize: ButtonSize.full,
-              onTap: () {},
+              onPressed: () {},
             ),
           ),
           const SizedBox(height: 16),

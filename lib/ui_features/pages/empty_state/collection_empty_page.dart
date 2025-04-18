@@ -27,7 +27,7 @@ class _CollectionEmptyPageState extends State<CollectionEmptyPage> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -62,7 +62,7 @@ class _CollectionEmptyPageState extends State<CollectionEmptyPage> {
           child: Button.primary(
             label: 'Browse Items',
             buttonSize: ButtonSize.large,
-            onTap: () {},
+            onPressed: () {},
           ),
         ),
         SizedBox(height: screenHeight(context) / 5),

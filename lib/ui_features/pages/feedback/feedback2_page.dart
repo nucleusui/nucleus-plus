@@ -39,7 +39,7 @@ class _Feedback2PageState extends State<Feedback2Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -71,7 +71,7 @@ class _Feedback2PageState extends State<Feedback2Page> {
                   Button.ghost(
                     label: 'Submit',
                     padding: EdgeInsets.zero,
-                    onTap: () => Navigator.pop(context),
+                    onPressed: () => Navigator.pop(context),
                   ),
                 ],
               ),

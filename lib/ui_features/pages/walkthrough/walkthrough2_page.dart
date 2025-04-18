@@ -73,7 +73,7 @@ class _Walktrough2PageState extends State<Walktrough2Page> {
           label: 'Sign up',
           buttonSize: ButtonSize.large,
           padding: const EdgeInsets.symmetric(horizontal: 56),
-          onTap: () {},
+          onPressed: () {},
         ),
         const Spacer(),
         Text.rich(

@@ -128,7 +128,7 @@ class _Subscription4PageState extends State<Subscription4Page> {
         child: Button.primary(
           label: 'Subscribe',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );

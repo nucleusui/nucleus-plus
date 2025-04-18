@@ -38,14 +38,14 @@ class FeatureInfo4Page extends StatelessWidget {
             Button.primary(
               label: 'Get Started',
               buttonSize: ButtonSize.large,
-              onTap: () {},
+              onPressed: () {},
             ),
             const Spacer(),
             const Text('Try later?', style: AssetStyles.pMd),
             Button.ghost(
               label: 'Back to home',
               padding: EdgeInsets.zero,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ]),
         ),

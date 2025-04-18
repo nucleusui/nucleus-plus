@@ -23,7 +23,7 @@ class _Signup2PageState extends State<Signup2Page> {
           Button.ghost(
             label: "Login",
             padding: EdgeInsets.zero,
-            onTap: () {},
+            onPressed: () {},
           ),
         ],
       ),
@@ -56,7 +56,7 @@ class _Signup2PageState extends State<Signup2Page> {
           Button.primary(
             label: "Get Started",
             buttonSize: ButtonSize.full,
-            onTap: emailController.text.isEmpty ? null : () {},
+            onPressed: emailController.text.isEmpty ? null : () {},
           ),
           const SizedBox(height: 24),
           Stack(alignment: Alignment.center, children: [
@@ -78,7 +78,7 @@ class _Signup2PageState extends State<Signup2Page> {
             label: 'Continue with Apple',
             color: Colors.black,
             prefixIcon: const UniversalImage(AssetPaths.icApple),
-            onTap: () {},
+            onPressed: () {},
           ),
           const SizedBox(height: 16),
           Button.social(
@@ -86,14 +86,14 @@ class _Signup2PageState extends State<Signup2Page> {
             labelColor: Colors.black,
             color: AppColors.getColor(ColorKey.grey10),
             prefixIcon: const UniversalImage(AssetPaths.icGoogle),
-            onTap: () {},
+            onPressed: () {},
           ),
           const SizedBox(height: 16),
           Button.social(
             label: 'Continue with Facebook',
             color: AssetColors.facebook,
             prefixIcon: const UniversalImage(AssetPaths.icFacebook),
-            onTap: () {},
+            onPressed: () {},
           ),
         ],
       ),

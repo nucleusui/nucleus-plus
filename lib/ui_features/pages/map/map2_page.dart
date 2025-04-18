@@ -103,7 +103,7 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
                 Button.secondary(
                   label: 'Search',
                   buttonSize: ButtonSize.small,
-                  onTap: () {},
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -114,7 +114,7 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
             child: Button.primary(
               label: 'Set location',
               buttonSize: ButtonSize.full,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ),
         ]),

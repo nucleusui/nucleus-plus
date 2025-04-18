@@ -191,7 +191,7 @@ class _Checkout2PageState extends State<Checkout2Page> {
         child: Button.primary(
           label: 'Checkout',
           buttonSize: ButtonSize.full,
-          onTap: () {},
+          onPressed: () {},
         ),
       ),
     );

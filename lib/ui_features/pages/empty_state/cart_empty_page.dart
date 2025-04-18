@@ -46,7 +46,7 @@ class _CartEmptyPageState extends State<CartEmptyPage> {
             margin: const EdgeInsets.all(24),
             child: Button.primary(
               label: 'Shop Now',
-              onTap: () {},
+              onPressed: () {},
             ),
           ),
           const Spacer(),

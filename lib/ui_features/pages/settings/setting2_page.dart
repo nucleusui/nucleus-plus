@@ -186,7 +186,7 @@ class _HeaderWidget extends StatelessWidget {
           buttonSize: ButtonSize.large,
           labelColor: Colors.white,
           border: BorderSide(color: Colors.white),
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
         const SizedBox(height: 32),
       ]),

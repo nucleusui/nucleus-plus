@@ -30,7 +30,7 @@ class _OrderReviewState extends State<OrderReview> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -130,7 +130,7 @@ class _OrderReviewState extends State<OrderReview> {
           Button.primary(
             label: 'Subscribe',
             buttonSize: ButtonSize.full,
-            onTap: () {},
+            onPressed: () {},
           ),
           SizedBox(height: screenHeight(context) / 4),
         ]),

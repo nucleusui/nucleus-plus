@@ -47,7 +47,7 @@ class _Calendar4PageState extends State<Calendar4Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -116,7 +116,7 @@ class _Calendar4PageState extends State<Calendar4Page> {
             child: Button.primary(
               label: 'Apply',
               buttonSize: ButtonSize.full,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ),
         ]);

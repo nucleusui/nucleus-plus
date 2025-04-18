@@ -84,7 +84,7 @@ class Video3Page extends StatelessWidget {
           const SizedBox(height: 24),
           Button.primary(
             label: 'Watch',
-            onTap: () {},
+            onPressed: () {},
           ),
         ])
       ]),

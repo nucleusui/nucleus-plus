@@ -87,7 +87,7 @@ class _Profile4PageState extends State<Profile4Page> {
                 Button.secondary(
                   label: 'Edit Profile',
                   buttonSize: ButtonSize.full,
-                  onTap: () => Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                 ),
               ],
             ),

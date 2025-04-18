@@ -77,7 +77,7 @@ class _Invite2PageState extends State<Invite2Page> {
               Button.primary(
                 label: 'Share link',
                 buttonSize: ButtonSize.small,
-                onTap: () {},
+                onPressed: () {},
               ),
             ],
           ),

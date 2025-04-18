@@ -102,7 +102,7 @@ class _Product3PageState extends State<Product3Page> {
           const Spacer(),
           Button.primary(
             label: 'Add to Cart',
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ]),
       ),

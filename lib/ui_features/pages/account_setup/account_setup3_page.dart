@@ -45,7 +45,7 @@ class _AccountSetup3PageState extends State<AccountSetup3Page> {
         child: Button.primary(
           label: "Next",
           buttonSize: ButtonSize.full,
-          onTap: () {},
+          onPressed: () {},
         ),
       ),
       body: ListView(

@@ -49,7 +49,7 @@ class _Verification4PageState extends State<Verification4Page> {
           Button.ghost(
             label: 'Change number',
             padding: EdgeInsets.zero,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ],
       ),
@@ -86,12 +86,12 @@ class _Verification4PageState extends State<Verification4Page> {
           Button.primary(
             label: 'Continue',
             buttonSize: ButtonSize.full,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
           Button.secondary(
             label: time == 0 ? 'Resend' : 'Resend code in ${time.toInt()}s',
-            onTap: time == 0 ? () => _startTimer() : null,
+            onPressed: time == 0 ? () => _startTimer() : null,
             buttonSize: ButtonSize.full,
           ),
         ]),

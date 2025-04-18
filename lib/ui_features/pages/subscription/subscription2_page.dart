@@ -61,7 +61,7 @@ class _Subscription2PageState extends State<Subscription2Page> {
                           e.icon,
                           width: e.icon == AssetPaths.icLockBold ? 18 : 20,
                         ),
-                        onTap: () {},
+                        onPressed: () {},
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -102,7 +102,7 @@ class _Subscription2PageState extends State<Subscription2Page> {
             Button.primary(
               label: 'Subscribe',
               buttonSize: ButtonSize.full,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ],
         ),

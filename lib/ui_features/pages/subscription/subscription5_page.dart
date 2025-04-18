@@ -103,13 +103,13 @@ class _Subscription5PageState extends State<Subscription5Page> {
             Button.primary(
               label: 'Subscribe',
               buttonSize: ButtonSize.full,
-              onTap: () {},
+              onPressed: () {},
             ),
             const SizedBox(height: 8),
             Button.ghost(
               label: 'Not now',
               buttonSize: ButtonSize.full,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
           ],
         ),

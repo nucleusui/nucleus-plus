@@ -76,7 +76,7 @@ class _Feedback1PageState extends State<Feedback1Page> {
           Button.primary(
             label: 'Submit',
             buttonSize: ButtonSize.full,
-            onTap: listItem.where((e) => e.value == true).isEmpty
+            onPressed: listItem.where((e) => e.value == true).isEmpty
                 ? null
                 : () => Navigator.pop(context),
           )

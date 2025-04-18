@@ -32,7 +32,7 @@ class _Feedback3PageState extends State<Feedback3Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -91,7 +91,7 @@ class _Feedback3PageState extends State<Feedback3Page> {
             Button.primary(
               label: 'Send',
               buttonSize: ButtonSize.full,
-              onTap: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context),
             ),
             SizedBox(height: screenHeight(context) / 3),
           ]),

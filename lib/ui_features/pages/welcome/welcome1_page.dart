@@ -24,7 +24,7 @@ class Welcome1Page extends StatelessWidget {
           child: Button.primary(
             label: 'Get Started',
             buttonSize: ButtonSize.full,
-            onTap: () {},
+            onPressed: () {},
           ),
         ),
         Stack(alignment: Alignment.center, children: [
@@ -55,7 +55,7 @@ class Welcome1Page extends StatelessWidget {
           ].map((path) {
             return Button.ghost(
               icon: UniversalImage(path),
-              onTap: () {},
+              onPressed: () {},
             );
           }).toList(),
         ),

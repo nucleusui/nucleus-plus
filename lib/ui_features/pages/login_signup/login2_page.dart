@@ -42,7 +42,7 @@ class _Login2PageState extends State<Login2Page> {
           Button.ghost(
             label: "Forgot password?",
             padding: EdgeInsets.zero,
-            onTap: () => debugPrint("Forgot password"),
+            onPressed: () => debugPrint("Forgot password"),
           ),
           const SizedBox(height: 10),
           Row(children: [
@@ -66,7 +66,7 @@ class _Login2PageState extends State<Login2Page> {
         child: Button.primary(
           label: 'Log in',
           buttonSize: ButtonSize.full,
-          onTap: () {},
+          onPressed: () {},
         ),
       ),
     );

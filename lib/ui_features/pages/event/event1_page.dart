@@ -143,7 +143,7 @@ class Event1Page extends StatelessWidget {
           const Spacer(),
           Button.primary(
             label: 'RSVP',
-            onTap: () {},
+            onPressed: () {},
           ),
         ]),
       ),

@@ -70,7 +70,7 @@ class _FeatureInfo2PageState extends State<FeatureInfo2Page> {
           Button.primary(
             label: 'Continue',
             buttonSize: ButtonSize.full,
-            onTap: () {},
+            onPressed: () {},
           ),
         ]),
       ),

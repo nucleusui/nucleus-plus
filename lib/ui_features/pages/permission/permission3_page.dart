@@ -43,7 +43,7 @@ class _Permission3PageState extends State<Permission3Page> {
           child: Button.primary(
             label: 'Show Bottom Sheet',
             buttonSize: ButtonSize.large,
-            onTap: () => showBottomSheet(context),
+            onPressed: () => showBottomSheet(context),
           ),
         ),
       ]),
@@ -86,7 +86,7 @@ class _Permission3PageState extends State<Permission3Page> {
                 child: Button.primary(
                   label: 'Allow access',
                   buttonSize: ButtonSize.full,
-                  onTap: () => Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                 ),
               ),
               const SizedBox(width: 12),
@@ -94,7 +94,7 @@ class _Permission3PageState extends State<Permission3Page> {
                 child: Button.secondary(
                   label: 'Nope',
                   buttonSize: ButtonSize.full,
-                  onTap: () => Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                 ),
               ),
             ],

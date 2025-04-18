@@ -28,7 +28,7 @@ class _Note4PageState extends State<Note4Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -92,20 +92,20 @@ class _Note4PageState extends State<Note4Page> {
                 height: 32,
                 width: 32,
                 icon: UniversalImage(AssetPaths.icTag),
-                onTap: () {},
+                onPressed: () {},
               ),
               const SizedBox(width: 16),
               Button.secondary(
                 height: 32,
                 width: 32,
                 icon: UniversalImage(AssetPaths.icUserPlusBold),
-                onTap: () {},
+                onPressed: () {},
               ),
               const Spacer(),
               Button.ghost(
                 label: 'Save',
                 padding: EdgeInsets.zero,
-                onTap: () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context),
               ),
               const SizedBox(width: 5),
             ]),

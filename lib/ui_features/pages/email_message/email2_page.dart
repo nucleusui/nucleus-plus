@@ -124,7 +124,7 @@ class _Email2PageState extends State<Email2Page> {
           padding: const EdgeInsets.only(right: 8),
           child: UniversalImage(AssetPaths.icPlus),
         ),
-        onTap: () {},
+        onPressed: () {},
       ),
       body: ListView(padding: const EdgeInsets.all(16), children: [
         Text(

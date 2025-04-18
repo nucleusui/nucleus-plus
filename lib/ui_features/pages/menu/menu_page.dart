@@ -73,7 +73,7 @@ class _MenuPageState extends State<MenuPage> {
             borderRadius: BorderRadius.circular(5),
             padding: const EdgeInsets.symmetric(horizontal: 16),
             labelStyle: AssetStyles.labelSm.copyWith(color: Colors.white),
-            onTap: () => launchUrl(Uri.parse(
+            onPressed: () => launchUrl(Uri.parse(
                 'https://nucleusui.gumroad.com/l/nucleus-ui-plus-all-in-one-figma-ui-kit-design-system')),
           ),
         ],

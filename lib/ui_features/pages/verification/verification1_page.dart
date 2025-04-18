@@ -43,7 +43,7 @@ class Verification1Page extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
       floatingActionButton: Button.outline(
         icon: UniversalImage(AssetPaths.icArrowLeft),
-        onTap: () => backScreen(),
+        onPressed: () => backScreen(),
       ),
     );
   }

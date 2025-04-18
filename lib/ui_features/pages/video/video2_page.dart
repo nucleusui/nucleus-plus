@@ -228,7 +228,7 @@ class _Video2PageState extends State<Video2Page> {
                   label: subscribed ? 'Unsubscribe' : 'Subscribe',
                   labelColor: subscribed ? AssetColors.red : null,
                   buttonSize: ButtonSize.small,
-                  onTap: () => setState(() => subscribed = !subscribed),
+                  onPressed: () => setState(() => subscribed = !subscribed),
                 ),
               ]),
               const SizedBox(height: 16),

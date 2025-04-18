@@ -61,7 +61,7 @@ class _Filter4PageState extends State<Filter4Page> {
           Button.ghost(
             label: 'Reset',
             padding: EdgeInsets.zero,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ],
       ),
@@ -151,7 +151,7 @@ class _Filter4PageState extends State<Filter4Page> {
         child: Button.primary(
           label: 'Apply',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );

@@ -102,7 +102,7 @@ class _Walktrough1PageState extends State<Walktrough1Page> {
                   child: Button.secondary(
                     label: 'Log in',
                     buttonSize: ButtonSize.large,
-                    onTap: () {},
+                    onPressed: () {},
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -110,7 +110,7 @@ class _Walktrough1PageState extends State<Walktrough1Page> {
                   child: Button.primary(
                     label: 'Sign up',
                     buttonSize: ButtonSize.large,
-                    onTap: () {},
+                    onPressed: () {},
                   ),
                 ),
               ]),

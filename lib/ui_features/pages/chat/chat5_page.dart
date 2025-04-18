@@ -54,7 +54,7 @@ class Chat5Page extends StatelessWidget {
               child: Button.outline(
                 label: e,
                 buttonSize: ButtonSize.full,
-                onTap: () {},
+                onPressed: () {},
               ),
             );
           }),

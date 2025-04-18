@@ -29,7 +29,7 @@ class _Checkout3PageState extends State<Checkout3Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -155,7 +155,7 @@ class _Checkout3PageState extends State<Checkout3Page> {
               Button.primary(
                 label: 'Checkout',
                 buttonSize: ButtonSize.full,
-                onTap: () {},
+                onPressed: () {},
               ),
               const SizedBox(height: 16),
             ]),

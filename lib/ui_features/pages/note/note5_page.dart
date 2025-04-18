@@ -40,7 +40,7 @@ class _Note5PageState extends State<Note5Page> {
                 AssetPaths.icTag,
                 color: AppColors.getColor(ColorKey.primary70),
               ),
-              onTap: () {},
+              onPressed: () {},
             ),
             const Spacer(),
             Text(

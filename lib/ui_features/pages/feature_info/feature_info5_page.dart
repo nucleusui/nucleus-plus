@@ -14,7 +14,7 @@ class FeatureInfo5Page extends StatelessWidget {
         Button.ghost(
           label: 'Not now',
           padding: EdgeInsets.zero,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ]),
       body: Padding(
@@ -127,7 +127,7 @@ class FeatureInfo5Page extends StatelessWidget {
             child: Button.primary(
               label: 'Activate',
               buttonSize: ButtonSize.full,
-              onTap: () {},
+              onPressed: () {},
             ),
           ),
         ]),

@@ -49,7 +49,7 @@ class Video1Page extends StatelessWidget {
                 labelColor: Colors.white,
                 border: BorderSide(color: Colors.white),
                 buttonSize: ButtonSize.small,
-                onTap: () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context),
               ),
             ),
           ]),

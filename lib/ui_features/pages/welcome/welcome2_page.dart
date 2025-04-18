@@ -33,7 +33,7 @@ class Welcome2Page extends StatelessWidget {
           Button.primary(
             label: 'Get Started',
             buttonSize: ButtonSize.full,
-            onTap: () {},
+            onPressed: () {},
           ),
         ]),
       ),

@@ -27,7 +27,7 @@ class _Permission2PageState extends State<Permission2Page> {
         child: Button.primary(
           label: 'Show Bottom Sheet',
           buttonSize: ButtonSize.large,
-          onTap: () => showBottomSheet(context),
+          onPressed: () => showBottomSheet(context),
         ),
       ),
     );
@@ -56,13 +56,13 @@ class _Permission2PageState extends State<Permission2Page> {
         Button.primary(
           label: 'Allow notifications',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
         const SizedBox(height: 8),
         Button.ghost(
           label: 'Allow notifications',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ]),
     );

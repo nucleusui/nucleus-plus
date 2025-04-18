@@ -127,7 +127,7 @@ class _Product2PageState extends State<Product2Page> {
         child: Button.primary(
           label: 'Add to Cart',
           buttonSize: ButtonSize.full,
-          onTap: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );

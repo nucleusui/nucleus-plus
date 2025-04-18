@@ -116,7 +116,7 @@ class _Article5PageState extends State<Article5Page> {
             Button.primary(
               label: 'Follow',
               buttonSize: ButtonSize.medium,
-              onTap: () {},
+              onPressed: () {},
             ),
           ]),
           const SizedBox(height: 12),

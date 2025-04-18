@@ -15,7 +15,7 @@ class Note3Page extends StatelessWidget {
           Button.secondary(
             label: 'Save',
             buttonSize: ButtonSize.small,
-            onTap: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(context),
           ),
         ],
       ),
