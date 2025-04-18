@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
+import 'package:nucles_app/extension/context.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/chat_textfield.dart';
@@ -26,7 +27,7 @@ class Chat2Page extends StatelessWidget {
         shrinkWrap: true,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         children: [
-          SizedBox(height: screenHeight(context) / 3),
+          SizedBox(height: context.heightBy(3.75)),
           const Align(
             alignment: Alignment.centerLeft,
             child: UniversalImage(

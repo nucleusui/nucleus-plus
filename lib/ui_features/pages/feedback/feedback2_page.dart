@@ -4,7 +4,6 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -52,59 +51,63 @@ class _Feedback2PageState extends State<Feedback2Page> {
       child: StatefulBuilder(builder: (context, setInnerState) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(children: [
-              PrimaryInkWell(
-                onTap: () => Navigator.pop(context),
-                child: const UniversalImage(AssetPaths.icClose),
-              ),
-              const Spacer(),
-              const Spacer(),
-              const Text('Share feedback', style: AssetStyles.h3),
-              const Spacer(),
-              PrimaryInkWell(
-                onTap: () {},
-                child: Text(
-                  'Submit',
-                  style: AssetStyles.h3.copyWith(
-                    color: AppColors.getColor(ColorKey.primary60),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  PrimaryInkWell(
+                    onTap: () => Navigator.pop(context),
+                    child: const UniversalImage(
+                      AssetPaths.icClose,
+                      width: 16,
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
-                ),
+                  const Spacer(),
+                  const Spacer(),
+                  const Text('Share feedback', style: AssetStyles.h3),
+                  const Spacer(),
+                  Button.ghost(
+                    label: 'Submit',
+                    padding: EdgeInsets.zero,
+                    onTap: () => Navigator.pop(context),
+                  ),
+                ],
               ),
-            ]),
-            const SizedBox(height: 40),
-            Text(
-              'How satisfied are you with our\ndesign system?',
-              style: AssetStyles.h2.copyWith(height: 1.2),
-            ),
-            const SizedBox(height: 24),
-            ...listItem.map((e) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: PrimaryRadio(
-                  title: e.name,
-                  selected: e.value,
-                  onTap: () {
-                    for (final f in listItem) {
-                      f.value = false;
-                    }
-                    setInnerState(() => e.value = !e.value);
-                  },
-                ),
-              );
-            }),
-            const SizedBox(height: 8),
-            const Text('Additional Comments', style: AssetStyles.h4),
-            const SizedBox(height: 16),
-            const PrimaryTextField(
-              minLines: 4,
-              height: null,
-              maxLines: 10,
-              hintText: 'Let us know what you think',
-            ),
-            SizedBox(height: screenHeight(context) / 8),
-          ]),
+              const SizedBox(height: 40),
+              Text(
+                'How satisfied are you with our\ndesign system?',
+                style: AssetStyles.h2.copyWith(height: 1.2),
+              ),
+              const SizedBox(height: 24),
+              ...listItem.map((e) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: PrimaryRadio(
+                    title: e.name,
+                    selected: e.value,
+                    onTap: () {
+                      for (final f in listItem) {
+                        f.value = false;
+                      }
+                      setInnerState(() => e.value = !e.value);
+                    },
+                  ),
+                );
+              }),
+              const SizedBox(height: 8),
+              const Text('Additional Comments', style: AssetStyles.h4),
+              const SizedBox(height: 16),
+              const TextFields(
+                minLines: 4,
+                height: null,
+                maxLines: 10,
+                hintText: 'Let us know what you think',
+              ),
+              SizedBox(height: screenHeight(context) / 8),
+            ],
+          ),
         );
       }),
     );

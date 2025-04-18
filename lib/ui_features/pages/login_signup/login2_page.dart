@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/input/primary_switch.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/utils/form_validator.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -25,7 +24,7 @@ class _Login2PageState extends State<Login2Page> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          PrimaryTextField(
+          TextFields(
             controller: emailController,
             labelText: "Email",
             hintText: "example@org.com",
@@ -33,7 +32,7 @@ class _Login2PageState extends State<Login2Page> {
             validator: FormValidator.email,
           ),
           const SizedBox(height: 20),
-          PrimaryTextField(
+          TextFields(
             controller: passwordController,
             labelText: "Password",
             isPassword: true,

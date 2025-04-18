@@ -4,7 +4,6 @@ import 'package:nucles_app/models/email_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Email2Page extends StatefulWidget {
@@ -99,30 +98,22 @@ class _Email2PageState extends State<Email2Page> {
     return Scaffold(
       appBar: PrimaryAppBar(
         hideLeading: true,
-        titleWidget: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          child: PrimaryTextField(
-            height: 40,
-            hintText: 'Search',
-            contentPadding: const EdgeInsets.only(top: 7),
-            fillColor: AppColors.getColor(ColorKey.grey10),
-            borderRadius: BorderRadius.circular(100),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 0, 8, 10),
-              child: UniversalImage(
-                AssetPaths.icSearch,
-                width: 20,
-                height: 20,
-                color: AppColors.getColor(ColorKey.grey60),
-              ),
-            ),
-            suffixPadding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-            suffixIcon: UniversalImage(
-              AssetPaths.icMicrophone,
-              width: 20,
-              height: 20,
-              color: AppColors.getColor(ColorKey.grey50),
-            ),
+        titleWidget: TextFields(
+          hintText: 'Search',
+          height: 48,
+          fillColor: AppColors.getColor(ColorKey.grey10),
+          borderRadius: BorderRadius.circular(100),
+          prefixIcon: UniversalImage(
+            AssetPaths.icSearch,
+            width: 20,
+            height: 20,
+            color: AppColors.getColor(ColorKey.grey60),
+          ),
+          suffixIcon: UniversalImage(
+            AssetPaths.icMicrophone,
+            width: 20,
+            height: 20,
+            color: AppColors.getColor(ColorKey.grey50),
           ),
         ),
       ),

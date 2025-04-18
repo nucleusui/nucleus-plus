@@ -3,7 +3,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -80,7 +79,7 @@ class _Feedback3PageState extends State<Feedback3Page> {
                   setInnerState(() => rating = value),
             ),
             const SizedBox(height: 16),
-            const PrimaryTextField(
+            const TextFields(
               minLines: 4,
               maxLines: 10,
               height: null,

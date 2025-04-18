@@ -6,8 +6,8 @@ import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Shop2Page extends StatefulWidget {
   const Shop2Page({super.key});
@@ -51,19 +51,16 @@ class _Shop2PageState extends State<Shop2Page> {
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.all(16),
-          child: PrimaryTextField(
+          child: TextFields(
             height: 48,
             hintText: 'Search',
             fillColor: AppColors.getColor(ColorKey.grey10),
             borderRadius: BorderRadius.circular(100),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 6, 12, 10),
-              child: UniversalImage(
-                AssetPaths.icSearch,
-                width: 18,
-                height: 18,
-                color: AppColors.getColor(ColorKey.grey60),
-              ),
+            prefixIcon: UniversalImage(
+              AssetPaths.icSearch,
+              width: 18,
+              height: 18,
+              color: AppColors.getColor(ColorKey.grey60),
             ),
           ),
         ),

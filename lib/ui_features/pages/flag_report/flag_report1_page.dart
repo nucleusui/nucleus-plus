@@ -4,7 +4,6 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -93,7 +92,7 @@ class _FlagReport1PageState extends State<FlagReport1Page> {
                 );
               }),
               const SizedBox(height: 10),
-              const PrimaryTextField(
+              const TextFields(
                 minLines: 4,
                 height: null,
                 maxLines: 10,

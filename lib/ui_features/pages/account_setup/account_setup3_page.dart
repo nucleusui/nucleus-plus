@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/utils/form_validator.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -59,7 +58,7 @@ class _AccountSetup3PageState extends State<AccountSetup3Page> {
             style: AssetStyles.h2,
           ),
           const SizedBox(height: 12),
-          PrimaryTextField(
+          TextFields(
             autofocus: true,
             controller: emailController,
             hintText: "Text you just entered",

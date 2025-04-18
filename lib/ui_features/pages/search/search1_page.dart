@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Search1Page extends StatefulWidget {
   const Search1Page({super.key});
@@ -81,24 +81,24 @@ class _Search1PageState extends State<Search1Page> {
             ),
             const SizedBox(width: 16),
             Expanded(
-              child: PrimaryTextField(
+              child: TextFields(
                 height: 48,
                 autofocus: true,
                 hintText: 'Search',
                 controller: searchController,
-                contentPadding: const EdgeInsets.only(top: 10),
-                fillColor: Colors.transparent,
-                suffixPadding: const EdgeInsets.fromLTRB(12, 12, 0, 0),
-                suffixIcon: PrimaryInkWell(
-                  onTap: () {
-                    searchController.clear();
-                    setState(() {});
-                  },
-                  child: UniversalImage(
-                    AssetPaths.icClose,
-                    width: 12,
-                    height: 12,
-                    color: AppColors.getColor(ColorKey.grey60),
+                suffixIcon: Visibility(
+                  visible: searchController.text.isNotEmpty,
+                  child: PrimaryInkWell(
+                    onTap: () {
+                      searchController.clear();
+                      setState(() {});
+                    },
+                    child: UniversalImage(
+                      AssetPaths.icClose,
+                      width: 12,
+                      height: 12,
+                      color: AppColors.getColor(ColorKey.grey60),
+                    ),
                   ),
                 ),
                 onChanged: (value) => setState(() => searchResult = listItem

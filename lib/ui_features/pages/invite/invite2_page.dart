@@ -6,7 +6,6 @@ import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_checkbox.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Invite2Page extends StatefulWidget {
@@ -88,21 +87,17 @@ class _Invite2PageState extends State<Invite2Page> {
         const SizedBox(height: 24),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: PrimaryTextField(
+          child: TextFields(
             height: 48,
             hintText: 'Search',
             controller: searchController,
-            contentPadding: const EdgeInsets.only(top: 9),
             fillColor: AppColors.getColor(ColorKey.grey10),
             borderRadius: BorderRadius.circular(100),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 6, 8, 10),
-              child: UniversalImage(
-                AssetPaths.icSearch,
-                width: 16,
-                height: 16,
-                color: AppColors.getColor(ColorKey.grey100),
-              ),
+            prefixIcon: UniversalImage(
+              AssetPaths.icSearch,
+              width: 16,
+              height: 16,
+              color: AppColors.getColor(ColorKey.grey100),
             ),
             onChanged: (value) {
               setState(() {

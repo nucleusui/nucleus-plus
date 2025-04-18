@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -128,23 +127,23 @@ class _Checkout3PageState extends State<Checkout3Page> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text('Email', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const PrimaryTextField(initialValue: 'james@nucleus-ui.com'),
+              const TextFields(initialValue: 'james@nucleus-ui.com'),
               const SizedBox(height: 24),
               const Text('Card information', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const PrimaryTextField(initialValue: '1234 1234 1234'),
+              const TextFields(initialValue: '1234 1234 1234'),
               const SizedBox(height: 10),
               const Row(children: [
-                Expanded(child: PrimaryTextField(hintText: 'MM/YY')),
+                Expanded(child: TextFields(hintText: 'MM/YY')),
                 SizedBox(width: 10),
-                Expanded(child: PrimaryTextField(hintText: 'CVC')),
+                Expanded(child: TextFields(hintText: 'CVC')),
               ]),
               const SizedBox(height: 10),
-              const PrimaryTextField(initialValue: 'James Ryan'),
+              const TextFields(initialValue: 'James Ryan'),
               const SizedBox(height: 24),
               const Text('Country', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const PrimaryTextField(
+              const TextFields(
                 initialValue: 'Indonesia',
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 10, top: 2),

@@ -9,9 +9,9 @@ class CountryDropdown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 8),
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
         const UniversalImage(
           AssetPaths.flagAU,
           height: 30,
@@ -26,7 +26,7 @@ class CountryDropdown extends StatelessWidget {
         ),
         const SizedBox(width: 5),
         SvgPicture.asset(AssetPaths.icArrowDown)
-      ]),
+      ],
     );
   }
 }

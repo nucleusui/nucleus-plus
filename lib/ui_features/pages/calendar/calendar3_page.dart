@@ -4,7 +4,6 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/calendar/primary_calendar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
@@ -117,7 +116,7 @@ class _Calendar3PageState extends State<Calendar3Page> {
                 ],
               ),
               const SizedBox(height: 24),
-              const PrimaryTextField(
+              const TextFields(
                 minLines: 4,
                 height: null,
                 maxLines: 10,

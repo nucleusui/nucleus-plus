@@ -5,8 +5,8 @@ import 'package:latlong2/latlong.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Map1Page extends StatefulWidget {
   const Map1Page({super.key});
@@ -66,20 +66,16 @@ class _Map1PageState extends State<Map1Page> with TickerProviderStateMixin {
           top: kToolbarHeight,
           left: 16,
           right: 16,
-          child: PrimaryTextField(
+          child: TextFields(
             height: 48,
             hintText: 'Search',
-            contentPadding: const EdgeInsets.only(top: 9),
             fillColor: AppColors.getColor(ColorKey.background),
             borderRadius: BorderRadius.circular(100),
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 6, 8, 10),
-              child: UniversalImage(
-                AssetPaths.icSearch,
-                width: 16,
-                height: 16,
-                color: AppColors.getColor(ColorKey.grey100),
-              ),
+            prefixIcon: UniversalImage(
+              AssetPaths.icSearch,
+              width: 16,
+              height: 16,
+              color: AppColors.getColor(ColorKey.grey100),
             ),
           ),
         ),

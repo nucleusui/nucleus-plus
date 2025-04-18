@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class AccountSetup4Page extends StatefulWidget {
   const AccountSetup4Page({super.key});
@@ -31,14 +31,11 @@ class _AccountSetup4PageState extends State<AccountSetup4Page> {
                 .copyWith(color: AppColors.getColor(ColorKey.grey60)),
           ),
           const SizedBox(height: 30),
-          PrimaryTextField(
+          TextFields(
             controller: locationController,
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 5, 8, 0),
-              child: UniversalImage(
-                AssetPaths.icMapPin,
-                color: AppColors.getColor(ColorKey.grey50),
-              ),
+            prefixIcon: UniversalImage(
+              AssetPaths.icMapPin,
+              color: AppColors.getColor(ColorKey.grey50),
             ),
             hintText: "Find Location",
           ),

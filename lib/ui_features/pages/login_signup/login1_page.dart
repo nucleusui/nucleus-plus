@@ -3,7 +3,6 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/dropdown/country_dropdown.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Login1Page extends StatelessWidget {
@@ -28,7 +27,7 @@ class Login1Page extends StatelessWidget {
             style: AssetStyles.pMd.copyWith(height: 0.8),
           ),
           const SizedBox(height: 28),
-          PrimaryTextField(
+          TextFields(
             controller: numberController,
             prefixIcon: const CountryDropdown(),
             hintText: "Placeholder text",

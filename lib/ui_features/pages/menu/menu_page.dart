@@ -5,7 +5,6 @@ import 'package:nucles_app/models/menu_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/pages/menu/menu_detail_page.dart';
 import 'package:nucles_app/ui_features/pages/menu/menu_list.dart';
 import 'package:nucleus_ui/nucleus_ui.dart';
@@ -119,35 +118,29 @@ class _MenuPageState extends State<MenuPage> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: PrimaryTextField(
+          child: TextFields(
             hintText: 'Search screen',
             controller: searchController,
-            prefixIcon: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 5, 8, 10),
-              child: UniversalImage(
-                AssetPaths.icSearch,
-                width: 18,
-                height: 18,
-                color: AppColors.getColor(searchController.text.isNotEmpty
-                    ? ColorKey.primary60
-                    : ColorKey.grey50),
-              ),
+            prefixIcon: UniversalImage(
+              AssetPaths.icSearch,
+              width: 18,
+              height: 18,
+              color: AppColors.getColor(searchController.text.isNotEmpty
+                  ? ColorKey.primary60
+                  : ColorKey.grey50),
             ),
             suffixIcon: Visibility(
               visible: searchController.text.isNotEmpty,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 0, 10, 6),
-                child: GestureDetector(
-                  onTap: () {
-                    FocusManager.instance.primaryFocus?.unfocus();
-                    searchController.clear();
-                    setState(() {});
-                  },
-                  child: UniversalImage(
-                    AssetPaths.icClose,
-                    width: 15,
-                    color: AppColors.getColor(ColorKey.primary60),
-                  ),
+              child: GestureDetector(
+                onTap: () {
+                  FocusManager.instance.primaryFocus?.unfocus();
+                  searchController.clear();
+                  setState(() {});
+                },
+                child: UniversalImage(
+                  AssetPaths.icClose,
+                  width: 15,
+                  color: AppColors.getColor(ColorKey.primary60),
                 ),
               ),
             ),
@@ -164,7 +157,7 @@ class _MenuPageState extends State<MenuPage> {
             },
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 16),
         Expanded(
             child: ListView(
           shrinkWrap: true,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
+import 'package:nucles_app/extension/context.dart';
 import 'package:nucles_app/ui_features/components/image/universal_image.dart';
-import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class ChatTextfield extends StatelessWidget {
   const ChatTextfield({
@@ -23,6 +24,7 @@ class ChatTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 81,
+      margin: EdgeInsets.only(bottom: context.extraPadBottom),
       decoration: BoxDecoration(
         color: AppColors.getColor(ColorKey.background),
         border: Border(
@@ -41,9 +43,8 @@ class ChatTextfield extends StatelessWidget {
               ),
           const SizedBox(width: 16),
           const Expanded(
-            child: PrimaryTextField(
+            child: TextFields(
               hintText: 'Placeholder text',
-              contentPadding: EdgeInsets.fromLTRB(16, 9, 16, 9),
               height: 48,
             ),
           ),
