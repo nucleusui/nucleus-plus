@@ -38,7 +38,7 @@ enum ColorKey {
 
 class AppColors {
   static Color getColor(ColorKey colorKey) {
-    return darkNotifier.value
+    return themeNotifier.value
         ? DarkColors.getColor(enumToString(colorKey)) ??
             LightColors.getColor(enumToString(colorKey))
         : LightColors.getColor(enumToString(colorKey));

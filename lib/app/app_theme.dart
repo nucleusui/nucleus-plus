@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nucles_app/config/config.dart';
 
-final darkNotifier = ValueNotifier<bool>(false);
+final themeNotifier = ValueNotifier<bool>(false);
+SystemUiOverlayStyle get currentSystemUiOverlayStyle => SystemUiOverlayStyle(
+      statusBarIconBrightness:
+          themeNotifier.value ? Brightness.light : Brightness.dark,
+      statusBarBrightness:
+          themeNotifier.value ? Brightness.dark : Brightness.light,
+    );
+
 final theme = ThemeData(
   fontFamily: 'PlusJakartaSans',
   colorScheme: const ColorScheme.light(surface: Colors.white),

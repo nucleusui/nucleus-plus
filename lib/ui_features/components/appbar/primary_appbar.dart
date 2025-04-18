@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nucles_app/app/app_theme.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PrimaryAppBar({
@@ -16,8 +17,7 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleStyle = AssetStyles.h3,
     this.iconColor,
     this.titleWidget,
-    this.systemOverlayStyle =
-        const SystemUiOverlayStyle(statusBarBrightness: Brightness.light),
+    this.systemOverlayStyle,
     this.hideLeading = false,
     this.icon = AssetPaths.icArrowBack,
     this.centerTitle = true,
@@ -55,7 +55,7 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       automaticallyImplyLeading: false,
       surfaceTintColor: surfaceTintColor,
-      systemOverlayStyle: systemOverlayStyle,
+      systemOverlayStyle: systemOverlayStyle ?? currentSystemUiOverlayStyle,
       title: titleWidget ?? Text(title ?? "", style: titleStyle),
       backgroundColor: backgroundColor ?? Colors.transparent,
       bottomOpacity: 0,
@@ -80,7 +80,7 @@ class PrimaryAppBar extends StatelessWidget implements PreferredSizeWidget {
                     Navigator.pop(context);
                   }
                 },
-                icon: PrimaryAssetImage(
+                icon: UniversalImage(
                   icon,
                   width: 8,
                   height: 16,

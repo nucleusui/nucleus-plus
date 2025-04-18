@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
-      valueListenable: darkNotifier,
+      valueListenable: themeNotifier,
       builder: (BuildContext context, bool darkMode, Widget? child) {
         return MaterialApp(
           title: Strings.appName,
