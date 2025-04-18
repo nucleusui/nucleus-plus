@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Filter2Page extends StatefulWidget {
   const Filter2Page({super.key});
@@ -24,13 +24,14 @@ class _Filter2PageState extends State<Filter2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -45,7 +46,7 @@ class _Filter2PageState extends State<Filter2Page> {
             Row(children: [
               PrimaryInkWell(
                 onTap: () => Navigator.pop(context),
-                child: const PrimaryAssetImage(
+                child: const UniversalImage(
                   AssetPaths.icClose,
                   fit: BoxFit.cover,
                 ),
@@ -72,7 +73,7 @@ class _Filter2PageState extends State<Filter2Page> {
                     Text(e.title, style: AssetStyles.pMd),
                     const Spacer(),
                     if (e.value.isEmpty)
-                      PrimaryAssetImage(
+                      UniversalImage(
                         AssetPaths.icArrowNext,
                         fit: BoxFit.cover,
                         width: 12,
@@ -89,7 +90,7 @@ class _Filter2PageState extends State<Filter2Page> {
                         ),
                         const SizedBox(width: 8),
                         Stack(alignment: Alignment.center, children: [
-                          const PrimaryAssetImage(AssetPaths.icClearCircle),
+                          const UniversalImage(AssetPaths.icClearCircle),
                           Icon(
                             Icons.clear,
                             size: 12,
@@ -106,9 +107,10 @@ class _Filter2PageState extends State<Filter2Page> {
             }),
             Padding(
               padding: const EdgeInsets.all(16),
-              child: PrimaryButton(
-                onTap: () {},
+              child: Button.primary(
                 label: 'Show 785 results',
+                buttonSize: ButtonSize.full,
+                onTap: () => Navigator.pop(context),
               ),
             ),
           ]),

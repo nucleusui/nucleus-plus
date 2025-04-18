@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/calendar/primary_calendar.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Calendar2Page extends StatefulWidget {
   const Calendar2Page({super.key});
@@ -30,13 +30,14 @@ class _Calendar2PageState extends State<Calendar2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -79,20 +80,18 @@ class _Calendar2PageState extends State<Calendar2Page> {
             ),
             child: Row(children: [
               Expanded(
-                child: PrimaryButton(
-                  onTap: () => Navigator.pop(context),
-                  width: double.infinity,
-                  color: Colors.transparent,
-                  labelColor: AppColors.getColor(ColorKey.primary60),
+                child: Button.ghost(
                   label: 'Cancel',
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: PrimaryButton(
-                  onTap: () => Navigator.pop(context),
-                  width: double.infinity,
+                child: Button.primary(
                   label: 'Apply',
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
             ]),

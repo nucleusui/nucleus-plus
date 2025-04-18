@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Setting3Page extends StatefulWidget {
   const Setting3Page({super.key});
@@ -41,13 +41,14 @@ class _Setting3PageState extends State<Setting3Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -61,7 +62,7 @@ class _Setting3PageState extends State<Setting3Page> {
           Row(children: [
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(AssetPaths.icClose),
+              child: const UniversalImage(AssetPaths.icClose),
             ),
             const Spacer(),
             const Text('Settings', style: AssetStyles.h3),
@@ -86,7 +87,7 @@ class _Setting3PageState extends State<Setting3Page> {
                 ),
               ]),
               const Spacer(),
-              const PrimaryAssetImage(
+              const UniversalImage(
                 AssetPaths.imgCrown,
                 width: 48,
                 height: 48,
@@ -109,7 +110,7 @@ class _Setting3PageState extends State<Setting3Page> {
                       child: Row(children: [
                         Text(f.title, style: AssetStyles.pMd),
                         const Spacer(),
-                        PrimaryAssetImage(
+                        UniversalImage(
                           AssetPaths.icArrowNext,
                           color: AppColors.getColor(ColorKey.grey50),
                         ),
@@ -121,11 +122,12 @@ class _Setting3PageState extends State<Setting3Page> {
             );
           }),
           SizedBox(height: screenHeight(context) / 10),
-          PrimaryButton(
-            color: Colors.transparent,
-            labelStyle: AssetStyles.h4.copyWith(color: AssetColors.red),
+          Button.destructive(
             label: 'Log out',
-            onTap: () {},
+            color: Colors.transparent,
+            labelColor: AssetColors.red,
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
         ]),

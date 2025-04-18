@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class ActionOption3Page extends StatefulWidget {
   const ActionOption3Page({super.key});
@@ -39,13 +39,14 @@ class _ActionOption3PageState extends State<ActionOption3Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -57,7 +58,7 @@ class _ActionOption3PageState extends State<ActionOption3Page> {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           child: Row(children: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.imgPlaceholder3,
               width: 64,
               height: 64,
@@ -91,7 +92,7 @@ class _ActionOption3PageState extends State<ActionOption3Page> {
                   child: Row(children: [
                     Padding(
                       padding: const EdgeInsets.all(4),
-                      child: PrimaryAssetImage(
+                      child: UniversalImage(
                         f.icon,
                         width: 16,
                         fit: BoxFit.scaleDown,

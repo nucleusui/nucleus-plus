@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Setting4Page extends StatefulWidget {
   const Setting4Page({super.key});
@@ -26,7 +26,7 @@ class _Setting4PageState extends State<Setting4Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PrimaryAppBar(actions: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.icMore,
           width: 20,
           color: AppColors.getColor(ColorKey.primary60),
@@ -37,7 +37,7 @@ class _Setting4PageState extends State<Setting4Page> {
         Padding(
           padding: const EdgeInsets.all(16),
           child: Row(children: [
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgUser1,
               width: 64,
               height: 64,
@@ -54,14 +54,10 @@ class _Setting4PageState extends State<Setting4Page> {
               ),
             ]),
             const Spacer(),
-            PrimaryButton(
+            Button.secondary(
               label: 'Edit',
-              height: 32,
-              width: 64,
-              padding: EdgeInsets.zero,
-              color: AppColors.getColor(ColorKey.primary20),
-              labelColor: AppColors.getColor(ColorKey.primary70),
-              onTap: () {},
+              buttonSize: ButtonSize.small,
+              onTap: () => Navigator.pop(context),
             ),
           ]),
         ),
@@ -72,16 +68,16 @@ class _Setting4PageState extends State<Setting4Page> {
             spacing: 8,
             children: ['In a meeting', 'At work', 'Busy', 'Out side'].map((e) {
               final active = e == status;
-              return PrimaryButton(
-                label: e,
-                height: 36,
-                color: active ? null : Colors.transparent,
-                border: active
-                    ? null
-                    : BorderSide(color: AppColors.getColor(ColorKey.primary30)),
-                labelColor:
-                    active ? null : AppColors.getColor(ColorKey.primary70),
-                onTap: () => setState(() => status = e),
+              return Visibility(
+                visible: active,
+                replacement: Button.outline(
+                  label: e,
+                  onTap: () => setState(() => status = e),
+                ),
+                child: Button.primary(
+                  label: e,
+                  onTap: () => setState(() => status = e),
+                ),
               );
             }).toList(),
           ),
@@ -102,7 +98,7 @@ class _Setting4PageState extends State<Setting4Page> {
               height: 64,
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.icon,
                   width: 18,
                   color: isLogout
@@ -117,7 +113,7 @@ class _Setting4PageState extends State<Setting4Page> {
                   ),
                 ),
                 const Spacer(),
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icArrowNext,
                   color: isLogout
                       ? Colors.transparent

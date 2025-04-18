@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Feedback2Page extends StatefulWidget {
   const Feedback2Page({super.key});
@@ -34,13 +34,14 @@ class _Feedback2PageState extends State<Feedback2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -56,7 +57,7 @@ class _Feedback2PageState extends State<Feedback2Page> {
             Row(children: [
               PrimaryInkWell(
                 onTap: () => Navigator.pop(context),
-                child: const PrimaryAssetImage(AssetPaths.icClose),
+                child: const UniversalImage(AssetPaths.icClose),
               ),
               const Spacer(),
               const Spacer(),

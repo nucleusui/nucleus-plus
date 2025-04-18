@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class ActionOption2Page extends StatefulWidget {
   const ActionOption2Page({super.key});
@@ -23,13 +23,14 @@ class _ActionOption2PageState extends State<ActionOption2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -65,11 +66,10 @@ class _ActionOption2PageState extends State<ActionOption2Page> {
         }),
         Padding(
           padding: const EdgeInsets.all(16),
-          child: PrimaryButton(
-            onTap: () => Navigator.pop(context),
-            color: AppColors.getColor(ColorKey.primary20),
-            labelColor: AppColors.getColor(ColorKey.primary70),
+          child: Button.ghost(
             label: 'Cancel',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
         ),
       ]),

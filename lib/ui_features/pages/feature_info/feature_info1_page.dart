@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FeatureInfo1Page extends StatefulWidget {
   const FeatureInfo1Page({super.key});
@@ -23,13 +23,14 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -42,7 +43,7 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           PrimaryInkWell(
             onTap: () => Navigator.pop(context),
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icClose,
               width: 16,
               color: AppColors.getColor(ColorKey.grey100),
@@ -78,7 +79,7 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
                 CircleAvatar(
                   radius: 24,
                   backgroundColor: AppColors.getColor(ColorKey.primary20),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     e.icon,
                     width: 16,
                     color: AppColors.getColor(ColorKey.primary70),
@@ -104,8 +105,9 @@ class _FeatureInfo1PageState extends State<FeatureInfo1Page> {
             );
           }),
           SizedBox(height: screenHeight(context) / 4),
-          PrimaryButton(
+          Button.primary(
             label: 'Get Started',
+            buttonSize: ButtonSize.full,
             onTap: () {},
           ),
           const SizedBox(height: 16),

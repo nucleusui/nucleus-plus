@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Welcome3Page extends StatelessWidget {
   const Welcome3Page({super.key});
@@ -27,29 +27,26 @@ class Welcome3Page extends StatelessWidget {
                     .copyWith(color: AppColors.getColor(ColorKey.grey60)),
               ),
               const SizedBox(height: 32),
-              PrimaryButton(
+              Button.primary(
                 label: 'Get started',
-                width: double.infinity,
+                buttonSize: ButtonSize.full,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
-              PrimaryButton(
+              Button.ghost(
                 label: 'Log in',
-                labelStyle: AssetStyles.labelMd
-                    .copyWith(color: AppColors.getColor(ColorKey.primary60)),
-                width: double.infinity,
-                color: Colors.transparent,
+                buttonSize: ButtonSize.full,
                 onTap: () {},
               ),
             ],
           ),
         ),
-        const Spacer(),
-        PrimaryAssetImage(
-          AssetPaths.imgPlaceholder2,
-          width: double.infinity,
-          fit: BoxFit.cover,
-          height: screenHeight(context) / 1.85,
+        Expanded(
+          child: UniversalImage(
+            AssetPaths.imgPlaceholder2,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
         ),
       ]),
     );

@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FeatureInfo2Page extends StatefulWidget {
   const FeatureInfo2Page({super.key});
@@ -25,7 +25,7 @@ class _FeatureInfo2PageState extends State<FeatureInfo2Page> {
           CircleAvatar(
             radius: 60,
             backgroundColor: AppColors.getColor(ColorKey.primary20),
-            child: const PrimaryAssetImage(
+            child: const UniversalImage(
               AssetPaths.icColumn,
               width: 42,
               height: 42,
@@ -46,7 +46,7 @@ class _FeatureInfo2PageState extends State<FeatureInfo2Page> {
             return Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icCheck,
                   width: 16,
                   color: AppColors.getColor(ColorKey.primary60),
@@ -67,9 +67,10 @@ class _FeatureInfo2PageState extends State<FeatureInfo2Page> {
             ),
           ]),
           const SizedBox(height: 16),
-          PrimaryButton(
-            onTap: () {},
+          Button.primary(
             label: 'Continue',
+            buttonSize: ButtonSize.full,
+            onTap: () {},
           ),
         ]),
       ),

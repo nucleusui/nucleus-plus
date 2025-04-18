@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Invite1Page extends StatefulWidget {
   const Invite1Page({super.key});
@@ -74,7 +74,7 @@ class _Invite1PageState extends State<Invite1Page> {
           return Padding(
             padding: const EdgeInsets.all(20),
             child: Row(children: [
-              PrimaryAssetImage(e.icon, height: 16),
+              UniversalImage(e.icon, height: 16),
               const SizedBox(width: 20),
               Text(e.title, style: AssetStyles.pMd)
             ]),
@@ -91,18 +91,22 @@ class _Invite1PageState extends State<Invite1Page> {
           return Padding(
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
             child: Row(children: [
-              PrimaryAssetImage(e.icon!, width: 40, height: 40),
+              UniversalImage(e.icon!, width: 40, height: 40),
               const SizedBox(width: 20),
               Text(e.name, style: AssetStyles.pMd),
               const Spacer(),
-              PrimaryButton(
-                height: 32,
-                label: e.value ? 'Added' : 'Add',
-                color: e.value ? AppColors.getColor(ColorKey.primary20) : null,
-                labelColor:
-                    e.value ? AppColors.getColor(ColorKey.primary70) : null,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                onTap: () => setState(() => e.value = !e.value),
+              Visibility(
+                visible: e.value,
+                replacement: Button.primary(
+                  label: 'Add',
+                  buttonSize: ButtonSize.small,
+                  onTap: () => setState(() => e.value = !e.value),
+                ),
+                child: Button.secondary(
+                  label: 'Added',
+                  buttonSize: ButtonSize.small,
+                  onTap: () => setState(() => e.value = !e.value),
+                ),
               ),
             ]),
           );

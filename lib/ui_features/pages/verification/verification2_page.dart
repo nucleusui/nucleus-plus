@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Verification2Page extends StatelessWidget {
   const Verification2Page({super.key});
@@ -55,9 +55,10 @@ class Verification2Page extends StatelessWidget {
       ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
-          onTap: () {},
+        child: Button.primary(
           label: 'Continue',
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
       ),
     );

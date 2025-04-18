@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/filter_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_checkbox.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Filter4Page extends StatefulWidget {
   const Filter4Page({super.key});
@@ -55,17 +55,16 @@ class _Filter4PageState extends State<Filter4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PrimaryAppBar(title: 'Filters', actions: [
-        PrimaryInkWell(
-          onTap: () {},
-          child: Text(
-            'Reset',
-            style: AssetStyles.h3.copyWith(
-              color: AppColors.getColor(ColorKey.primary60),
-            ),
+      appBar: PrimaryAppBar(
+        title: 'Filters',
+        actions: [
+          Button.ghost(
+            label: 'Reset',
+            padding: EdgeInsets.zero,
+            onTap: () => Navigator.pop(context),
           ),
-        ),
-      ]),
+        ],
+      ),
       body: ListView(
         shrinkWrap: true,
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -92,7 +91,7 @@ class _Filter4PageState extends State<Filter4Page> {
                   const Spacer(),
                   Transform.rotate(
                     angle: e.active ? 3.1 : 0,
-                    child: const PrimaryAssetImage(
+                    child: const UniversalImage(
                       AssetPaths.icArrowDownThin,
                       fit: BoxFit.cover,
                       width: 8,
@@ -149,9 +148,10 @@ class _Filter4PageState extends State<Filter4Page> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
-          onTap: () => Navigator.pop(context),
+        child: Button.primary(
           label: 'Apply',
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
       ),
     );

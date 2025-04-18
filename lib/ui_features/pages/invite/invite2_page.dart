@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_checkbox.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Invite2Page extends StatefulWidget {
   const Invite2Page({super.key});
@@ -75,11 +75,9 @@ class _Invite2PageState extends State<Invite2Page> {
                 ),
               ),
               const SizedBox(height: 16),
-              PrimaryButton(
-                height: 32,
-                width: 108,
+              Button.primary(
                 label: 'Share link',
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                buttonSize: ButtonSize.small,
                 onTap: () {},
               ),
             ],
@@ -99,7 +97,7 @@ class _Invite2PageState extends State<Invite2Page> {
             borderRadius: BorderRadius.circular(100),
             prefixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(16, 6, 8, 10),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 16,
                 height: 16,
@@ -146,7 +144,7 @@ class _Invite2PageState extends State<Invite2Page> {
                   onChanged: (value) => setState(() => e.value = !e.value),
                 ),
                 const SizedBox(width: 20),
-                PrimaryAssetImage(e.icon!, width: 40, height: 40),
+                UniversalImage(e.icon!, width: 40, height: 40),
                 const SizedBox(width: 20),
                 Text(e.name, style: AssetStyles.pMd),
               ]),

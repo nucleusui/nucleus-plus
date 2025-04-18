@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 import 'package:video_player/video_player.dart';
 
 class Video2Page extends StatefulWidget {
@@ -62,7 +62,7 @@ class _Video2PageState extends State<Video2Page> {
               child: Stack(alignment: Alignment.bottomCenter, children: [
                 Visibility(
                   visible: !isLoading,
-                  replacement: const PrimaryAssetImage(
+                  replacement: const UniversalImage(
                     AssetPaths.imgPlaceholder5,
                     height: 232,
                     width: double.infinity,
@@ -80,7 +80,7 @@ class _Video2PageState extends State<Video2Page> {
                       color: _controller.value.isPlaying
                           ? Colors.transparent
                           : Colors.black.withValues(alpha: .5),
-                      child: const PrimaryAssetImage(
+                      child: const UniversalImage(
                         AssetPaths.icPlayFill,
                         width: 40,
                       ),
@@ -159,7 +159,7 @@ class _Video2PageState extends State<Video2Page> {
                     ),
                   ),
                 ),
-                const PrimaryAssetImage(AssetPaths.icArrowDown),
+                const UniversalImage(AssetPaths.icArrowDown),
               ]),
               const SizedBox(height: 12),
               Text(
@@ -185,7 +185,7 @@ class _Video2PageState extends State<Video2Page> {
                 ].map((e) {
                   return Column(
                     children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         e.icon,
                         color: AppColors.getColor(ColorKey.grey100),
                       ),
@@ -204,7 +204,7 @@ class _Video2PageState extends State<Video2Page> {
               const PrimaryDivider(),
               const SizedBox(height: 16),
               Row(children: [
-                const PrimaryAssetImage(
+                const UniversalImage(
                   AssetPaths.imgUser1,
                   width: 40,
                   height: 40,
@@ -224,16 +224,10 @@ class _Video2PageState extends State<Video2Page> {
                   ],
                 ),
                 const Spacer(),
-                PrimaryButton(
+                Button.secondary(
                   label: subscribed ? 'Unsubscribe' : 'Subscribe',
-                  height: 36,
-                  color: AppColors.getColor(
-                      subscribed ? ColorKey.grey20 : ColorKey.primary20),
-                  labelStyle: AssetStyles.h4.copyWith(
-                    color: subscribed
-                        ? AssetColors.red
-                        : AppColors.getColor(ColorKey.primary70),
-                  ),
+                  labelColor: subscribed ? AssetColors.red : null,
+                  buttonSize: ButtonSize.small,
                   onTap: () => setState(() => subscribed = !subscribed),
                 ),
               ]),
@@ -253,7 +247,7 @@ class _Video2PageState extends State<Video2Page> {
                       listComment.sort((a, b) => b.text.compareTo(a.text));
                     }
                   }),
-                  child: const PrimaryAssetImage(AssetPaths.icSort),
+                  child: const UniversalImage(AssetPaths.icSort),
                 ),
               ]),
               const SizedBox(height: 16),
@@ -261,7 +255,7 @@ class _Video2PageState extends State<Video2Page> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 16),
                   child: Row(children: [
-                    PrimaryAssetImage(
+                    UniversalImage(
                       e.image,
                       width: 32,
                       height: 32,

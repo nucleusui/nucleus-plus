@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
-import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FeatureInfo4Page extends StatelessWidget {
   const FeatureInfo4Page({super.key});
@@ -14,7 +13,7 @@ class FeatureInfo4Page extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(children: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.imgPlaceholder2,
               height: screenHeight(context) / 3.5,
               fit: BoxFit.cover,
@@ -36,22 +35,17 @@ class FeatureInfo4Page extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              PrimaryButton(
-                onTap: () {},
-                label: 'Get Started',
-              ),
-            ]),
+            Button.primary(
+              label: 'Get Started',
+              buttonSize: ButtonSize.large,
+              onTap: () {},
+            ),
             const Spacer(),
             const Text('Try later?', style: AssetStyles.pMd),
-            PrimaryInkWell(
+            Button.ghost(
+              label: 'Back to home',
+              padding: EdgeInsets.zero,
               onTap: () => Navigator.pop(context),
-              child: Text(
-                'Back to home',
-                style: AssetStyles.h4.copyWith(
-                  color: AppColors.getColor(ColorKey.primary70),
-                ),
-              ),
             ),
           ]),
         ),

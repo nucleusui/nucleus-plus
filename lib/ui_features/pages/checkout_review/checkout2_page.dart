@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Checkout2Page extends StatefulWidget {
   const Checkout2Page({super.key});
@@ -33,7 +33,7 @@ class _Checkout2PageState extends State<Checkout2Page> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.imgPlaceholder2,
                 width: 100,
                 height: 100,
@@ -97,7 +97,7 @@ class _Checkout2PageState extends State<Checkout2Page> {
                   ],
                 ),
               ),
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.icDelete2,
                 width: 16,
                 fit: BoxFit.cover,
@@ -129,7 +129,7 @@ class _Checkout2PageState extends State<Checkout2Page> {
                 Row(children: [
                   Padding(
                     padding: const EdgeInsets.all(16),
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       e.value.icon,
                       width: e.key == 1 ? 16 : 20,
                       height: e.key == 1 ? 16 : 20,
@@ -152,7 +152,7 @@ class _Checkout2PageState extends State<Checkout2Page> {
                     ),
                   ),
                   const SizedBox(width: 16),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.icArrowNext,
                     color: AppColors.getColor(ColorKey.grey60),
                   ),
@@ -188,8 +188,9 @@ class _Checkout2PageState extends State<Checkout2Page> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
+        child: Button.primary(
           label: 'Checkout',
+          buttonSize: ButtonSize.full,
           onTap: () {},
         ),
       ),

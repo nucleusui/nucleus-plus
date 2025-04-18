@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Welcome4Page extends StatelessWidget {
   const Welcome4Page({super.key});
@@ -12,7 +12,7 @@ class Welcome4Page extends StatelessWidget {
       backgroundColor: AppColors.getColor(ColorKey.grey10),
       body: Column(children: [
         const Spacer(),
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgToggle,
           width: 280,
           height: 280,
@@ -37,19 +37,20 @@ class Welcome4Page extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               Row(children: [
-                PrimaryButton(
-                  label: 'Log in',
-                  width: (screenWidth(context) / 2) - 32,
-                  labelStyle: AssetStyles.labelMd
-                      .copyWith(color: AppColors.getColor(ColorKey.primary60)),
-                  color: AppColors.getColor(ColorKey.primary20),
-                  onTap: () {},
+                Expanded(
+                  child: Button.secondary(
+                    label: 'Log in',
+                    buttonSize: ButtonSize.large,
+                    onTap: () {},
+                  ),
                 ),
                 const SizedBox(width: 16),
-                PrimaryButton(
-                  label: 'Get started',
-                  width: (screenWidth(context) / 2) - 32,
-                  onTap: () {},
+                Expanded(
+                  child: Button.primary(
+                    label: 'Get started',
+                    buttonSize: ButtonSize.large,
+                    onTap: () {},
+                  ),
                 ),
               ]),
             ],

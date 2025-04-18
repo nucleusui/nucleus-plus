@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class AudioPlayer2Page extends StatefulWidget {
   const AudioPlayer2Page({super.key});
@@ -45,13 +45,14 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -67,7 +68,7 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
               const SizedBox(height: 8),
               PrimaryInkWell(
                 onTap: () => Navigator.pop(context),
-                child: PrimaryAssetImage(
+                child: UniversalImage(
                   AssetPaths.icClose,
                   color: AppColors.getColor(ColorKey.primary60),
                 ),
@@ -81,7 +82,7 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(children: [
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.imgPlaceholder1,
                 height: 240,
                 width: 240,
@@ -128,7 +129,7 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
               ]),
               const SizedBox(height: 32),
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                const PrimaryAssetImage(
+                const UniversalImage(
                   AssetPaths.icRefreshCcwThin,
                   width: 22,
                   height: 22,
@@ -166,14 +167,14 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
                             size: 48,
                             color: AppColors.getColor(ColorKey.primary60),
                           )
-                        : PrimaryAssetImage(
+                        : UniversalImage(
                             AssetPaths.icPlayFill,
                             width: 28,
                             color: AppColors.getColor(ColorKey.primary60),
                           ),
                   ),
                 ),
-                const PrimaryAssetImage(
+                const UniversalImage(
                   AssetPaths.icRefreshCwThin,
                   width: 22,
                   height: 22,
@@ -186,9 +187,9 @@ class _AudioPlayer2PageState extends State<AudioPlayer2Page> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const PrimaryAssetImage(AssetPaths.ic1x, width: 16),
-                const PrimaryAssetImage(AssetPaths.icSignal, width: 16),
-                PrimaryAssetImage(
+                const UniversalImage(AssetPaths.ic1x, width: 16),
+                const UniversalImage(AssetPaths.icSignal, width: 16),
+                UniversalImage(
                   AssetPaths.icMore,
                   width: 16,
                   color: AppColors.getColor(ColorKey.grey100),

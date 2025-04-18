@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class CartEmptyPage extends StatefulWidget {
   const CartEmptyPage({super.key});
@@ -41,14 +41,14 @@ class _CartEmptyPageState extends State<CartEmptyPage> {
               color: AppColors.getColor(ColorKey.grey50),
             ),
           ),
-          const SizedBox(height: 24),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            PrimaryButton(
+          Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.all(24),
+            child: Button.primary(
               label: 'Shop Now',
-              padding: const EdgeInsets.symmetric(horizontal: 24),
               onTap: () {},
             ),
-          ]),
+          ),
           const Spacer(),
         ]),
       ),

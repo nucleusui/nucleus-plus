@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Video1Page extends StatelessWidget {
   const Video1Page({super.key});
@@ -36,26 +36,22 @@ class Video1Page extends StatelessWidget {
       body: SafeArea(
         child: Column(children: [
           Stack(alignment: Alignment.bottomLeft, children: [
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgPlaceholder2,
               height: 211,
               fit: BoxFit.cover,
               width: double.infinity,
             ),
-            Row(children: [
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: PrimaryButton(
-                  height: 32,
-                  label: "Watch Preview",
-                  onTap: () {},
-                  color: Colors.transparent,
-                  border: const BorderSide(color: Colors.white),
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  labelStyle: AssetStyles.h4.copyWith(color: Colors.white),
-                ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Button.outline(
+                label: 'Watch Preview',
+                labelColor: Colors.white,
+                border: BorderSide(color: Colors.white),
+                buttonSize: ButtonSize.small,
+                onTap: () => Navigator.pop(context),
               ),
-            ]),
+            ),
           ]),
           Expanded(
             child: ListView(
@@ -69,7 +65,7 @@ class Video1Page extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  const PrimaryAssetImage(AssetPaths.icArrowDown)
+                  const UniversalImage(AssetPaths.icArrowDown)
                 ]),
                 const SizedBox(height: 16),
                 ...videos.map((e) {
@@ -77,7 +73,7 @@ class Video1Page extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 24),
                     child: Column(children: [
                       Row(children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           e.image,
                           fit: BoxFit.cover,
                           width: 120,
@@ -106,7 +102,7 @@ class Video1Page extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 16),
-                        const PrimaryAssetImage(AssetPaths.icDownload)
+                        const UniversalImage(AssetPaths.icDownload)
                       ]),
                       const SizedBox(height: 12),
                       Text(

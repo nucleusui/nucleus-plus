@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_checkbox.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class AccountSetup2Page extends StatefulWidget {
   const AccountSetup2Page({super.key});
@@ -28,9 +28,9 @@ class _AccountSetup2PageState extends State<AccountSetup2Page> {
       appBar: const PrimaryAppBar(title: 'Set your account'),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
+        child: Button.primary(
           label: "Next",
-          width: double.infinity,
+          buttonSize: ButtonSize.full,
           onTap: () {},
         ),
       ),

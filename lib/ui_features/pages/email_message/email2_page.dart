@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/email_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Email2Page extends StatefulWidget {
   const Email2Page({super.key});
@@ -101,14 +102,14 @@ class _Email2PageState extends State<Email2Page> {
         titleWidget: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: PrimaryTextField(
-            height: 36,
+            height: 40,
             hintText: 'Search',
-            contentPadding: const EdgeInsets.only(top: 3),
+            contentPadding: const EdgeInsets.only(top: 7),
             fillColor: AppColors.getColor(ColorKey.grey10),
             borderRadius: BorderRadius.circular(100),
             prefixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(12, 0, 8, 10),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 20,
                 height: 20,
@@ -116,7 +117,7 @@ class _Email2PageState extends State<Email2Page> {
               ),
             ),
             suffixPadding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
-            suffixIcon: PrimaryAssetImage(
+            suffixIcon: UniversalImage(
               AssetPaths.icMicrophone,
               width: 20,
               height: 20,
@@ -125,29 +126,14 @@ class _Email2PageState extends State<Email2Page> {
           ),
         ),
       ),
-      floatingActionButton: SizedBox(
-        height: 48,
-        child: FloatingActionButton.extended(
-          onPressed: () {},
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-          backgroundColor: AppColors.getColor(ColorKey.primary60),
-          label: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Row(children: [
-              const PrimaryAssetImage(
-                AssetPaths.icPlus,
-                width: 18,
-                color: Colors.white,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                'Compose',
-                style: AssetStyles.h4.copyWith(color: Colors.white),
-              ),
-            ]),
-          ),
+      floatingActionButton: Button.primary(
+        label: 'Compose',
+        buttonSize: ButtonSize.large,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(right: 8),
+          child: UniversalImage(AssetPaths.icPlus),
         ),
+        onTap: () {},
       ),
       body: ListView(padding: const EdgeInsets.all(16), children: [
         Text(
@@ -165,7 +151,7 @@ class _Email2PageState extends State<Email2Page> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PrimaryAssetImage(
+                  UniversalImage(
                     e.image,
                     width: 40,
                     height: 40,
@@ -188,7 +174,7 @@ class _Email2PageState extends State<Email2Page> {
                           ),
                           const Spacer(),
                           if (e.hasAttachment ?? false)
-                            PrimaryAssetImage(
+                            UniversalImage(
                               AssetPaths.icAttachment,
                               width: 11,
                               color: AppColors.getColor(ColorKey.grey60),
@@ -220,7 +206,7 @@ class _Email2PageState extends State<Email2Page> {
                             ),
                           ),
                           const SizedBox(width: 24),
-                          PrimaryAssetImage(
+                          UniversalImage(
                             AssetPaths.icStarBold,
                             width: 18,
                             color: AppColors.getColor(ColorKey.grey50),

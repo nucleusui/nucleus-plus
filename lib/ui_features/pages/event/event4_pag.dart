@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Event4Page extends StatefulWidget {
   const Event4Page({super.key});
@@ -22,13 +22,14 @@ class _Event4PageState extends State<Event4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -69,7 +70,7 @@ class _Event4PageState extends State<Event4Page> {
                 ].asMap().entries.map((e) {
                   return Padding(
                     padding: EdgeInsets.only(left: e.key * 20),
-                    child: PrimaryAssetImage(e.value, width: 40, height: 40),
+                    child: UniversalImage(e.value, width: 40, height: 40),
                   );
                 }).toList(),
               ),
@@ -89,7 +90,7 @@ class _Event4PageState extends State<Event4Page> {
               (icon: AssetPaths.icCalendar, title: 'Add to Cal'),
             ].map((e) {
               return Column(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.icon,
                   height: 24,
                   width: 24,

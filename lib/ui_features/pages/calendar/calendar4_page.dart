@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/calendar/primary_calendar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Calendar4Page extends StatefulWidget {
   const Calendar4Page({super.key});
@@ -41,13 +41,14 @@ class _Calendar4PageState extends State<Calendar4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -83,9 +84,9 @@ class _Calendar4PageState extends State<Calendar4Page> {
                 style: AssetStyles.h3,
               ),
               const Spacer(),
-              const PrimaryAssetImage(AssetPaths.icArrowBack, height: 12),
+              const UniversalImage(AssetPaths.icArrowBack, height: 12),
               const SizedBox(width: 32),
-              const PrimaryAssetImage(AssetPaths.icArrowNext, height: 12)
+              const UniversalImage(AssetPaths.icArrowNext, height: 12)
             ]),
           ),
           const SizedBox(height: 8),
@@ -112,10 +113,10 @@ class _Calendar4PageState extends State<Calendar4Page> {
                 ),
               ),
             ),
-            child: PrimaryButton(
-              onTap: () => Navigator.pop(context),
-              width: double.infinity,
+            child: Button.primary(
               label: 'Apply',
+              buttonSize: ButtonSize.full,
+              onTap: () => Navigator.pop(context),
             ),
           ),
         ]);

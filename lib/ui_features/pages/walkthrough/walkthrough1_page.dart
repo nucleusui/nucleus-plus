@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Walktrough1Page extends StatefulWidget {
   const Walktrough1Page({super.key});
@@ -55,7 +55,7 @@ class _Walktrough1PageState extends State<Walktrough1Page> {
             onPageChanged: (index) => setState(() => currentIndex = index),
             itemBuilder: (context, index) => Column(children: [
               const Spacer(),
-              PrimaryAssetImage(
+              UniversalImage(
                 listItems[index].image,
                 width: 250,
                 height: 250,
@@ -98,20 +98,20 @@ class _Walktrough1PageState extends State<Walktrough1Page> {
               ),
               const SizedBox(height: 32),
               Row(children: [
-                PrimaryButton(
-                  label: 'Log in',
-                  width: (screenWidth(context) / 2) - 32,
-                  labelStyle: AssetStyles.labelMd.copyWith(
-                    color: AppColors.getColor(ColorKey.primary60),
+                Expanded(
+                  child: Button.secondary(
+                    label: 'Log in',
+                    buttonSize: ButtonSize.large,
+                    onTap: () {},
                   ),
-                  color: AppColors.getColor(ColorKey.primary20),
-                  onTap: () {},
                 ),
                 const SizedBox(width: 16),
-                PrimaryButton(
-                  label: 'Sign up',
-                  width: (screenWidth(context) / 2) - 32,
-                  onTap: () {},
+                Expanded(
+                  child: Button.primary(
+                    label: 'Sign up',
+                    buttonSize: ButtonSize.large,
+                    onTap: () {},
+                  ),
                 ),
               ]),
             ],

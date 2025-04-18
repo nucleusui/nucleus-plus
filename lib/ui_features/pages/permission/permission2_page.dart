@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/dialog/primary_dialog.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Permission2Page extends StatefulWidget {
   const Permission2Page({super.key});
@@ -14,25 +14,26 @@ class _Permission2PageState extends State<Permission2Page> {
   @override
   void initState() {
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => showModalDialog(context));
+        .addPostFrameCallback((_) => showBottomSheet(context));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Modal Dialog',
-            onTap: () => showModalDialog(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
 
-  void showModalDialog(BuildContext context) {
+  void showBottomSheet(BuildContext context) {
     return primaryDialog(
       context,
       radius: 16,
@@ -52,15 +53,15 @@ class _Permission2PageState extends State<Permission2Page> {
           ),
         ),
         const SizedBox(height: 24),
-        PrimaryButton(
+        Button.primary(
           label: 'Allow notifications',
-          onTap: () {},
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
         const SizedBox(height: 8),
-        PrimaryButton(
-          label: 'Set up later',
-          color: AppColors.getColor(ColorKey.background),
-          labelColor: AppColors.getColor(ColorKey.primary70),
+        Button.ghost(
+          label: 'Allow notifications',
+          buttonSize: ButtonSize.full,
           onTap: () => Navigator.pop(context),
         ),
       ]),

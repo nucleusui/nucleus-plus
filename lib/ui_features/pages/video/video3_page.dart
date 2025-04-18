@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Video3Page extends StatelessWidget {
   const Video3Page({super.key});
@@ -25,7 +25,7 @@ class Video3Page extends StatelessWidget {
               leading: IconButton(
                 splashRadius: 20,
                 onPressed: () => Navigator.pop(context),
-                icon: const PrimaryAssetImage(
+                icon: const UniversalImage(
                   AssetPaths.icArrowBack,
                   width: 8,
                   height: 16,
@@ -34,7 +34,7 @@ class Video3Page extends StatelessWidget {
                 ),
               ),
               actions: const [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icShare,
                   width: 18,
                   color: Colors.white,
@@ -47,7 +47,7 @@ class Video3Page extends StatelessWidget {
           CircleAvatar(
             radius: 50,
             backgroundColor: Colors.white,
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icPlayFill,
               width: 28,
               color: AppColors.getColor(ColorKey.primary60),
@@ -62,7 +62,7 @@ class Video3Page extends StatelessWidget {
           const SizedBox(height: 24),
           GestureDetector(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icBookmark,
               height: 16,
               color: AppColors.getColor(ColorKey.primary60),
@@ -82,15 +82,9 @@ class Video3Page extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              PrimaryButton(
-                height: 40,
-                label: 'Watch',
-                onTap: () {},
-              ),
-            ],
+          Button.primary(
+            label: 'Watch',
+            onTap: () {},
           ),
         ])
       ]),

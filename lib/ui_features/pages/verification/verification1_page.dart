@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/icon_rounded_button.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/pin_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Verification1Page extends StatelessWidget {
   const Verification1Page({super.key});
@@ -39,15 +40,10 @@ class Verification1Page extends StatelessWidget {
         const Spacer(),
         const SizedBox(height: 32),
       ]),
-      bottomSheet: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(children: [
-          IconRoundedButton(
-            icon: AssetPaths.icArrowLeft,
-            borderColor: AppColors.getColor(ColorKey.primary60),
-            onTap: () => backScreen(),
-          ),
-        ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
+      floatingActionButton: Button.outline(
+        icon: UniversalImage(AssetPaths.icArrowLeft),
+        onTap: () => backScreen(),
       ),
     );
   }

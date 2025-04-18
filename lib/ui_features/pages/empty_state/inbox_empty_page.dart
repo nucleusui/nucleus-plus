@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class InboxEmptyPage extends StatefulWidget {
   const InboxEmptyPage({super.key});
@@ -24,14 +24,15 @@ class _InboxEmptyPageState extends State<InboxEmptyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PrimaryAppBar(actions: [
-        Text(
-          'Action',
-          style: AssetStyles.h3.copyWith(
-            color: AppColors.getColor(ColorKey.primary60),
+      appBar: PrimaryAppBar(
+        actions: [
+          Button.ghost(
+            label: 'Action',
+            padding: EdgeInsets.zero,
+            onTap: () {},
           ),
-        ),
-      ]),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
         child: Column(children: [
@@ -49,9 +50,10 @@ class _InboxEmptyPageState extends State<InboxEmptyPage> {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: PrimaryButton(
-              onTap: () {},
+            child: Button.primary(
               label: 'Start a Message',
+              buttonSize: ButtonSize.full,
+              onTap: () {},
             ),
           ),
           const SizedBox(height: 16),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/utils/form_validator.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class AccountSetup3Page extends StatefulWidget {
   const AccountSetup3Page({super.key});
@@ -43,9 +43,9 @@ class _AccountSetup3PageState extends State<AccountSetup3Page> {
       ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
+        child: Button.primary(
           label: "Next",
-          width: double.infinity,
+          buttonSize: ButtonSize.full,
           onTap: () {},
         ),
       ),

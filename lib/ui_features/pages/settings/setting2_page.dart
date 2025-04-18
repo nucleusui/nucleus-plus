@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_switch.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Setting2Page extends StatefulWidget {
   const Setting2Page({super.key});
@@ -100,7 +100,7 @@ class _Setting2PageState extends State<Setting2Page> {
                       child: SizedBox(
                         height: 64,
                         child: Row(children: [
-                          PrimaryAssetImage(
+                          UniversalImage(
                             f.icon,
                             width: 16,
                             height: 16,
@@ -126,7 +126,7 @@ class _Setting2PageState extends State<Setting2Page> {
                             ),
                             const SizedBox(width: 16),
                           ] else if (!isLogout)
-                            const PrimaryAssetImage(AssetPaths.icArrowNext),
+                            const UniversalImage(AssetPaths.icArrowNext),
                         ]),
                       ),
                     );
@@ -165,7 +165,7 @@ class _HeaderWidget extends StatelessWidget {
           style: AssetStyles.h3.copyWith(color: Colors.white),
         ),
         const SizedBox(height: 40),
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgUser1,
           width: 64,
           height: 64,
@@ -181,15 +181,13 @@ class _HeaderWidget extends StatelessWidget {
           style: AssetStyles.pSm.copyWith(color: Colors.white),
         ),
         const SizedBox(height: 16),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Edit Profile',
-            color: Colors.transparent,
-            border: const BorderSide(color: Colors.white),
-            labelStyle: AssetStyles.h4.copyWith(color: Colors.white),
-            onTap: () {},
-          ),
-        ]),
+        Button.outline(
+          label: 'Edit Profile',
+          buttonSize: ButtonSize.large,
+          labelColor: Colors.white,
+          border: BorderSide(color: Colors.white),
+          onTap: () => Navigator.pop(context),
+        ),
         const SizedBox(height: 32),
       ]),
     );

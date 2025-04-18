@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Note5Page extends StatefulWidget {
   const Note5Page({super.key});
@@ -31,28 +31,26 @@ class _Note5PageState extends State<Note5Page> {
       ]),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(16),
-        child: Row(children: [
-          PrimaryButton(
-            height: 32,
-            width: 132,
-            label: 'Add Tags',
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            color: AppColors.getColor(ColorKey.primary20),
-            labelColor: AppColors.getColor(ColorKey.primary70),
-            prefixIcon: PrimaryAssetImage(
-              AssetPaths.icTag,
-              color: AppColors.getColor(ColorKey.primary70),
+        child: Row(
+          children: [
+            Button.secondary(
+              label: 'Add Tags',
+              buttonSize: ButtonSize.small,
+              prefixIcon: UniversalImage(
+                AssetPaths.icTag,
+                color: AppColors.getColor(ColorKey.primary70),
+              ),
+              onTap: () {},
             ),
-            onTap: () {},
-          ),
-          const Spacer(),
-          Text(
-            '${textController.text.length}/8000',
-            style: AssetStyles.pSm.copyWith(
-              color: AppColors.getColor(ColorKey.grey50),
+            const Spacer(),
+            Text(
+              '${textController.text.length}/8000',
+              style: AssetStyles.pSm.copyWith(
+                color: AppColors.getColor(ColorKey.grey50),
+              ),
             ),
-          ),
-        ]),
+          ],
+        ),
       ),
       body: ListView(
         shrinkWrap: true,

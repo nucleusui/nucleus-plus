@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/icon_rounded_button.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Profile2Page extends StatelessWidget {
   const Profile2Page({super.key});
@@ -16,7 +15,7 @@ class Profile2Page extends StatelessWidget {
       appBar: PrimaryAppBar(actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icMoreVert,
             height: 18,
             color: AppColors.getColor(ColorKey.primary60),
@@ -29,30 +28,29 @@ class Profile2Page extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Row(children: [
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgUser1,
               width: 64,
               height: 64,
               fit: BoxFit.cover,
             ),
             const Spacer(),
-            IconRoundedButton(
-              width: 32,
+            Button.secondary(
               height: 32,
-              iconSize: 14,
-              color: AppColors.getColor(ColorKey.primary30),
-              icon: AssetPaths.icNotification,
-              iconColor: AppColors.getColor(ColorKey.primary70),
-              borderColor: AppColors.getColor(ColorKey.primary30),
+              width: 32,
+              icon: UniversalImage(
+                AssetPaths.icNotification,
+                width: 16,
+                color: AppColors.getColor(ColorKey.primary70),
+              ),
               onTap: () {},
             ),
             const SizedBox(width: 12),
-            PrimaryButton(
-              height: 32,
+            Button.primary(
               label: 'Following',
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              onTap: () {},
-            )
+              buttonSize: ButtonSize.small,
+              onTap: () => Navigator.pop(context),
+            ),
           ]),
           const SizedBox(height: 24),
           const Text('James Ryan', style: AssetStyles.h2),
@@ -97,7 +95,7 @@ class Profile2Page extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: Row(children: [
-                  PrimaryAssetImage(
+                  UniversalImage(
                     e.$1,
                     width: 12,
                     height: 12,

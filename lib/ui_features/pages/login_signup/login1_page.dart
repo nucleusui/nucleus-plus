@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/dropdown/country_dropdown.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Login1Page extends StatelessWidget {
   const Login1Page({super.key});
@@ -13,11 +14,9 @@ class Login1Page extends StatelessWidget {
     TextEditingController numberController = TextEditingController();
     return Scaffold(
       appBar: const PrimaryAppBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: AppColors.getColor(ColorKey.primary60),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-        child: const PrimaryAssetImage(AssetPaths.icArrowRight),
+      floatingActionButton: Button.primary(
+        icon: UniversalImage(AssetPaths.icArrowRight),
+        onTap: () {},
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),

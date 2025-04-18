@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/dialog/primary_dialog.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Subscription1Page extends StatefulWidget {
   const Subscription1Page({super.key});
@@ -16,25 +16,26 @@ class _Subscription1PageState extends State<Subscription1Page> {
   @override
   void initState() {
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => showModalDialog(context));
+        .addPostFrameCallback((_) => showBottomSheet(context));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Modal Dialog',
-            onTap: () => showModalDialog(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
 
-  void showModalDialog(BuildContext context) {
+  void showBottomSheet(BuildContext context) {
     return primaryDialog(
       context,
       radius: 16,
@@ -44,7 +45,7 @@ class _Subscription1PageState extends State<Subscription1Page> {
           children: [
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icClose,
                 width: 16,
                 height: 16,
@@ -58,7 +59,7 @@ class _Subscription1PageState extends State<Subscription1Page> {
           ],
         ),
         const SizedBox(height: 32),
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.imgPlaceholder1,
           height: 234,
           width: double.infinity,
@@ -91,9 +92,10 @@ class _Subscription1PageState extends State<Subscription1Page> {
           style: AssetStyles.pSm,
         ),
         const SizedBox(height: 24),
-        PrimaryButton(
+        Button.primary(
           label: 'Subscribe',
-          onTap: () {},
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
         const SizedBox(height: 16),
         Text(

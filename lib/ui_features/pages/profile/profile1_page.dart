@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Profile1Page extends StatefulWidget {
   const Profile1Page({super.key});
@@ -24,13 +24,14 @@ class _Profile1PageState extends State<Profile1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -46,7 +47,7 @@ class _Profile1PageState extends State<Profile1Page> {
             children: [
               PrimaryInkWell(
                 onTap: () => Navigator.pop(context),
-                child: const PrimaryAssetImage(AssetPaths.icClose),
+                child: const UniversalImage(AssetPaths.icClose),
               ),
               const SizedBox(height: 40),
               Row(children: [
@@ -63,7 +64,7 @@ class _Profile1PageState extends State<Profile1Page> {
                   ],
                 ),
                 const Spacer(),
-                const PrimaryAssetImage(
+                const UniversalImage(
                   AssetPaths.imgUser3,
                   width: 64,
                   height: 64,
@@ -79,7 +80,7 @@ class _Profile1PageState extends State<Profile1Page> {
                   return Padding(
                     padding: const EdgeInsets.only(right: 32),
                     child: Row(children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         e.icon,
                         width: 20,
                         height: 20,
@@ -125,7 +126,7 @@ class _Profile1PageState extends State<Profile1Page> {
               ),
               const SizedBox(height: 32),
               Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icCircle,
                   color: AppColors.getColor(ColorKey.grey100),
                 ),
@@ -143,7 +144,7 @@ class _Profile1PageState extends State<Profile1Page> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Row(children: [
-                    PrimaryAssetImage(
+                    UniversalImage(
                       AssetPaths.icCircle,
                       color: AppColors.getColor(ColorKey.grey100),
                     ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Share2Page extends StatefulWidget {
   const Share2Page({super.key});
@@ -30,13 +30,14 @@ class _Share2PageState extends State<Share2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -54,7 +55,7 @@ class _Share2PageState extends State<Share2Page> {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.icon,
                   width: 16,
                   color: AppColors.getColor(ColorKey.grey100),
@@ -62,7 +63,7 @@ class _Share2PageState extends State<Share2Page> {
                 const SizedBox(width: 20),
                 Text(e.title, style: AssetStyles.pMd),
                 const Spacer(),
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icArrowNext,
                   color: AppColors.getColor(ColorKey.grey50),
                 )

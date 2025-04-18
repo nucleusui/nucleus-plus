@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_switch.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Profile4Page extends StatefulWidget {
   const Profile4Page({super.key});
@@ -68,7 +68,7 @@ class _Profile4PageState extends State<Profile4Page> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(children: [
-                  const PrimaryAssetImage(
+                  const UniversalImage(
                     AssetPaths.imgUser2,
                     width: 64,
                     height: 64,
@@ -84,11 +84,10 @@ class _Profile4PageState extends State<Profile4Page> {
                   ),
                 ]),
                 const SizedBox(height: 16),
-                PrimaryButton(
+                Button.secondary(
                   label: 'Edit Profile',
-                  color: AppColors.getColor(ColorKey.primary20),
-                  labelColor: AppColors.getColor(ColorKey.primary70),
-                  onTap: () {},
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ],
             ),
@@ -99,14 +98,14 @@ class _Profile4PageState extends State<Profile4Page> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 18, 16, 18),
                 child: Row(children: [
-                  PrimaryAssetImage(
+                  UniversalImage(
                     e.icon,
                     color: AppColors.getColor(ColorKey.grey100),
                   ),
                   const SizedBox(width: 16),
                   Text(e.title, style: AssetStyles.pMd),
                   const Spacer(),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.icArrowNext,
                     color: AppColors.getColor(ColorKey.grey100),
                   ),
@@ -129,7 +128,7 @@ class _Profile4PageState extends State<Profile4Page> {
             return Padding(
               padding: const EdgeInsets.fromLTRB(16, 18, 16, 18),
               child: Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.icon!,
                   color: AppColors.getColor(ColorKey.grey100),
                 ),

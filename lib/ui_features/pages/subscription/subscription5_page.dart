@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Subscription5Page extends StatefulWidget {
   const Subscription5Page({super.key});
@@ -15,7 +15,7 @@ class _Subscription5PageState extends State<Subscription5Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgPlaceholder1,
           height: 250,
           width: double.infinity,
@@ -60,7 +60,7 @@ class _Subscription5PageState extends State<Subscription5Page> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 5),
-                        child: PrimaryAssetImage(
+                        child: UniversalImage(
                           e.icon,
                           width: 16,
                           color: AppColors.getColor(ColorKey.primary60),
@@ -100,16 +100,15 @@ class _Subscription5PageState extends State<Subscription5Page> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            PrimaryButton(
+            Button.primary(
               label: 'Subscribe',
+              buttonSize: ButtonSize.full,
               onTap: () {},
             ),
             const SizedBox(height: 8),
-            PrimaryButton(
+            Button.ghost(
               label: 'Not now',
-              color: Colors.transparent,
-              border: BorderSide.none,
-              labelColor: AppColors.getColor(ColorKey.primary70),
+              buttonSize: ButtonSize.full,
               onTap: () => Navigator.pop(context),
             ),
           ],

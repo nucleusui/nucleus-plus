@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/input/pin_textfield.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Verification4Page extends StatefulWidget {
   const Verification4Page({super.key});
@@ -44,14 +44,15 @@ class _Verification4PageState extends State<Verification4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PrimaryAppBar(actions: [
-        Text(
-          'Change number',
-          style: AssetStyles.h3.copyWith(
-            color: AppColors.getColor(ColorKey.primary60),
+      appBar: PrimaryAppBar(
+        actions: [
+          Button.ghost(
+            label: 'Change number',
+            padding: EdgeInsets.zero,
+            onTap: () => Navigator.pop(context),
           ),
-        ),
-      ]),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(children: [
@@ -82,14 +83,16 @@ class _Verification4PageState extends State<Verification4Page> {
             },
           ),
           const Spacer(),
-          PrimaryButton(onTap: () {}, label: 'Continue'),
+          Button.primary(
+            label: 'Continue',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
+          ),
           const SizedBox(height: 16),
-          PrimaryButton(
+          Button.secondary(
             label: time == 0 ? 'Resend' : 'Resend code in ${time.toInt()}s',
             onTap: time == 0 ? () => _startTimer() : null,
-            color: AppColors.getColor(ColorKey.primary20),
-            labelColor:
-                time == 0 ? AppColors.getColor(ColorKey.primary70) : null,
+            buttonSize: ButtonSize.full,
           ),
         ]),
       ),

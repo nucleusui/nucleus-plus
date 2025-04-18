@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class ActionOption1Page extends StatefulWidget {
   const ActionOption1Page({super.key});
@@ -30,13 +30,14 @@ class _ActionOption1PageState extends State<ActionOption1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -66,7 +67,7 @@ class _ActionOption1PageState extends State<ActionOption1Page> {
                     child: Row(children: [
                       Text(e.title, style: AssetStyles.pMd),
                       const Spacer(),
-                      PrimaryAssetImage(
+                      UniversalImage(
                         e.icon,
                         width: 16,
                         color: AppColors.getColor(ColorKey.grey100),
@@ -78,11 +79,10 @@ class _ActionOption1PageState extends State<ActionOption1Page> {
             ),
           ),
           const SizedBox(height: 16),
-          PrimaryButton(
-            onTap: () => Navigator.pop(context),
-            color: Colors.transparent,
-            labelColor: AppColors.getColor(ColorKey.grey50),
+          Button.ghost(
             label: 'Cancel',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
         ]),
       ),

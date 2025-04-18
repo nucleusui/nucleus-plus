@@ -4,10 +4,10 @@ import 'package:nucles_app/config/asset_paths.dart';
 import 'package:nucles_app/config/asset_styles.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Product1Page extends StatefulWidget {
   const Product1Page({super.key});
@@ -42,12 +42,12 @@ class _Product1PageState extends State<Product1Page> {
         actions: [
           PrimaryInkWell(
             onTap: () {},
-            child: const PrimaryAssetImage(AssetPaths.icShare, width: 18),
+            child: const UniversalImage(AssetPaths.icShare, width: 18),
           ),
           const SizedBox(width: 20),
           PrimaryInkWell(
             onTap: () {},
-            child: const PrimaryAssetImage(AssetPaths.icBag, width: 20),
+            child: const UniversalImage(AssetPaths.icBag, width: 20),
           ),
           const SizedBox(width: 5),
         ],
@@ -62,7 +62,7 @@ class _Product1PageState extends State<Product1Page> {
                 itemCount: 5,
                 scrollDirection: Axis.horizontal,
                 onPageChanged: (value) => setState(() => currentIndex = value),
-                itemBuilder: (_, __) => const PrimaryAssetImage(
+                itemBuilder: (_, __) => const UniversalImage(
                   AssetPaths.imgPlaceholder2,
                   fit: BoxFit.cover,
                 ),
@@ -73,7 +73,7 @@ class _Product1PageState extends State<Product1Page> {
                   spacing: 5,
                   alignment: WrapAlignment.center,
                   children: List.generate(5, (index) {
-                    return PrimaryAssetImage(
+                    return UniversalImage(
                       AssetPaths.icCircleFill,
                       width: 8,
                       color: index == currentIndex
@@ -137,7 +137,7 @@ class _Product1PageState extends State<Product1Page> {
                             borderRadius: BorderRadius.circular(100),
                             border: Border.all(width: 0.5),
                           ),
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       AssetPaths.icCircleFill,
                       width: 20,
                       color: e.color,
@@ -151,9 +151,10 @@ class _Product1PageState extends State<Product1Page> {
       ]),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
-          onTap: () {},
+        child: Button.primary(
           label: 'Add to Cart',
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
       ),
     );

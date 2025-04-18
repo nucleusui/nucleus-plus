@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Note3Page extends StatelessWidget {
   const Note3Page({super.key});
@@ -10,16 +10,15 @@ class Note3Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PrimaryAppBar(actions: [
-        PrimaryButton(
-          label: 'Save',
-          height: 32,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          color: AppColors.getColor(ColorKey.primary20),
-          labelColor: AppColors.getColor(ColorKey.primary70),
-          onTap: () {},
-        ),
-      ]),
+      appBar: PrimaryAppBar(
+        actions: [
+          Button.secondary(
+            label: 'Save',
+            buttonSize: ButtonSize.small,
+            onTap: () => Navigator.pop(context),
+          ),
+        ],
+      ),
       body: ListView(
         shrinkWrap: true,
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -68,14 +67,14 @@ class Note3Page extends StatelessWidget {
         child: Row(children: [
           IconButton(
             onPressed: () {},
-            icon: PrimaryAssetImage(
+            icon: UniversalImage(
               AssetPaths.icAlphabet,
               color: AppColors.getColor(ColorKey.grey50),
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: PrimaryAssetImage(
+            icon: UniversalImage(
               AssetPaths.icAttachment,
               width: 15,
               color: AppColors.getColor(ColorKey.grey50),
@@ -83,7 +82,7 @@ class Note3Page extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: PrimaryAssetImage(
+            icon: UniversalImage(
               AssetPaths.icCheckSquare,
               color: AppColors.getColor(ColorKey.grey50),
             ),
@@ -91,7 +90,7 @@ class Note3Page extends StatelessWidget {
           const Spacer(),
           IconButton(
             onPressed: () {},
-            icon: PrimaryAssetImage(
+            icon: UniversalImage(
               AssetPaths.icTrash,
               color: AppColors.getColor(ColorKey.grey50),
             ),

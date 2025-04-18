@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FlagReport3Page extends StatefulWidget {
   const FlagReport3Page({super.key});
@@ -24,13 +24,14 @@ class _FlagReport3PageState extends State<FlagReport3Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -46,7 +47,7 @@ class _FlagReport3PageState extends State<FlagReport3Page> {
             const SizedBox(height: 8),
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(AssetPaths.icClose),
+              child: const UniversalImage(AssetPaths.icClose),
             ),
             const Spacer(),
             const Text('Report', style: AssetStyles.h3),
@@ -65,7 +66,7 @@ class _FlagReport3PageState extends State<FlagReport3Page> {
                 child: Row(children: [
                   Text(e, style: AssetStyles.pMd),
                   const Spacer(),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.icArrowNext,
                     color: AppColors.getColor(ColorKey.grey100),
                   )

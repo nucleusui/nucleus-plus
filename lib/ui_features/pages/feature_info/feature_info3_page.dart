@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/dialog/primary_dialog.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FeatureInfo3Page extends StatefulWidget {
   const FeatureInfo3Page({super.key});
@@ -15,31 +15,32 @@ class _FeatureInfo3PageState extends State<FeatureInfo3Page> {
   @override
   void initState() {
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => showModalDialog(context));
+        .addPostFrameCallback((_) => showBottomSheet(context));
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Modal Dialog',
-            onTap: () => showModalDialog(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
 
-  void showModalDialog(BuildContext context) {
+  void showBottomSheet(BuildContext context) {
     return primaryDialog(
       context,
       radius: 16,
       padding: EdgeInsets.zero,
       child: Column(mainAxisSize: MainAxisSize.min, children: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.imgPlaceholder1,
           height: screenHeight(context) / 3,
           fit: BoxFit.cover,
@@ -67,15 +68,15 @@ class _FeatureInfo3PageState extends State<FeatureInfo3Page> {
                 ),
               ),
               const SizedBox(height: 24),
-              PrimaryButton(
+              Button.primary(
                 label: 'Get Started',
+                buttonSize: ButtonSize.full,
                 onTap: () {},
               ),
               const SizedBox(height: 16),
-              PrimaryButton(
+              Button.secondary(
                 label: 'Maybe Later',
-                color: AppColors.getColor(ColorKey.primary20),
-                labelColor: AppColors.getColor(ColorKey.primary70),
+                buttonSize: ButtonSize.full,
                 onTap: () => Navigator.pop(context),
               ),
             ],

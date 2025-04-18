@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class OrderReview extends StatefulWidget {
   const OrderReview({super.key});
@@ -24,13 +24,14 @@ class _OrderReviewState extends State<OrderReview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Modal Dialog',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -44,7 +45,7 @@ class _OrderReviewState extends State<OrderReview> {
           Row(children: [
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(AssetPaths.icClose, width: 18),
+              child: const UniversalImage(AssetPaths.icClose, width: 18),
             ),
             const Spacer(),
             const Text(
@@ -90,7 +91,7 @@ class _OrderReviewState extends State<OrderReview> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(top: 5),
-                          child: PrimaryAssetImage(
+                          child: UniversalImage(
                             AssetPaths.icCheck,
                             width: 16,
                             color: AppColors.getColor(ColorKey.primary60),
@@ -126,8 +127,9 @@ class _OrderReviewState extends State<OrderReview> {
             ),
           ),
           const SizedBox(height: 24),
-          PrimaryButton(
+          Button.primary(
             label: 'Subscribe',
+            buttonSize: ButtonSize.full,
             onTap: () {},
           ),
           SizedBox(height: screenHeight(context) / 4),

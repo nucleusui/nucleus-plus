@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/icon_rounded_button.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Note4Page extends StatefulWidget {
   const Note4Page({super.key});
@@ -22,13 +22,14 @@ class _Note4PageState extends State<Note4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -87,31 +88,24 @@ class _Note4PageState extends State<Note4Page> {
               ),
             ),
             child: Row(children: [
-              IconRoundedButton(
-                width: 32,
+              Button.secondary(
                 height: 32,
-                icon: AssetPaths.icTag,
-                borderColor: Colors.transparent,
-                iconColor: AppColors.getColor(ColorKey.primary70),
-                color: AppColors.getColor(ColorKey.primary20),
+                width: 32,
+                icon: UniversalImage(AssetPaths.icTag),
                 onTap: () {},
               ),
               const SizedBox(width: 16),
-              IconRoundedButton(
-                width: 32,
+              Button.secondary(
                 height: 32,
-                icon: AssetPaths.icUserPlusBold,
-                borderColor: Colors.transparent,
-                iconColor: AppColors.getColor(ColorKey.primary70),
-                color: AppColors.getColor(ColorKey.primary20),
+                width: 32,
+                icon: UniversalImage(AssetPaths.icUserPlusBold),
                 onTap: () {},
               ),
               const Spacer(),
-              Text(
-                'Save',
-                style: AssetStyles.h4.copyWith(
-                  color: AppColors.getColor(ColorKey.primary70),
-                ),
+              Button.ghost(
+                label: 'Save',
+                padding: EdgeInsets.zero,
+                onTap: () => Navigator.pop(context),
               ),
               const SizedBox(width: 5),
             ]),

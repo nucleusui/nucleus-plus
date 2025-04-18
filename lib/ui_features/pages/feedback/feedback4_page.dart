@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Feedback4Page extends StatefulWidget {
   const Feedback4Page({super.key});
@@ -33,13 +33,14 @@ class _Feedback4PageState extends State<Feedback4Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -54,7 +55,7 @@ class _Feedback4PageState extends State<Feedback4Page> {
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(AssetPaths.icClose),
+              child: const UniversalImage(AssetPaths.icClose),
             ),
             const SizedBox(height: 40),
             Text(
@@ -81,20 +82,18 @@ class _Feedback4PageState extends State<Feedback4Page> {
             const SizedBox(height: 16),
             Row(children: [
               Expanded(
-                child: PrimaryButton(
-                  onTap: () => Navigator.pop(context),
-                  width: double.infinity,
+                child: Button.primary(
                   label: 'Send',
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: PrimaryButton(
-                  onTap: () => Navigator.pop(context),
-                  width: double.infinity,
-                  color: AppColors.getColor(ColorKey.primary20),
-                  labelColor: AppColors.getColor(ColorKey.primary60),
+                child: Button.secondary(
                   label: 'Cancel',
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
             ]),

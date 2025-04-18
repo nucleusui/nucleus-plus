@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Event1Page extends StatelessWidget {
   const Event1Page({super.key});
@@ -18,7 +18,7 @@ class Event1Page extends StatelessWidget {
         const SizedBox(width: 5),
       ]),
       body: ListView(shrinkWrap: true, padding: EdgeInsets.zero, children: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.imgPlaceholder2,
           fit: BoxFit.cover,
           height: screenHeight(context) / 2.5,
@@ -33,7 +33,7 @@ class Event1Page extends StatelessWidget {
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Padding(
                 padding: EdgeInsets.only(top: 5),
-                child: PrimaryAssetImage(AssetPaths.icCalendar),
+                child: UniversalImage(AssetPaths.icCalendar),
               ),
               const SizedBox(width: 12),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -60,7 +60,7 @@ class Event1Page extends StatelessWidget {
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Padding(
                 padding: EdgeInsets.only(top: 5),
-                child: PrimaryAssetImage(AssetPaths.icMapPin),
+                child: UniversalImage(AssetPaths.icMapPin),
               ),
               const SizedBox(width: 12),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -82,7 +82,7 @@ class Event1Page extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.imgPlaceholder2,
                 width: 48,
                 height: 48,
@@ -141,9 +141,8 @@ class Event1Page extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          PrimaryButton(
+          Button.primary(
             label: 'RSVP',
-            height: 40,
             onTap: () {},
           ),
         ]),

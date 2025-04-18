@@ -3,10 +3,10 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_animations/flutter_map_animations.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Map2Page extends StatefulWidget {
   const Map2Page({super.key});
@@ -46,7 +46,7 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
                 height: 62,
                 width: 42,
                 point: _latLng,
-                child: const PrimaryAssetImage(
+                child: const UniversalImage(
                   AssetPaths.icMapPinLarge,
                   fit: BoxFit.cover,
                 ),
@@ -59,7 +59,7 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
           padding: const EdgeInsets.only(left: 16, top: kToolbarHeight),
           child: PrimaryInkWell(
             onTap: () => Navigator.pop(context),
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icClose,
               width: 16,
               height: 16,
@@ -100,11 +100,9 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
               children: [
                 const Text('1226 University of California'),
                 const Spacer(),
-                PrimaryButton(
-                  height: 32,
+                Button.secondary(
                   label: 'Search',
-                  color: AppColors.getColor(ColorKey.primary20),
-                  labelColor: AppColors.getColor(ColorKey.primary70),
+                  buttonSize: ButtonSize.small,
                   onTap: () {},
                 ),
               ],
@@ -113,9 +111,10 @@ class _Map2PageState extends State<Map2Page> with TickerProviderStateMixin {
           const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.all(16),
-            child: PrimaryButton(
+            child: Button.primary(
               label: 'Set location',
-              onTap: () {},
+              buttonSize: ButtonSize.full,
+              onTap: () => Navigator.pop(context),
             ),
           ),
         ]),

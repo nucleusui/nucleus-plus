@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Permission1Page extends StatefulWidget {
   const Permission1Page({super.key});
@@ -23,13 +23,14 @@ class _Permission1PageState extends State<Permission1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -43,7 +44,7 @@ class _Permission1PageState extends State<Permission1Page> {
           Row(children: [
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(AssetPaths.icClose),
+              child: const UniversalImage(AssetPaths.icClose),
             ),
             const Spacer(),
             PrimaryInkWell(
@@ -57,7 +58,7 @@ class _Permission1PageState extends State<Permission1Page> {
             ),
           ]),
           const SizedBox(height: 32),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.imgPlaceholder2,
             height: 183,
             fit: BoxFit.cover,
@@ -99,7 +100,7 @@ class _Permission1PageState extends State<Permission1Page> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 3),
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       e.icon,
                       width: 16,
                       color: AppColors.getColor(ColorKey.grey100),
@@ -117,9 +118,10 @@ class _Permission1PageState extends State<Permission1Page> {
             );
           }),
           SizedBox(height: screenHeight(context) / 8),
-          PrimaryButton(
-            onTap: () {},
+          Button.primary(
             label: 'Allow notifications',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
         ]),

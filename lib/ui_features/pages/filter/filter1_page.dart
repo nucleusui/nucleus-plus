@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_radio.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Filter1Page extends StatefulWidget {
   const Filter1Page({super.key});
@@ -25,13 +25,14 @@ class _Filter1PageState extends State<Filter1Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -98,7 +99,7 @@ class _Filter1PageState extends State<Filter1Page> {
                     const Spacer(),
                     Transform.rotate(
                       angle: currentIndex == e.key ? 3.1 : 0,
-                      child: const PrimaryAssetImage(
+                      child: const UniversalImage(
                         AssetPaths.icArrowDownThin,
                         fit: BoxFit.cover,
                         width: 8,
@@ -128,9 +129,10 @@ class _Filter1PageState extends State<Filter1Page> {
             }),
             Padding(
               padding: const EdgeInsets.all(16),
-              child: PrimaryButton(
-                onTap: () {},
+              child: Button.primary(
                 label: 'Show results',
+                buttonSize: ButtonSize.full,
+                onTap: () => Navigator.pop(context),
               ),
             ),
           ]),

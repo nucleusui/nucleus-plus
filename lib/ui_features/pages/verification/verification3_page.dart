@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Verification3Page extends StatelessWidget {
   const Verification3Page({super.key});
@@ -15,7 +15,7 @@ class Verification3Page extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(children: [
           const Spacer(),
-          const PrimaryAssetImage(
+          const UniversalImage(
             AssetPaths.imgCheck,
             height: 250,
             width: 250,
@@ -34,17 +34,16 @@ class Verification3Page extends StatelessWidget {
                 .copyWith(color: AppColors.getColor(ColorKey.grey50)),
           ),
           const Spacer(),
-          PrimaryButton(
-            onTap: () {},
+          Button.primary(
             label: 'Open my email',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
           const SizedBox(height: 16),
-          PrimaryButton(
-            onTap: () {},
-            labelStyle: AssetStyles.labelMd
-                .copyWith(color: AppColors.getColor(ColorKey.primary60)),
-            color: AppColors.getColor(ColorKey.primary20),
+          Button.secondary(
             label: 'Resend verification',
+            buttonSize: ButtonSize.full,
+            onTap: () => Navigator.pop(context),
           ),
         ]),
       ),

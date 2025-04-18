@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Checkout4Page extends StatefulWidget {
   const Checkout4Page({super.key});
@@ -48,7 +48,7 @@ class _Checkout4PageState extends State<Checkout4Page> {
               padding: const EdgeInsets.only(bottom: 16),
               child:
                   Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.value.image,
                   width: 100,
                   height: 100,
@@ -115,7 +115,7 @@ class _Checkout4PageState extends State<Checkout4Page> {
                     ],
                   ),
                 ),
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icDelete2,
                   width: 16,
                   fit: BoxFit.cover,
@@ -149,8 +149,9 @@ class _Checkout4PageState extends State<Checkout4Page> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
+        child: Button.primary(
           label: 'Continue to Checkout',
+          buttonSize: ButtonSize.full,
           onTap: () => Navigator.pop(context),
         ),
       ),

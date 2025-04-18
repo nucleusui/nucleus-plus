@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/utils/form_validator.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Signup2Page extends StatefulWidget {
   const Signup2Page({super.key});
@@ -19,17 +19,23 @@ class _Signup2PageState extends State<Signup2Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PrimaryAppBar(actions: [
-        Text(
-          'Login',
-          style: AssetStyles.h3
-              .copyWith(color: AppColors.getColor(ColorKey.primary60)),
-        ),
-      ]),
-      body: SingleChildScrollView(
+      appBar: PrimaryAppBar(
+        actions: [
+          Button.ghost(
+            label: "Login",
+            padding: EdgeInsets.zero,
+            onTap: () {},
+          ),
+        ],
+      ),
+      body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-        child: Column(children: [
-          const Text('Join Nucleus', style: AssetStyles.h1),
+        children: [
+          const Text(
+            'Join Nucleus',
+            textAlign: TextAlign.center,
+            style: AssetStyles.h1,
+          ),
           const SizedBox(height: 8),
           Text(
             'Start building your design system with our\ncomponent library',
@@ -48,9 +54,9 @@ class _Signup2PageState extends State<Signup2Page> {
             onChanged: (e) => setState(() {}),
           ),
           const SizedBox(height: 16),
-          PrimaryButton(
+          Button.primary(
             label: "Get Started",
-            width: double.infinity,
+            buttonSize: ButtonSize.full,
             onTap: emailController.text.isEmpty ? null : () {},
           ),
           const SizedBox(height: 24),
@@ -69,34 +75,28 @@ class _Signup2PageState extends State<Signup2Page> {
             ),
           ]),
           const SizedBox(height: 24),
-          PrimaryButton(
-            width: double.infinity,
-            color: Colors.black,
-            padding: const EdgeInsets.only(left: 16, right: 32),
-            prefixIcon: const PrimaryAssetImage(AssetPaths.icApple),
+          Button.social(
             label: 'Continue with Apple',
+            color: Colors.black,
+            prefixIcon: const UniversalImage(AssetPaths.icApple),
             onTap: () {},
           ),
           const SizedBox(height: 16),
-          PrimaryButton(
-            width: double.infinity,
-            color: AppColors.getColor(ColorKey.grey10),
-            labelColor: AppColors.getColor(ColorKey.grey100),
-            padding: const EdgeInsets.only(left: 16, right: 32),
-            prefixIcon: const PrimaryAssetImage(AssetPaths.icGoogle),
+          Button.social(
             label: 'Continue with Google',
+            labelColor: Colors.black,
+            color: AppColors.getColor(ColorKey.grey10),
+            prefixIcon: const UniversalImage(AssetPaths.icGoogle),
             onTap: () {},
           ),
           const SizedBox(height: 16),
-          PrimaryButton(
-            width: double.infinity,
-            color: AssetColors.blue,
+          Button.social(
             label: 'Continue with Facebook',
-            padding: const EdgeInsets.only(left: 16, right: 32),
-            prefixIcon: const PrimaryAssetImage(AssetPaths.icFacebook),
+            color: AssetColors.facebook,
+            prefixIcon: const UniversalImage(AssetPaths.icFacebook),
             onTap: () {},
           ),
-        ]),
+        ],
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.only(bottom: 16),

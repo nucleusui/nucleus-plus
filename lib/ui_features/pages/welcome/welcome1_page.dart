@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/icon_rounded_button.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Welcome1Page extends StatelessWidget {
   const Welcome1Page({super.key});
@@ -12,7 +11,7 @@ class Welcome1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.imgPlaceholder1,
           width: double.infinity,
           fit: BoxFit.fitWidth,
@@ -22,9 +21,9 @@ class Welcome1Page extends StatelessWidget {
         const Text('Design better', style: AssetStyles.h1),
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
-          child: PrimaryButton(
-            width: double.infinity,
+          child: Button.primary(
             label: 'Get Started',
+            buttonSize: ButtonSize.full,
             onTap: () {},
           ),
         ),
@@ -53,10 +52,9 @@ class Welcome1Page extends StatelessWidget {
             AssetPaths.logoFacebook,
             AssetPaths.logoGoogle,
             AssetPaths.logoTwitter,
-          ].map((e) {
-            return IconRoundedButton(
-              icon: e,
-              borderColor: Colors.transparent,
+          ].map((path) {
+            return Button.ghost(
+              icon: UniversalImage(path),
               onTap: () {},
             );
           }).toList(),

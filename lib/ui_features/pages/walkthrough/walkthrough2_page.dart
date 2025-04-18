@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Walktrough2Page extends StatefulWidget {
   const Walktrough2Page({super.key});
@@ -40,7 +40,7 @@ class _Walktrough2PageState extends State<Walktrough2Page> {
             onPageChanged: (index) => setState(() => currentIndex = index),
             itemBuilder: (context, index) => Column(children: [
               const Spacer(),
-              PrimaryAssetImage(
+              UniversalImage(
                 listItems[index].image,
                 width: index == 0 ? 327 : 250,
                 height: index == 0 ? 327 : 250,
@@ -69,13 +69,12 @@ class _Walktrough2PageState extends State<Walktrough2Page> {
           }).toList(),
         ),
         const SizedBox(height: 24),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            onTap: () {},
-            label: 'Sign up',
-            padding: const EdgeInsets.symmetric(horizontal: 56),
-          ),
-        ]),
+        Button.primary(
+          label: 'Sign up',
+          buttonSize: ButtonSize.large,
+          padding: const EdgeInsets.symmetric(horizontal: 56),
+          onTap: () {},
+        ),
         const Spacer(),
         Text.rich(
           textAlign: TextAlign.center,

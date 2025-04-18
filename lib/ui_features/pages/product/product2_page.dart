@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Product2Page extends StatefulWidget {
   const Product2Page({super.key});
@@ -22,7 +22,7 @@ class _Product2PageState extends State<Product2Page> {
       appBar: PrimaryAppBar(actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icShare,
             width: 18,
             color: AppColors.getColor(ColorKey.primary60),
@@ -49,7 +49,7 @@ class _Product2PageState extends State<Product2Page> {
                     glowColor: Colors.amber,
                     direction: Axis.horizontal,
                     itemBuilder: (context, index) =>
-                        const PrimaryAssetImage(AssetPaths.icStarFill),
+                        const UniversalImage(AssetPaths.icStarFill),
                     onRatingUpdate: (value) {},
                   ),
                   const SizedBox(width: 8),
@@ -60,7 +60,7 @@ class _Product2PageState extends State<Product2Page> {
                     ),
                   ),
                   const Spacer(),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.icLove,
                     width: 16,
                     color: AppColors.getColor(ColorKey.grey60),
@@ -80,7 +80,7 @@ class _Product2PageState extends State<Product2Page> {
                 onPageChanged: (value) => setState(() => currentIndex = value),
                 itemBuilder: (_, __) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.imgPlaceholder1,
                     fit: BoxFit.cover,
                     borderRadius: BorderRadius.circular(16),
@@ -93,7 +93,7 @@ class _Product2PageState extends State<Product2Page> {
                   spacing: 5,
                   alignment: WrapAlignment.center,
                   children: List.generate(5, (index) {
-                    return PrimaryAssetImage(
+                    return UniversalImage(
                       AssetPaths.icCircleFill,
                       width: 8,
                       color: Colors.white
@@ -124,9 +124,10 @@ class _Product2PageState extends State<Product2Page> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
-          onTap: () {},
+        child: Button.primary(
           label: 'Add to Cart',
+          buttonSize: ButtonSize.full,
+          onTap: () => Navigator.pop(context),
         ),
       ),
     );

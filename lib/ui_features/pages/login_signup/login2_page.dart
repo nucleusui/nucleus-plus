@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/input/primary_switch.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/utils/form_validator.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Login2Page extends StatefulWidget {
   const Login2Page({super.key});
@@ -40,16 +40,11 @@ class _Login2PageState extends State<Login2Page> {
             validator: FormValidator.password,
             textInputAction: TextInputAction.send,
           ),
-          Row(children: [
-            PrimaryButton(
-              label: "Forgot password?",
-              transparent: true,
-              padding: EdgeInsets.zero,
-              labelStyle: AssetStyles.h4
-                  .copyWith(color: AppColors.getColor(ColorKey.primary60)),
-              onTap: () => debugPrint("Forgot password"),
-            ),
-          ]),
+          Button.ghost(
+            label: "Forgot password?",
+            padding: EdgeInsets.zero,
+            onTap: () => debugPrint("Forgot password"),
+          ),
           const SizedBox(height: 10),
           Row(children: [
             Text(
@@ -69,9 +64,9 @@ class _Login2PageState extends State<Login2Page> {
       ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(16),
-        child: PrimaryButton(
-          label: "Log in",
-          width: double.infinity,
+        child: Button.primary(
+          label: 'Log in',
+          buttonSize: ButtonSize.full,
           onTap: () {},
         ),
       ),

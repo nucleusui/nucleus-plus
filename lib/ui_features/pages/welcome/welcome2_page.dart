@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Welcome2Page extends StatelessWidget {
   const Welcome2Page({super.key});
@@ -24,15 +24,15 @@ class Welcome2Page extends StatelessWidget {
             style: AssetStyles.h1.copyWith(height: 1.2),
           ),
           const Spacer(),
-          const PrimaryAssetImage(
+          const UniversalImage(
             AssetPaths.imgMinecraft,
             width: 250,
             height: 250,
           ),
           const Spacer(),
-          PrimaryButton(
-            label: 'Get started',
-            width: double.infinity,
+          Button.primary(
+            label: 'Get Started',
+            buttonSize: ButtonSize.full,
             onTap: () {},
           ),
         ]),

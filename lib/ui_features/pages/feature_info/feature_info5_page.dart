@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
-import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class FeatureInfo5Page extends StatelessWidget {
   const FeatureInfo5Page({super.key});
@@ -12,14 +11,10 @@ class FeatureInfo5Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PrimaryAppBar(hideLeading: true, actions: [
-        PrimaryInkWell(
+        Button.ghost(
+          label: 'Not now',
+          padding: EdgeInsets.zero,
           onTap: () => Navigator.pop(context),
-          child: Text(
-            'Not now',
-            style: AssetStyles.h3.copyWith(
-              color: AppColors.getColor(ColorKey.primary60),
-            ),
-          ),
         ),
       ]),
       body: Padding(
@@ -30,7 +25,7 @@ class FeatureInfo5Page extends StatelessWidget {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Center(
-                child: PrimaryAssetImage(
+                child: UniversalImage(
                   AssetPaths.imgPicture,
                   height: 162,
                   width: 162,
@@ -92,7 +87,7 @@ class FeatureInfo5Page extends StatelessWidget {
                       CircleAvatar(
                         radius: 24,
                         backgroundColor: AppColors.getColor(ColorKey.primary20),
-                        child: PrimaryAssetImage(e.icon),
+                        child: UniversalImage(e.icon),
                       ),
                       const SizedBox(width: 16),
                       Expanded(
@@ -129,7 +124,11 @@ class FeatureInfo5Page extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: PrimaryButton(onTap: () {}, label: 'Activate'),
+            child: Button.primary(
+              label: 'Activate',
+              buttonSize: ButtonSize.full,
+              onTap: () {},
+            ),
           ),
         ]),
       ),

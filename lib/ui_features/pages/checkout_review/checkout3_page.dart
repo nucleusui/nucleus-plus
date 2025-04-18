@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Checkout3Page extends StatefulWidget {
   const Checkout3Page({super.key});
@@ -24,13 +24,14 @@ class _Checkout3PageState extends State<Checkout3Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Modal Dialog',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -46,7 +47,7 @@ class _Checkout3PageState extends State<Checkout3Page> {
             const SizedBox(width: 16),
             PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icArrowBack,
                 width: 18,
                 height: 18,
@@ -66,7 +67,7 @@ class _Checkout3PageState extends State<Checkout3Page> {
               CircleAvatar(
                 radius: 12,
                 backgroundColor: AppColors.getColor(ColorKey.primary60),
-                child: const PrimaryAssetImage(
+                child: const UniversalImage(
                   AssetPaths.icCheck,
                   width: 12,
                   color: Colors.white,
@@ -147,13 +148,14 @@ class _Checkout3PageState extends State<Checkout3Page> {
                 initialValue: 'Indonesia',
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 10, top: 2),
-                  child: PrimaryAssetImage(AssetPaths.icArrowDownThin),
+                  child: UniversalImage(AssetPaths.icArrowDownThin),
                 ),
               ),
               SizedBox(height: screenHeight(context) / 6),
               const SizedBox(height: 16),
-              PrimaryButton(
+              Button.primary(
                 label: 'Checkout',
+                buttonSize: ButtonSize.full,
                 onTap: () {},
               ),
               const SizedBox(height: 16),

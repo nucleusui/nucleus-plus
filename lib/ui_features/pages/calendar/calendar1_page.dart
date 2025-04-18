@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/calendar/header_calendar.dart';
 import 'package:nucles_app/ui_features/components/calendar/primary_calendar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Calendar1Page extends StatefulWidget {
   const Calendar1Page({super.key});
@@ -70,8 +70,9 @@ class _Calendar1PageState extends State<Calendar1Page> {
         const Spacer(),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 16),
-          child: PrimaryButton(
+          child: Button.primary(
             label: 'Save',
+            buttonSize: ButtonSize.full,
             onTap: () => backScreen(),
           ),
         ),

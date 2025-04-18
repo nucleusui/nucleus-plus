@@ -3,8 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Camera1Page extends StatefulWidget {
@@ -54,7 +55,7 @@ class _Camera1PageState extends State<Camera1Page> {
         const Positioned(
           left: 20,
           top: kToolbarHeight,
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icSetting,
             width: 21,
             color: Colors.white,
@@ -65,7 +66,7 @@ class _Camera1PageState extends State<Camera1Page> {
           top: kToolbarHeight,
           child: PrimaryInkWell(
             onTap: () => Navigator.pop(context),
-            child: const PrimaryAssetImage(
+            child: const UniversalImage(
               AssetPaths.icClose,
               width: 16,
               color: Colors.white,
@@ -78,13 +79,13 @@ class _Camera1PageState extends State<Camera1Page> {
           child: const Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              PrimaryAssetImage(AssetPaths.icFlashOff, color: Colors.white),
+              UniversalImage(AssetPaths.icFlashOff, color: Colors.white),
               SizedBox(height: 32),
-              PrimaryAssetImage(AssetPaths.icLayout, color: Colors.white),
+              UniversalImage(AssetPaths.icLayout, color: Colors.white),
               SizedBox(height: 32),
-              PrimaryAssetImage(AssetPaths.icType, color: Colors.white),
+              UniversalImage(AssetPaths.icType, color: Colors.white),
               SizedBox(height: 32),
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.icArrowDownThin,
                 color: Colors.white,
                 width: 16,
@@ -97,14 +98,16 @@ class _Camera1PageState extends State<Camera1Page> {
           child: _BottomBarAction(),
         ),
       ]),
-      floatingActionButton: CircleAvatar(
-        radius: 17,
-        backgroundColor: AppColors.getColor(ColorKey.primary60),
-        child: const PrimaryAssetImage(
+      floatingActionButton: Button.primary(
+        width: 32,
+        height: 32,
+        buttonSize: ButtonSize.large,
+        icon: UniversalImage(
           AssetPaths.icRefreshCw,
-          width: 13,
+          width: 12,
           color: Colors.white,
         ),
+        onTap: () {},
       ),
     );
   }
@@ -135,7 +138,7 @@ class __BottomBarActionState extends State<_BottomBarAction> {
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         Row(
           children: [
-            const PrimaryAssetImage(AssetPaths.imgPlaceholder11, width: 34),
+            const UniversalImage(AssetPaths.imgPlaceholder11, width: 34),
             const Spacer(flex: 3),
             JustTheTooltip(
               tailLength: 8,
@@ -176,13 +179,13 @@ class __BottomBarActionState extends State<_BottomBarAction> {
               ),
             ),
             const Spacer(),
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgPlaceholder9,
               width: 50,
               height: 50,
             ),
             const SizedBox(width: 24),
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgPlaceholder10,
               width: 34,
               height: 34,

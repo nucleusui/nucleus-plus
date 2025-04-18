@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/icon_rounded_button.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Subscription2Page extends StatefulWidget {
   const Subscription2Page({super.key});
@@ -16,7 +15,7 @@ class _Subscription2PageState extends State<Subscription2Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgPlaceholder6,
           height: 250,
           width: double.infinity,
@@ -57,12 +56,11 @@ class _Subscription2PageState extends State<Subscription2Page> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconRoundedButton(
-                        icon: e.icon,
-                        iconSize: e.icon == AssetPaths.icLockBold ? 20 : 16,
-                        iconColor: Colors.white,
-                        color: AppColors.getColor(ColorKey.primary60),
-                        borderColor: AppColors.getColor(ColorKey.primary60),
+                      Button.primary(
+                        icon: UniversalImage(
+                          e.icon,
+                          width: e.icon == AssetPaths.icLockBold ? 18 : 20,
+                        ),
                         onTap: () {},
                       ),
                       const SizedBox(width: 12),
@@ -101,9 +99,10 @@ class _Subscription2PageState extends State<Subscription2Page> {
               ),
             ),
             const SizedBox(height: 16),
-            PrimaryButton(
+            Button.primary(
               label: 'Subscribe',
-              onTap: () {},
+              buttonSize: ButtonSize.full,
+              onTap: () => Navigator.pop(context),
             ),
           ],
         ),

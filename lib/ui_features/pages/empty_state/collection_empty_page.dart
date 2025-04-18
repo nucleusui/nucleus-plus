@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class CollectionEmptyPage extends StatefulWidget {
   const CollectionEmptyPage({super.key});
@@ -21,13 +21,14 @@ class _CollectionEmptyPageState extends State<CollectionEmptyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
-            label: 'Show Bottom Sheet',
-            onTap: () => showBottomSheet(context),
-          ),
-        ]),
+      body: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(16),
+        child: Button.primary(
+          label: 'Show Bottom Sheet',
+          buttonSize: ButtonSize.large,
+          onTap: () => showBottomSheet(context),
+        ),
       ),
     );
   }
@@ -55,13 +56,15 @@ class _CollectionEmptyPageState extends State<CollectionEmptyPage> {
             color: AppColors.getColor(ColorKey.grey50),
           ),
         ),
-        const SizedBox(height: 24),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          PrimaryButton(
+        Container(
+          alignment: Alignment.center,
+          margin: const EdgeInsets.all(24),
+          child: Button.primary(
             label: 'Browse Items',
-            onTap: () => Navigator.pop(context),
+            buttonSize: ButtonSize.large,
+            onTap: () {},
           ),
-        ]),
+        ),
         SizedBox(height: screenHeight(context) / 5),
       ]),
     );

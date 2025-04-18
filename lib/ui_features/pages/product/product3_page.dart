@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Product3Page extends StatefulWidget {
   const Product3Page({super.key});
@@ -21,7 +21,7 @@ class _Product3PageState extends State<Product3Page> {
       appBar: PrimaryAppBar(title: 'Nucleus UI', actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icBag,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -36,7 +36,7 @@ class _Product3PageState extends State<Product3Page> {
             itemCount: 5,
             scrollDirection: Axis.horizontal,
             onPageChanged: (value) => setState(() => currentIndex = value),
-            itemBuilder: (_, __) => const PrimaryAssetImage(
+            itemBuilder: (_, __) => const UniversalImage(
               AssetPaths.imgPlaceholder7,
               fit: BoxFit.cover,
             ),
@@ -51,7 +51,7 @@ class _Product3PageState extends State<Product3Page> {
               spacing: 5,
               alignment: WrapAlignment.center,
               children: List.generate(5, (index) {
-                return PrimaryAssetImage(
+                return UniversalImage(
                   AssetPaths.icCircleFill,
                   width: 8,
                   color: index == currentIndex
@@ -62,11 +62,11 @@ class _Product3PageState extends State<Product3Page> {
             ),
             const SizedBox(height: 40),
             const Row(children: [
-              PrimaryAssetImage(AssetPaths.icLoveFill),
+              UniversalImage(AssetPaths.icLoveFill),
               Spacer(),
-              PrimaryAssetImage(AssetPaths.icBookmarkBold),
+              UniversalImage(AssetPaths.icBookmarkBold),
               SizedBox(width: 16),
-              PrimaryAssetImage(AssetPaths.icShare),
+              UniversalImage(AssetPaths.icShare),
             ]),
             const SizedBox(height: 20),
             const Text('Product Name', style: AssetStyles.h2),
@@ -100,7 +100,10 @@ class _Product3PageState extends State<Product3Page> {
             ],
           ),
           const Spacer(),
-          PrimaryButton(height: 40, label: 'Add to Cart', onTap: () {}),
+          Button.primary(
+            label: 'Add to Cart',
+            onTap: () => Navigator.pop(context),
+          ),
         ]),
       ),
     );

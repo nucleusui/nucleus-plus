@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Event3Page extends StatefulWidget {
   const Event3Page({super.key});
@@ -32,7 +32,7 @@ class _Event3PageState extends State<Event3Page> {
         onTap: (index) => setState(() => currentIndex = index),
       ),
       body: ListView(shrinkWrap: true, children: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.imgPlaceholder6,
           fit: BoxFit.cover,
           width: double.infinity,
@@ -53,8 +53,9 @@ class _Event3PageState extends State<Event3Page> {
               style: AssetStyles.pMd,
             ),
             const SizedBox(height: 24),
-            PrimaryButton(
+            Button.primary(
               label: 'Reserve a Spot',
+              buttonSize: ButtonSize.full,
               onTap: () {},
             ),
             const SizedBox(height: 24),
@@ -83,7 +84,7 @@ class _Event3PageState extends State<Event3Page> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
-                      child: PrimaryAssetImage(
+                      child: UniversalImage(
                         e.icon,
                         width: 16,
                         color: AppColors.getColor(ColorKey.grey100),

@@ -3,12 +3,12 @@ import 'package:nucles_app/app/app_theme.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/menu_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/pages/menu/menu_detail_page.dart';
 import 'package:nucles_app/ui_features/pages/menu/menu_list.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,13 +30,13 @@ class _MenuPageState extends State<MenuPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       prefs = await SharedPreferences.getInstance();
-      setState(() => darkNotifier.value = prefs.getBool('darkMode') ?? false);
+      setState(() => themeNotifier.value = prefs.getBool('darkMode') ?? false);
     });
   }
 
   @override
   void dispose() {
-    darkNotifier.dispose();
+    themeNotifier.dispose();
     super.dispose();
   }
 
@@ -47,19 +47,20 @@ class _MenuPageState extends State<MenuPage> {
         hideLeading: true,
         centerTitle: false,
         title: 'Nucleus Plus',
+        systemOverlayStyle: currentSystemUiOverlayStyle,
         titleStyle: AssetStyles.h2.copyWith(
           fontSize: 22,
           fontWeight: FontWeight.w600,
         ),
         actions: [
           ValueListenableBuilder<bool>(
-            valueListenable: darkNotifier,
+            valueListenable: themeNotifier,
             builder: (BuildContext context, bool darkMode, Widget? child) {
               return IconButton(
                 onPressed: () async {
                   final value = !darkMode;
                   await prefs.setBool('darkMode', value);
-                  setState(() => darkNotifier.value = value);
+                  setState(() => themeNotifier.value = value);
                 },
                 tooltip: 'Switch theme',
                 icon: Icon(darkMode ? Icons.dark_mode : Icons.light_mode),
@@ -67,12 +68,12 @@ class _MenuPageState extends State<MenuPage> {
             },
           ),
           const SizedBox(width: 8),
-          PrimaryButton(
+          Button.primary(
             label: 'Buy Now',
-            labelStyle: AssetStyles.labelSm.copyWith(color: Colors.white),
-            height: 32,
-            radius: 5,
+            buttonSize: ButtonSize.small,
+            borderRadius: BorderRadius.circular(5),
             padding: const EdgeInsets.symmetric(horizontal: 16),
+            labelStyle: AssetStyles.labelSm.copyWith(color: Colors.white),
             onTap: () => launchUrl(Uri.parse(
                 'https://nucleusui.gumroad.com/l/nucleus-ui-plus-all-in-one-figma-ui-kit-design-system')),
           ),
@@ -123,7 +124,7 @@ class _MenuPageState extends State<MenuPage> {
             controller: searchController,
             prefixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(12, 5, 8, 10),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 18,
                 height: 18,
@@ -142,7 +143,7 @@ class _MenuPageState extends State<MenuPage> {
                     searchController.clear();
                     setState(() {});
                   },
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icClose,
                     width: 15,
                     color: AppColors.getColor(ColorKey.primary60),

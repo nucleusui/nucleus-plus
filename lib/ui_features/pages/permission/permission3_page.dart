@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/sheet/primary_bottom_sheet.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Permission3Page extends StatefulWidget {
   const Permission3Page({super.key});
@@ -39,13 +39,12 @@ class _Permission3PageState extends State<Permission3Page> {
         ),
         Container(
           alignment: Alignment.bottomCenter,
-          margin: const EdgeInsets.only(bottom: 16),
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            PrimaryButton(
-              label: 'Show Bottom Sheet',
-              onTap: () => showBottomSheet(context),
-            ),
-          ]),
+          margin: const EdgeInsets.all(16),
+          child: Button.primary(
+            label: 'Show Bottom Sheet',
+            buttonSize: ButtonSize.large,
+            onTap: () => showBottomSheet(context),
+          ),
         ),
       ]),
     );
@@ -60,7 +59,7 @@ class _Permission3PageState extends State<Permission3Page> {
           CircleAvatar(
             radius: 40,
             backgroundColor: AppColors.getColor(ColorKey.primary20),
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icMapPin,
               width: 24,
               height: 24,
@@ -84,20 +83,18 @@ class _Permission3PageState extends State<Permission3Page> {
           Row(
             children: [
               Expanded(
-                child: PrimaryButton(
-                  onTap: () {},
+                child: Button.primary(
                   label: 'Allow access',
-                  width: double.infinity,
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: PrimaryButton(
-                  onTap: () => Navigator.pop(context),
+                child: Button.secondary(
                   label: 'Nope',
-                  width: double.infinity,
-                  color: AppColors.getColor(ColorKey.primary20),
-                  labelColor: AppColors.getColor(ColorKey.primary70),
+                  buttonSize: ButtonSize.full,
+                  onTap: () => Navigator.pop(context),
                 ),
               ),
             ],
