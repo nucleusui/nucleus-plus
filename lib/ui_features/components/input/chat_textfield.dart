@@ -45,7 +45,6 @@ class ChatTextfield extends StatelessWidget {
           const Expanded(
             child: TextFields(
               hintText: 'Placeholder text',
-              height: 48,
             ),
           ),
           if (suffixIcon != null) suffixIcon!,

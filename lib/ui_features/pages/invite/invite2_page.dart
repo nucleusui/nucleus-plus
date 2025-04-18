@@ -88,7 +88,6 @@ class _Invite2PageState extends State<Invite2Page> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: TextFields(
-            height: 48,
             hintText: 'Search',
             controller: searchController,
             fillColor: AppColors.getColor(ColorKey.grey10),

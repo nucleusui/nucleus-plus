@@ -153,6 +153,7 @@ class _MenuPageState extends State<MenuPage> {
                             f.title.toLowerCase().contains(value.toLowerCase()))
                         .isNotEmpty;
               }).toList();
+              print(searchList);
               setState(() {});
             },
           ),

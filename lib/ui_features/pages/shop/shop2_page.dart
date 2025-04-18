@@ -52,7 +52,6 @@ class _Shop2PageState extends State<Shop2Page> {
         Padding(
           padding: const EdgeInsets.all(16),
           child: TextFields(
-            height: 48,
             hintText: 'Search',
             fillColor: AppColors.getColor(ColorKey.grey10),
             borderRadius: BorderRadius.circular(100),

@@ -82,7 +82,6 @@ class _Search1PageState extends State<Search1Page> {
             const SizedBox(width: 16),
             Expanded(
               child: TextFields(
-                height: 48,
                 autofocus: true,
                 hintText: 'Search',
                 controller: searchController,

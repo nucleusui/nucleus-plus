@@ -44,7 +44,6 @@ class _Search3PageState extends State<Search3Page> {
               const SizedBox(width: 16),
               Expanded(
                 child: TextFields(
-                  height: 48,
                   hintText: 'Search',
                   autofocus: true,
                   controller: searchController,

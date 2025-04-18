@@ -100,7 +100,6 @@ class _Email2PageState extends State<Email2Page> {
         hideLeading: true,
         titleWidget: TextFields(
           hintText: 'Search',
-          height: 48,
           fillColor: AppColors.getColor(ColorKey.grey10),
           borderRadius: BorderRadius.circular(100),
           prefixIcon: UniversalImage(
