@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class Article3Page extends StatelessWidget {
   const Article3Page({super.key});
@@ -32,7 +32,7 @@ class Article3Page extends StatelessWidget {
               style: AssetStyles.pSm,
             ),
             const SizedBox(height: 24),
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.imgPlaceholder2,
               height: 245,
               fit: BoxFit.cover,

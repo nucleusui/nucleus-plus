@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 
 class ChatTextfield extends StatelessWidget {
@@ -37,7 +37,7 @@ class ChatTextfield extends StatelessWidget {
                 backgroundColor:
                     backgroundColor ?? AppColors.getColor(ColorKey.grey20),
                 radius: 16,
-                child: Center(child: PrimaryAssetImage(icon, color: iconColor)),
+                child: Center(child: UniversalImage(icon, color: iconColor)),
               ),
           const SizedBox(width: 16),
           const Expanded(

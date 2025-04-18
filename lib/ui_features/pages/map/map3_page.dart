@@ -4,7 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/map_model.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class Map3Page extends StatefulWidget {
@@ -107,7 +107,7 @@ class _Map3PageState extends State<Map3Page> {
           padding: const EdgeInsets.only(left: 16, top: kToolbarHeight),
           child: PrimaryInkWell(
             onTap: () => Navigator.pop(context),
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icClose,
               width: 16,
               height: 16,
@@ -182,7 +182,7 @@ class _Map3PageState extends State<Map3Page> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           e.image,
                           width: 240,
                           height: 160,
@@ -211,7 +211,7 @@ class _Map3PageState extends State<Map3Page> {
                             ),
                           ),
                           const Spacer(),
-                          const PrimaryAssetImage(
+                          const UniversalImage(
                             AssetPaths.icStarBold,
                             width: 16,
                           ),

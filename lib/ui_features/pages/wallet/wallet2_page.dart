@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class Wallet2Page extends StatefulWidget {
   const Wallet2Page({super.key});
@@ -31,7 +31,7 @@ class _Wallet2PageState extends State<Wallet2Page> {
               ),
             ),
             Spacer(),
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.imgUser1,
               width: 64,
               height: 64,
@@ -78,7 +78,7 @@ class _Wallet2PageState extends State<Wallet2Page> {
                     style: AssetStyles.pSm.copyWith(color: Colors.white),
                   ),
                   const Spacer(),
-                  const PrimaryAssetImage(AssetPaths.logoMastercard, height: 28)
+                  const UniversalImage(AssetPaths.logoMastercard, height: 28)
                 ]),
               ],
             ),

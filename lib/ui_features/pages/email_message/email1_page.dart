@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/email_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class Email1Page extends StatefulWidget {
@@ -119,12 +119,12 @@ class _Email1PageState extends State<Email1Page> {
     return Scaffold(
       appBar: PrimaryAppBar(
         title: 'Inbox',
-        leading: const PrimaryAssetImage(
+        leading: const UniversalImage(
           AssetPaths.icMenu,
           fit: BoxFit.scaleDown,
         ),
         actions: [
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icSearch,
             width: 20,
             fit: BoxFit.scaleDown,
@@ -140,7 +140,7 @@ class _Email1PageState extends State<Email1Page> {
             child: PrimaryInkWell(
               onTap: () => setState(() => e.isRead = !e.isRead),
               child: Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   e.image,
                   width: 40,
                   height: 40,

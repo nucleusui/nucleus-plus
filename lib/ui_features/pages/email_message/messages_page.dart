@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class MessagesPage extends StatelessWidget {
@@ -15,7 +15,7 @@ class MessagesPage extends StatelessWidget {
         actions: [
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icPlusThin,
               width: 18,
               height: 18,
@@ -25,7 +25,7 @@ class MessagesPage extends StatelessWidget {
           const SizedBox(width: 20),
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icSearch,
               width: 18,
               height: 18,
@@ -85,7 +85,7 @@ class MessagesPage extends StatelessWidget {
                 children: [
                   Row(children: [
                     Stack(alignment: Alignment.topRight, children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         e.image,
                         width: 48,
                         height: 48,
@@ -102,7 +102,7 @@ class MessagesPage extends StatelessWidget {
                           child: Stack(
                             alignment: Alignment.center,
                             children: [
-                              const PrimaryAssetImage(
+                              const UniversalImage(
                                 AssetPaths.icCircleFill,
                                 width: 16,
                                 height: 16,

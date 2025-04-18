@@ -4,7 +4,7 @@ import 'package:flutter_map_animations/flutter_map_animations.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -54,7 +54,7 @@ class _Map1PageState extends State<Map1Page> with TickerProviderStateMixin {
                 height: 62,
                 width: 42,
                 point: _latLng,
-                child: const PrimaryAssetImage(
+                child: const UniversalImage(
                   AssetPaths.icMapPinLarge,
                   fit: BoxFit.cover,
                 ),
@@ -74,7 +74,7 @@ class _Map1PageState extends State<Map1Page> with TickerProviderStateMixin {
             borderRadius: BorderRadius.circular(100),
             prefixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(16, 6, 8, 10),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 16,
                 height: 16,
@@ -167,7 +167,7 @@ class _Map1PageState extends State<Map1Page> with TickerProviderStateMixin {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           e.image,
                           width: 130,
                           height: 124,

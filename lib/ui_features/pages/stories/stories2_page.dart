@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Stories2Page extends StatefulWidget {
@@ -60,7 +60,7 @@ class _Stories2PageState extends State<Stories2Page> {
             itemCount: stories.length,
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 stories[index],
                 fit: BoxFit.cover,
                 borderRadius: BorderRadius.circular(16),
@@ -73,7 +73,7 @@ class _Stories2PageState extends State<Stories2Page> {
           child: Column(
             children: [
               Row(children: [
-                const PrimaryAssetImage(
+                const UniversalImage(
                   AssetPaths.imgUser1,
                   width: 40,
                   height: 40,
@@ -133,7 +133,7 @@ class _Stories2PageState extends State<Stories2Page> {
               (icon: AssetPaths.icBookmark, width: 14),
               (icon: AssetPaths.icShare, width: 14),
             ].map((e) {
-              return PrimaryAssetImage(
+              return UniversalImage(
                 e.icon,
                 width: e.width.toDouble(),
                 color: Colors.white,

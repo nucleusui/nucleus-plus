@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 
@@ -71,7 +71,7 @@ class _Search1PageState extends State<Search1Page> {
               onTap: () => Navigator.pop(context),
               child: Padding(
                 padding: const EdgeInsets.all(8),
-                child: PrimaryAssetImage(
+                child: UniversalImage(
                   AssetPaths.icArrowBack,
                   width: 8,
                   height: 16,
@@ -94,7 +94,7 @@ class _Search1PageState extends State<Search1Page> {
                     searchController.clear();
                     setState(() {});
                   },
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icClose,
                     width: 12,
                     height: 12,
@@ -119,7 +119,7 @@ class _Search1PageState extends State<Search1Page> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 24),
                   child: Row(children: [
-                    PrimaryAssetImage(
+                    UniversalImage(
                       e.image,
                       height: 64,
                       width: 64,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class AugemntedReality3Page extends StatefulWidget {
@@ -16,14 +16,14 @@ class _AugemntedReality3PageState extends State<AugemntedReality3Page> {
     return Scaffold(
       backgroundColor: AppColors.getColor(ColorKey.grey40),
       body: Stack(alignment: Alignment.center, children: [
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgPlaceholder19,
           width: double.infinity,
           fit: BoxFit.cover,
         ),
         const Padding(
           padding: EdgeInsets.only(bottom: 128),
-          child: PrimaryAssetImage(AssetPaths.imgPlaceholder18, width: 244),
+          child: UniversalImage(AssetPaths.imgPlaceholder18, width: 244),
         ),
         Container(
           alignment: Alignment.bottomCenter,
@@ -43,7 +43,7 @@ class _AugemntedReality3PageState extends State<AugemntedReality3Page> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const PrimaryAssetImage(
+                  const UniversalImage(
                     AssetPaths.icLike,
                     width: 20,
                     color: Colors.white,
@@ -54,7 +54,7 @@ class _AugemntedReality3PageState extends State<AugemntedReality3Page> {
                     child: CircleAvatar(
                       radius: 28,
                       backgroundColor: AppColors.getColor(ColorKey.primary60),
-                      child: const PrimaryAssetImage(
+                      child: const UniversalImage(
                         AssetPaths.icCheck,
                         width: 20,
                         color: Colors.white,
@@ -62,7 +62,7 @@ class _AugemntedReality3PageState extends State<AugemntedReality3Page> {
                     ),
                   ),
                   const SizedBox(width: 48),
-                  const PrimaryAssetImage(
+                  const UniversalImage(
                     AssetPaths.icTrash,
                     width: 20,
                     color: Colors.white,

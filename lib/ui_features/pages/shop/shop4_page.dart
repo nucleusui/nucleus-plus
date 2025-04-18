@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -29,7 +29,7 @@ class _Shop4PageState extends State<Shop4Page> {
       appBar: PrimaryAppBar(leading: const SizedBox(), title: 'Shop', actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icSearch,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -62,7 +62,7 @@ class _Shop4PageState extends State<Shop4Page> {
                 alignment: WrapAlignment.spaceBetween,
                 children: List.generate(8, (index) {
                   return Column(children: [
-                    PrimaryAssetImage(
+                    UniversalImage(
                       index == 0
                           ? AssetPaths.imgPlaceholder7
                           : index == 1
@@ -116,7 +116,7 @@ class _Shop4PageState extends State<Shop4Page> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          PrimaryAssetImage(
+                          UniversalImage(
                             index == 0
                                 ? AssetPaths.imgPlaceholder2
                                 : index == 1

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/app/app_theme.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class AugemntedReality2Page extends StatefulWidget {
@@ -19,18 +19,18 @@ class _AugemntedReality2PageState extends State<AugemntedReality2Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(alignment: Alignment.center, children: [
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgPlaceholder20,
           width: double.infinity,
           fit: BoxFit.cover,
         ),
-        const PrimaryAssetImage(AssetPaths.imgPlaceholder17, width: 135),
+        const UniversalImage(AssetPaths.imgPlaceholder17, width: 135),
         Padding(
           padding: const EdgeInsets.only(top: 16),
           child: PrimaryAppBar(
             leading: PrimaryInkWell(
               onTap: () => Navigator.pop(context),
-              child: const PrimaryAssetImage(
+              child: const UniversalImage(
                 AssetPaths.icClose,
                 fit: BoxFit.scaleDown,
                 color: Colors.white,
@@ -70,7 +70,7 @@ class _AugemntedReality2PageState extends State<AugemntedReality2Page> {
                         e,
                         style: AssetStyles.h6.copyWith(
                           color: active
-                              ? AppColors.getColor(darkNotifier.value
+                              ? AppColors.getColor(themeNotifier.value
                                   ? ColorKey.background
                                   : ColorKey.grey100)
                               : AppColors.getColor(ColorKey.grey60),
@@ -82,7 +82,7 @@ class _AugemntedReality2PageState extends State<AugemntedReality2Page> {
               ),
             ),
             actions: const [
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.icShare,
                 width: 18,
                 color: Colors.white,

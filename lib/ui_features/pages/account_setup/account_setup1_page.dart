@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class AccountSetup1Page extends StatefulWidget {
@@ -84,7 +84,7 @@ class _AccountSetup1PageState extends State<AccountSetup1Page> {
                   visible: data.value,
                   child: const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       AssetPaths.icCheck,
                       width: 14,
                       color: Colors.white,

@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -29,7 +29,7 @@ class _NewsFeed5PageState extends State<NewsFeed5Page> {
       appBar: PrimaryAppBar(title: 'News', hideLeading: true, actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icSearch,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -76,7 +76,7 @@ class _NewsFeed5PageState extends State<NewsFeed5Page> {
                 const Spacer(),
                 PrimaryInkWell(
                   onTap: () {},
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icHeadphone,
                     width: 16,
                     height: 16,
@@ -86,7 +86,7 @@ class _NewsFeed5PageState extends State<NewsFeed5Page> {
                 const SizedBox(width: 16),
                 PrimaryInkWell(
                   onTap: () {},
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icBookmarkBold,
                     width: 16,
                     height: 16,
@@ -99,7 +99,7 @@ class _NewsFeed5PageState extends State<NewsFeed5Page> {
                   child: SizedBox(
                     width: 16,
                     height: 16,
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       AssetPaths.icShare,
                       fit: BoxFit.scaleDown,
                       color: AppColors.getColor(ColorKey.grey100),

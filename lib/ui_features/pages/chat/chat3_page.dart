@@ -4,7 +4,7 @@ import 'package:nucles_app/models/chat_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chat/secondary_chat_bubble.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
 class Chat3Page extends StatefulWidget {
@@ -32,7 +32,7 @@ class _Chat3PageState extends State<Chat3Page> {
         appBar: PrimaryAppBar(
           title: 'Jeremy',
           actions: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icSetting,
               width: 20,
               color: AppColors.getColor(ColorKey.primary60),

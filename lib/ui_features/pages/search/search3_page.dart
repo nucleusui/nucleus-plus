@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 
@@ -33,7 +33,7 @@ class _Search3PageState extends State<Search3Page> {
                 onTap: () => Navigator.pop(context),
                 child: Padding(
                   padding: const EdgeInsets.all(8),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icArrowBack,
                     width: 8,
                     height: 16,
@@ -53,7 +53,7 @@ class _Search3PageState extends State<Search3Page> {
                   borderRadius: BorderRadius.circular(100),
                   prefixIcon: Padding(
                     padding: const EdgeInsets.fromLTRB(16, 5, 8, 10),
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       AssetPaths.icSearch,
                       width: 16,
                       height: 16,
@@ -92,7 +92,7 @@ class _Search3PageState extends State<Search3Page> {
                     child: Row(children: [
                       Text(e, style: AssetStyles.pMd),
                       const Spacer(),
-                      PrimaryAssetImage(
+                      UniversalImage(
                         AssetPaths.icArrowNext,
                         width: 14,
                         height: 14,

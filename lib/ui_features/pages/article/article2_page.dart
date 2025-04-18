@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class Article2Page extends StatelessWidget {
@@ -13,7 +13,7 @@ class Article2Page extends StatelessWidget {
       appBar: PrimaryAppBar(actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icBookmark,
             width: 16,
             color: AppColors.getColor(ColorKey.primary60),
@@ -22,7 +22,7 @@ class Article2Page extends StatelessWidget {
         const SizedBox(width: 20),
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icShare,
             color: AppColors.getColor(ColorKey.primary60),
           ),
@@ -44,7 +44,7 @@ class Article2Page extends StatelessWidget {
             style: AssetStyles.pMd,
           ),
           const SizedBox(height: 24),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.imgPlaceholder26,
             height: 375,
             fit: BoxFit.cover,

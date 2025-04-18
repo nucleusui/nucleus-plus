@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class AudioPlayer1Page extends StatefulWidget {
@@ -46,7 +46,10 @@ class _AudioPlayer1PageState extends State<AudioPlayer1Page> {
     return Scaffold(
       appBar: const PrimaryAppBar(
         title: 'Album name',
-        actions: [PrimaryAssetImage(AssetPaths.icMore), SizedBox(width: 5)],
+        actions: [
+          UniversalImage(AssetPaths.icMore),
+          SizedBox(width: 5),
+        ],
       ),
       body: ListView(
         shrinkWrap: true,
@@ -57,7 +60,7 @@ class _AudioPlayer1PageState extends State<AudioPlayer1Page> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.imgPlaceholder2,
                   height: 343,
                   fit: BoxFit.cover,
@@ -102,8 +105,8 @@ class _AudioPlayer1PageState extends State<AudioPlayer1Page> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const PrimaryAssetImage(AssetPaths.icShuffle),
-                    const PrimaryAssetImage(AssetPaths.icSkipBack),
+                    const UniversalImage(AssetPaths.icShuffle),
+                    const UniversalImage(AssetPaths.icSkipBack),
                     PrimaryInkWell(
                       onTap: () {
                         if (play) {
@@ -118,15 +121,15 @@ class _AudioPlayer1PageState extends State<AudioPlayer1Page> {
                         backgroundColor: AppColors.getColor(ColorKey.primary60),
                         child: play
                             ? const Icon(Icons.pause, color: Colors.white)
-                            : const PrimaryAssetImage(
+                            : const UniversalImage(
                                 AssetPaths.icPlay,
                                 width: 16,
                                 color: Colors.white,
                               ),
                       ),
                     ),
-                    const PrimaryAssetImage(AssetPaths.icSkipForward),
-                    PrimaryAssetImage(
+                    const UniversalImage(AssetPaths.icSkipForward),
+                    UniversalImage(
                       AssetPaths.icRefreshCw,
                       color: AppColors.getColor(ColorKey.grey60),
                     ),
@@ -142,12 +145,12 @@ class _AudioPlayer1PageState extends State<AudioPlayer1Page> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icShare2,
               height: 16,
               color: AppColors.getColor(ColorKey.grey70),
             ),
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icList,
               height: 12,
               color: AppColors.getColor(ColorKey.grey70),

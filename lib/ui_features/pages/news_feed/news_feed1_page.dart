@@ -4,7 +4,7 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -87,7 +87,7 @@ class _NewsFeed1PageState extends State<NewsFeed1Page> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            PrimaryAssetImage(
+            UniversalImage(
               height: 207,
               fit: BoxFit.cover,
               borderRadius: BorderRadius.circular(16),
@@ -114,7 +114,7 @@ class _NewsFeed1PageState extends State<NewsFeed1Page> {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         e.image,
                         height: 64,
                         width: 64,

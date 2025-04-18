@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -38,7 +38,7 @@ class _Stories1PageState extends State<Stories1Page> {
         actions: [
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icBookmark,
               width: 18,
               color: AppColors.getColor(ColorKey.primary60),
@@ -81,7 +81,7 @@ class _Stories1PageState extends State<Stories1Page> {
                 scrollDirection: Axis.horizontal,
                 itemCount: stories.length,
                 itemBuilder: (context, index) =>
-                    PrimaryAssetImage(stories[index], fit: BoxFit.cover),
+                    UniversalImage(stories[index], fit: BoxFit.cover),
               ),
               Positioned(
                 bottom: 20,

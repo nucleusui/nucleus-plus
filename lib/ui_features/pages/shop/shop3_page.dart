@@ -4,7 +4,7 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -38,7 +38,7 @@ class _Shop3PageState extends State<Shop3Page> {
       appBar: PrimaryAppBar(hideLeading: true, actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icSearch,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -81,7 +81,7 @@ class _Shop3PageState extends State<Shop3Page> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         index == 0
                             ? AssetPaths.imgPlaceholder7
                             : index == 1
@@ -101,7 +101,7 @@ class _Shop3PageState extends State<Shop3Page> {
                         children: [
                           const Text('Brand', style: AssetStyles.h4),
                           const Spacer(),
-                          PrimaryAssetImage(
+                          UniversalImage(
                             AssetPaths.icLove,
                             color: AppColors.getColor(ColorKey.grey60),
                           ),

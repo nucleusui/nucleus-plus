@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -29,7 +29,7 @@ class _NewsFeed4PageState extends State<NewsFeed4Page> {
       appBar: PrimaryAppBar(actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: const PrimaryAssetImage(
+          child: const UniversalImage(
             AssetPaths.imgUser1,
             width: 32,
             height: 32,
@@ -73,7 +73,7 @@ class _NewsFeed4PageState extends State<NewsFeed4Page> {
                     ),
                   ),
                   const SizedBox(width: 16),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     width: 60,
                     height: 60,
                     fit: BoxFit.cover,
@@ -102,7 +102,7 @@ class _NewsFeed4PageState extends State<NewsFeed4Page> {
                   const Spacer(),
                   PrimaryInkWell(
                     onTap: () {},
-                    child: PrimaryAssetImage(
+                    child: UniversalImage(
                       AssetPaths.icBookmark,
                       width: 16,
                       height: 16,
@@ -115,7 +115,7 @@ class _NewsFeed4PageState extends State<NewsFeed4Page> {
                     child: SizedBox(
                       width: 16,
                       height: 16,
-                      child: PrimaryAssetImage(
+                      child: UniversalImage(
                         AssetPaths.icMore,
                         fit: BoxFit.scaleDown,
                         color: AppColors.getColor(ColorKey.grey60),

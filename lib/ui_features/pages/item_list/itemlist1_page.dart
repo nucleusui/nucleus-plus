@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
 class ItemList1Page extends StatefulWidget {
@@ -71,7 +71,7 @@ class _ItemList1PageState extends State<ItemList1Page> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           e.image,
                           fit: BoxFit.cover,
                           borderRadius: BorderRadius.circular(16),
@@ -92,7 +92,8 @@ class _ItemList1PageState extends State<ItemList1Page> {
                   }).toList(),
                 ),
               ),
-              const Center(child: Text('Component Tab', style: AssetStyles.pMd)),
+              const Center(
+                  child: Text('Component Tab', style: AssetStyles.pMd)),
             ]),
           ),
         ]),

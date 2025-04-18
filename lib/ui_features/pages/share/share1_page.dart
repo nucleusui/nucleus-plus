@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class Share1Page extends StatefulWidget {
   const Share1Page({super.key});
@@ -103,7 +103,7 @@ class _Share1PageState extends State<Share1Page> {
               spacing: 5,
               alignment: WrapAlignment.start,
               children: listItem.asMap().entries.map((e) {
-                return PrimaryAssetImage(
+                return UniversalImage(
                   AssetPaths.icCircleFill,
                   width: 8,
                   color: e.key == slideIndex
@@ -126,7 +126,7 @@ class _Share1PageState extends State<Share1Page> {
                 child: Row(children: [
                   Text(e.title, style: AssetStyles.pMd),
                   const Spacer(),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     e.icon,
                     width: 16,
                     color: AppColors.getColor(ColorKey.grey100),

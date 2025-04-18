@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -45,7 +45,7 @@ class _Profile3PageState extends State<Profile3Page> {
               child: Row(children: [
                 Text(e.title, style: AssetStyles.pMd),
                 const Spacer(),
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icArrowNext,
                   color: AppColors.getColor(ColorKey.grey100),
                 ),
@@ -79,7 +79,7 @@ class _HeaderWidget extends StatelessWidget {
         ),
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
-        const PrimaryAssetImage(
+        const UniversalImage(
           AssetPaths.imgUser7,
           width: 64,
           height: 64,

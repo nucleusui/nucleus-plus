@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
 class Event2Page extends StatefulWidget {
@@ -41,7 +41,7 @@ class _Event2PageState extends State<Event2Page> {
           alignment: Alignment.topLeft,
           child: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: const PrimaryAssetImage(AssetPaths.icArrowBack),
+            icon: const UniversalImage(AssetPaths.icArrowBack),
           ),
         ),
         Expanded(

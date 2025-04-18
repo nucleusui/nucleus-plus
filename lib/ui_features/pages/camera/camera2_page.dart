@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_the_tooltip/just_the_tooltip.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Camera2Page extends StatefulWidget {
@@ -53,7 +53,7 @@ class _Camera2PageState extends State<Camera2Page> {
         const Positioned(
           left: 16,
           top: kToolbarHeight,
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icMenu,
             width: 21,
             color: Colors.white,
@@ -63,13 +63,13 @@ class _Camera2PageState extends State<Camera2Page> {
           right: 16,
           top: kToolbarHeight,
           child: Row(children: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icClockBold,
               width: 23,
               color: Colors.white,
             ),
             SizedBox(width: 16),
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icQuestion,
               color: Colors.white,
             ),

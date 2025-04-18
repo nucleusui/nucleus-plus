@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/chat_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chat/primary_chat_bubble.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/chat_textfield.dart';
 
 class Chat1Page extends StatelessWidget {
@@ -13,13 +13,13 @@ class Chat1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PrimaryAppBar(title: 'Andy', actions: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.icBookmark,
           width: 16,
           color: AppColors.getColor(ColorKey.primary60),
         ),
         const SizedBox(width: 16),
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.icSearch,
           width: 20,
           color: AppColors.getColor(ColorKey.primary60),
@@ -38,13 +38,13 @@ class Chat1Page extends StatelessWidget {
           Center(
             child: Column(children: [
               const Stack(alignment: Alignment.bottomRight, children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.imgUser1,
                   fit: BoxFit.cover,
                   height: 64,
                   width: 64,
                 ),
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icCircleFill,
                   width: 20,
                   color: AssetColors.green,

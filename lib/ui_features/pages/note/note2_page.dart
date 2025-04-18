@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class Note2Page extends StatefulWidget {
@@ -29,32 +29,32 @@ class _Note2PageState extends State<Note2Page> {
         titleWidget: Row(children: [
           PrimaryInkWell(
             onTap: () => Navigator.pop(context),
-            child: const PrimaryAssetImage(
+            child: const UniversalImage(
               AssetPaths.icCheck,
               width: 16,
               color: AssetColors.green,
             ),
           ),
           const SizedBox(width: 20),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icRefreshCcw,
             width: 15,
             color: AppColors.getColor(ColorKey.grey100),
           ),
           const SizedBox(width: 16),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icRefreshCw,
             width: 15,
             color: AppColors.getColor(ColorKey.grey100),
           ),
           const Spacer(),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icUserPlus,
             width: 16,
             color: AppColors.getColor(ColorKey.grey100),
           ),
           const SizedBox(width: 16),
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icMore,
             width: 16,
             color: AppColors.getColor(ColorKey.grey100),
@@ -84,7 +84,7 @@ class _Note2PageState extends State<Note2Page> {
         padding: const EdgeInsets.all(16),
         children: [
           Row(children: [
-            const PrimaryAssetImage(AssetPaths.icBook),
+            const UniversalImage(AssetPaths.icBook),
             const SizedBox(width: 8),
             Text(
               'Design',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class PrimaryRadio extends StatelessWidget {
@@ -38,7 +38,7 @@ class PrimaryRadio extends StatelessWidget {
         ),
         child: Row(children: [
           if (icon != null) ...[
-            PrimaryAssetImage(icon!, width: 24, height: 24),
+            UniversalImage(icon!, width: 24, height: 24),
             const SizedBox(width: 16),
           ],
           Column(

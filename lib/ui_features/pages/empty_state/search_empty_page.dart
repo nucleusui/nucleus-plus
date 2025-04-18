@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class SearchEmptyPage extends StatefulWidget {
   const SearchEmptyPage({super.key});
@@ -38,7 +38,7 @@ class _SearchEmptyPageState extends State<SearchEmptyPage> {
         leading: IconButton(
           splashRadius: 20,
           onPressed: () => Navigator.pop(context),
-          icon: const PrimaryAssetImage(AssetPaths.icArrowBack, width: 9),
+          icon: const UniversalImage(AssetPaths.icArrowBack, width: 9),
         ),
         actions: [
           IconButton(
@@ -47,7 +47,7 @@ class _SearchEmptyPageState extends State<SearchEmptyPage> {
               searchController.clear();
               setState(() {});
             },
-            icon: PrimaryAssetImage(
+            icon: UniversalImage(
               AssetPaths.icClose,
               width: 12,
               color: AppColors.getColor(ColorKey.grey60),

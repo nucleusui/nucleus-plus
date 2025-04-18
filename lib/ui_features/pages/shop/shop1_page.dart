@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -32,7 +32,7 @@ class _Shop1PageState extends State<Shop1Page> {
         actions: [
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icBookmark,
               height: 20,
               color: AppColors.getColor(ColorKey.primary60),
@@ -41,7 +41,7 @@ class _Shop1PageState extends State<Shop1Page> {
           const SizedBox(width: 16),
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icSearch,
               width: 20,
               color: AppColors.getColor(ColorKey.primary60),
@@ -107,7 +107,7 @@ class _Shop1PageState extends State<Shop1Page> {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           f.image,
                           width: 217,
                           height: 217,

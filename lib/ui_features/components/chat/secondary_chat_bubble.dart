@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/chat_model.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class SecondaryChatBubble extends StatelessWidget {
   const SecondaryChatBubble(this.data, {super.key});
@@ -14,7 +14,7 @@ class SecondaryChatBubble extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 16),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         if (data.sender != 'myself') ...[
-          const PrimaryAssetImage(AssetPaths.imgUser5, width: 40, height: 40),
+          const UniversalImage(AssetPaths.imgUser5, width: 40, height: 40),
           const SizedBox(width: 16),
         ],
         Expanded(

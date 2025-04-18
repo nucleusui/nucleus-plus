@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -30,7 +30,7 @@ class _Product4PageState extends State<Product4Page> {
       appBar: PrimaryAppBar(title: 'Nucleus UI', actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icBag,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -47,7 +47,7 @@ class _Product4PageState extends State<Product4Page> {
             Row(children: [
               const Text('Design System', style: AssetStyles.h1),
               const Spacer(),
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.icLove,
                 color: AppColors.getColor(ColorKey.grey50),
               ),
@@ -82,7 +82,7 @@ class _Product4PageState extends State<Product4Page> {
             onPageChanged: (value) => setState(() => slideIndex = value),
             itemBuilder: (_, index) => Padding(
               padding: EdgeInsets.only(left: 16, right: index != 4 ? 0 : 16),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 index.isOdd
                     ? AssetPaths.imgPlaceholder1
                     : AssetPaths.imgPlaceholder2,

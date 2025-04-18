@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/chat_textfield.dart';
 
 class Chat4Page extends StatelessWidget {
@@ -22,7 +22,7 @@ class Chat4Page extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 3, right: 4),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     AssetPaths.icCircleFill,
                     width: 8,
                     color: AssetColors.green,
@@ -37,7 +37,7 @@ class Chat4Page extends StatelessWidget {
           ],
         ),
         actions: [
-          PrimaryAssetImage(
+          UniversalImage(
             AssetPaths.icSetting,
             width: 20,
             color: AppColors.getColor(ColorKey.primary60),
@@ -46,7 +46,7 @@ class Chat4Page extends StatelessWidget {
         ],
       ),
       bottomSheet: ChatTextfield(
-        prefixIcon: PrimaryAssetImage(
+        prefixIcon: UniversalImage(
           AssetPaths.icAttachment,
           width: 18,
           height: 18,
@@ -54,7 +54,7 @@ class Chat4Page extends StatelessWidget {
         ),
         suffixIcon: Padding(
           padding: const EdgeInsets.only(left: 16),
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icMicrophone,
             width: 18,
             height: 18,
@@ -69,7 +69,7 @@ class Chat4Page extends StatelessWidget {
           SizedBox(height: screenHeight(context) / 1.9),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Stack(alignment: Alignment.bottomRight, children: [
-              const PrimaryAssetImage(
+              const UniversalImage(
                 AssetPaths.imgUser1,
                 fit: BoxFit.cover,
                 height: 48,
@@ -81,7 +81,7 @@ class Chat4Page extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(100),
                 ),
-                child: const PrimaryAssetImage(
+                child: const UniversalImage(
                   AssetPaths.icCircleFill,
                   width: 14,
                   color: AssetColors.green,
@@ -114,7 +114,7 @@ class Chat4Page extends StatelessWidget {
           ]),
           const SizedBox(height: 16),
           Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgUser2,
               fit: BoxFit.cover,
               height: 40,
@@ -143,7 +143,7 @@ class Chat4Page extends StatelessWidget {
                         style: AssetStyles.pSm,
                       ),
                     ),
-                    PrimaryAssetImage(
+                    UniversalImage(
                       AssetPaths.icCheckOutlined,
                       width: 16,
                       height: 16,
@@ -159,7 +159,7 @@ class Chat4Page extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const PrimaryAssetImage(
+                    const UniversalImage(
                       AssetPaths.icCheckOutlined,
                       width: 16,
                       height: 16,

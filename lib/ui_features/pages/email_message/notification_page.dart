@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -47,7 +47,7 @@ class NotificationPage extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Row(children: [
-              PrimaryAssetImage(
+              UniversalImage(
                 e.image,
                 width: 36,
                 height: 36,
@@ -75,7 +75,7 @@ class NotificationPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
-              PrimaryAssetImage(
+              UniversalImage(
                 AssetPaths.icCircleFill,
                 width: 8,
                 color: AppColors.getColor(ColorKey.primary60),

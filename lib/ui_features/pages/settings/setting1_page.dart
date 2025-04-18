@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -71,7 +71,7 @@ class _Setting1PageState extends State<Setting1Page> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  PrimaryAssetImage(
+                  UniversalImage(
                     e.value.icon!,
                     width: 26,
                     height: 26,

@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -31,7 +31,7 @@ class _ItemList3PageState extends State<ItemList3Page> {
         actions: [
           PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icLove,
               width: 20,
               color: AppColors.getColor(ColorKey.primary60),
@@ -55,7 +55,7 @@ class _ItemList3PageState extends State<ItemList3Page> {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      PrimaryAssetImage(
+                      UniversalImage(
                         AssetPaths.imgPlaceholder2,
                         height: 150,
                         width: 150,
@@ -66,7 +66,7 @@ class _ItemList3PageState extends State<ItemList3Page> {
                       const Text('Product name', style: AssetStyles.h5),
                       const SizedBox(height: 8),
                       Row(children: [
-                        const PrimaryAssetImage(
+                        const UniversalImage(
                           AssetPaths.imgUser1,
                           width: 32,
                           height: 32,

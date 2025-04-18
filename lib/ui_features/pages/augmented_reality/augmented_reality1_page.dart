@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 
 class AugemntedReality1Page extends StatelessWidget {
@@ -14,7 +14,7 @@ class AugemntedReality1Page extends StatelessWidget {
       body: Stack(alignment: Alignment.center, children: [
         const Padding(
           padding: EdgeInsets.only(bottom: 128),
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.imgPlaceholder12,
             width: 174,
           ),
@@ -23,7 +23,7 @@ class AugemntedReality1Page extends StatelessWidget {
           leading: PrimaryInkWell(
             onTap: () => Navigator.pop(context),
             child: Center(
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icClose,
                 width: 16,
                 fit: BoxFit.scaleDown,
@@ -32,7 +32,7 @@ class AugemntedReality1Page extends StatelessWidget {
             ),
           ),
           actions: [
-            PrimaryAssetImage(
+            UniversalImage(
               AssetPaths.icMore,
               width: 22,
               fit: BoxFit.scaleDown,
@@ -73,7 +73,7 @@ class AugemntedReality1Page extends StatelessWidget {
                   PrimaryInkWell(
                     onTap: () => Navigator.pop(context),
                     child: Center(
-                      child: PrimaryAssetImage(
+                      child: UniversalImage(
                         AssetPaths.icClose,
                         width: 14,
                         fit: BoxFit.scaleDown,
@@ -96,7 +96,7 @@ class AugemntedReality1Page extends StatelessWidget {
                   AssetPaths.imgPlaceholder16,
                   AssetPaths.imgPlaceholder13,
                   AssetPaths.imgPlaceholder14,
-                ].map((e) => PrimaryAssetImage(e, width: 76)).toList(),
+                ].map((e) => UniversalImage(e, width: 76)).toList(),
               ),
             ),
             Padding(

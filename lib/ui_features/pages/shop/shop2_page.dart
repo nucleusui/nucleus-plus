@@ -4,7 +4,7 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/input/primary_textfield.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
@@ -39,7 +39,7 @@ class _Shop2PageState extends State<Shop2Page> {
       appBar: PrimaryAppBar(title: 'Shop', hideLeading: true, actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icSearch,
             width: 20,
             height: 20,
@@ -58,7 +58,7 @@ class _Shop2PageState extends State<Shop2Page> {
             borderRadius: BorderRadius.circular(100),
             prefixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(16, 6, 12, 10),
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 18,
                 height: 18,
@@ -96,7 +96,7 @@ class _Shop2PageState extends State<Shop2Page> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Stack(alignment: Alignment.topRight, children: [
-                        PrimaryAssetImage(
+                        UniversalImage(
                           index == 0
                               ? AssetPaths.imgPlaceholder2
                               : index == 1
@@ -112,7 +112,7 @@ class _Shop2PageState extends State<Shop2Page> {
                         ),
                         const Padding(
                           padding: EdgeInsets.all(12),
-                          child: PrimaryAssetImage(
+                          child: UniversalImage(
                             AssetPaths.icLove,
                             color: Colors.white,
                           ),

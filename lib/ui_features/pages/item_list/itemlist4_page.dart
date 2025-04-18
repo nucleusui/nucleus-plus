@@ -5,7 +5,7 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -38,7 +38,7 @@ class _ItemList4PageState extends State<ItemList4Page> {
       appBar: PrimaryAppBar(title: 'Nucleus Components', actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icBookmark,
             width: 18,
             color: AppColors.getColor(ColorKey.primary60),
@@ -72,7 +72,7 @@ class _ItemList4PageState extends State<ItemList4Page> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.imgPlaceholder2,
                     height: 100,
                     width: 100,
@@ -103,7 +103,7 @@ class _ItemList4PageState extends State<ItemList4Page> {
                             glowColor: Colors.amber,
                             direction: Axis.horizontal,
                             itemPadding: const EdgeInsets.only(right: 4),
-                            itemBuilder: (context, index) => PrimaryAssetImage(
+                            itemBuilder: (context, index) => UniversalImage(
                               AssetPaths.icStarBold,
                               color: rating <= index
                                   ? null
@@ -122,7 +122,7 @@ class _ItemList4PageState extends State<ItemList4Page> {
                           const Spacer(),
                           PrimaryInkWell(
                             onTap: () {},
-                            child: PrimaryAssetImage(
+                            child: UniversalImage(
                               AssetPaths.icLove,
                               width: 12,
                               color: AppColors.getColor(ColorKey.grey50),

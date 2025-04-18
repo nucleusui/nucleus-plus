@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
 class ItemList5Page extends StatefulWidget {
@@ -32,7 +32,7 @@ class _ItemList5PageState extends State<ItemList5Page> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              PrimaryAssetImage(
+              UniversalImage(
                 index.isEven
                     ? AssetPaths.imgPlaceholder5
                     : AssetPaths.imgPlaceholder2,
@@ -52,7 +52,7 @@ class _ItemList5PageState extends State<ItemList5Page> {
               ),
               const SizedBox(height: 8),
               Row(children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   AssetPaths.icCircle,
                   width: 16,
                   color: AppColors.getColor(ColorKey.primary60),

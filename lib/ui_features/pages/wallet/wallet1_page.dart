@@ -4,7 +4,7 @@ import 'package:nucles_app/models/basic_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/chip/primary_chip.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/primary_switch.dart';
 
 class Wallet1Page extends StatefulWidget {
@@ -46,7 +46,7 @@ class _Wallet1PageState extends State<Wallet1Page> {
                     alignment: Alignment.centerRight,
                     leading: Padding(
                       padding: const EdgeInsets.only(left: 12),
-                      child: PrimaryAssetImage(
+                      child: UniversalImage(
                         e.icon!,
                         color: e.value
                             ? Colors.white
@@ -170,7 +170,7 @@ class _HeaderWidget extends StatelessWidget {
             ]),
           ]),
           const Spacer(),
-          const PrimaryAssetImage(
+          const UniversalImage(
             AssetPaths.imgUser1,
             fit: BoxFit.cover,
             width: 48,

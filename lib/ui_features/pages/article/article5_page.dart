@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/button/primary_button.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
+import 'package:nucleus_ui/nucleus_ui.dart';
 
 class Article5Page extends StatefulWidget {
   const Article5Page({super.key});
@@ -31,12 +31,12 @@ class _Article5PageState extends State<Article5Page> {
       appBar: PrimaryAppBar(actions: [
         PrimaryInkWell(
           onTap: () {},
-          child: const PrimaryAssetImage(AssetPaths.icBookmark, width: 16),
+          child: const UniversalImage(AssetPaths.icBookmark, width: 16),
         ),
         const SizedBox(width: 20),
         PrimaryInkWell(
           onTap: () {},
-          child: PrimaryAssetImage(
+          child: UniversalImage(
             AssetPaths.icMore,
             color: AppColors.getColor(ColorKey.primary60),
           ),
@@ -56,7 +56,7 @@ class _Article5PageState extends State<Article5Page> {
           Wrap(
             spacing: 5,
             children: List.generate(3, (index) {
-              return PrimaryAssetImage(
+              return UniversalImage(
                 AssetPaths.icCircleFill,
                 width: 8,
                 height: 8,
@@ -85,7 +85,7 @@ class _Article5PageState extends State<Article5Page> {
               itemCount: 3,
               scrollDirection: Axis.horizontal,
               onPageChanged: (value) => setState(() => slideIndex = value),
-              itemBuilder: (_, __) => PrimaryAssetImage(
+              itemBuilder: (_, __) => UniversalImage(
                 AssetPaths.imgPlaceholder5,
                 height: 180,
                 fit: BoxFit.cover,
@@ -96,7 +96,7 @@ class _Article5PageState extends State<Article5Page> {
           ),
           const SizedBox(height: 24),
           Row(children: [
-            const PrimaryAssetImage(
+            const UniversalImage(
               AssetPaths.imgUser1,
               width: 40,
               height: 40,
@@ -113,9 +113,9 @@ class _Article5PageState extends State<Article5Page> {
               ),
             ]),
             const Spacer(),
-            PrimaryButton(
+            Button.primary(
               label: 'Follow',
-              height: 36,
+              buttonSize: ButtonSize.medium,
               onTap: () {},
             ),
           ]),
@@ -137,7 +137,7 @@ class _Article5PageState extends State<Article5Page> {
               ].asMap().entries.map((e) {
                 return Padding(
                   padding: EdgeInsets.only(left: e.key * 16),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     e.value,
                     width: 32,
                     height: 32,

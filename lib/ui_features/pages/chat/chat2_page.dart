@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/input/chat_textfield.dart';
 
 class Chat2Page extends StatelessWidget {
@@ -11,7 +11,7 @@ class Chat2Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PrimaryAppBar(title: 'General', actions: [
-        PrimaryAssetImage(
+        UniversalImage(
           AssetPaths.icUserPlus,
           width: 20,
           color: AppColors.getColor(ColorKey.primary60),
@@ -29,7 +29,7 @@ class Chat2Page extends StatelessWidget {
           SizedBox(height: screenHeight(context) / 3),
           const Align(
             alignment: Alignment.centerLeft,
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.imgChat,
               height: 76,
               width: 76,
@@ -52,7 +52,7 @@ class Chat2Page extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child: Row(children: [
-              const PrimaryAssetImage(AssetPaths.icChat),
+              const UniversalImage(AssetPaths.icChat),
               const SizedBox(width: 12),
               Text(
                 'Setting up room',
@@ -61,7 +61,7 @@ class Chat2Page extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              const PrimaryAssetImage(
+              const UniversalImage(
                 AssetPaths.icCheckCircle,
                 height: 24,
                 width: 24,
@@ -95,7 +95,7 @@ class Chat2Page extends StatelessWidget {
                 CircleAvatar(
                   backgroundColor: AppColors.getColor(ColorKey.primary20),
                   radius: 20,
-                  child: PrimaryAssetImage(e.image),
+                  child: UniversalImage(e.image),
                 ),
                 const SizedBox(width: 14),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

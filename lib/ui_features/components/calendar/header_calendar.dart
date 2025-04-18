@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nucles_app/config/config.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class HeaderCalendar extends StatelessWidget {
   const HeaderCalendar({super.key, this.startRange, this.endRange});
@@ -29,7 +29,7 @@ class HeaderCalendar extends StatelessWidget {
           ),
         ]),
         const Spacer(),
-        const PrimaryAssetImage(AssetPaths.icArrowRight, color: Colors.black),
+        const UniversalImage(AssetPaths.icArrowRight, color: Colors.black),
         const Spacer(),
         Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Text(

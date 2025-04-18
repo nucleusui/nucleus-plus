@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 
 class PrimaryNavbar extends StatelessWidget {
   const PrimaryNavbar({
@@ -39,7 +39,7 @@ class PrimaryNavbar extends StatelessWidget {
               child: Column(children: [
                 Visibility(
                   visible: e.value.icon == null,
-                  replacement: PrimaryAssetImage(
+                  replacement: UniversalImage(
                     selected
                         ? '${e.value.activeIcon ?? e.value.icon}'
                         : '${e.value.icon}',
@@ -50,7 +50,7 @@ class PrimaryNavbar extends StatelessWidget {
                         ? AppColors.getColor(ColorKey.primary70)
                         : AppColors.getColor(ColorKey.grey50),
                   ),
-                  child: PrimaryAssetImage(
+                  child: UniversalImage(
                     selected ? AssetPaths.icCircleFill : AssetPaths.icCircle,
                     color: selected
                         ? AppColors.getColor(ColorKey.primary70)

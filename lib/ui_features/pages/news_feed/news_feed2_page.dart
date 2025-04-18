@@ -3,7 +3,7 @@ import 'package:nucles_app/config/config.dart';
 import 'package:nucles_app/models/navbar_model.dart';
 import 'package:nucles_app/ui_features/components/appbar/primary_appbar.dart';
 import 'package:nucles_app/ui_features/components/divider/primary_divider.dart';
-import 'package:nucles_app/ui_features/components/image/primary_asset_image.dart';
+import 'package:nucles_app/ui_features/components/image/universal_image.dart';
 import 'package:nucles_app/ui_features/components/inkwell/primary_inkwel.dart';
 import 'package:nucles_app/ui_features/components/navbar/primary_navbar.dart';
 
@@ -32,7 +32,7 @@ class _NewsFeed2PageState extends State<NewsFeed2Page> {
           title: 'News Feed',
           leading: PrimaryInkWell(
             onTap: () {},
-            child: PrimaryAssetImage(
+            child: UniversalImage(
               AssetPaths.icMenu,
               fit: BoxFit.scaleDown,
               color: AppColors.getColor(ColorKey.grey100),
@@ -41,7 +41,7 @@ class _NewsFeed2PageState extends State<NewsFeed2Page> {
           actions: [
             PrimaryInkWell(
               onTap: () {},
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSearch,
                 width: 20,
                 color: AppColors.getColor(ColorKey.grey100),
@@ -50,7 +50,7 @@ class _NewsFeed2PageState extends State<NewsFeed2Page> {
             const SizedBox(width: 16),
             PrimaryInkWell(
               onTap: () {},
-              child: PrimaryAssetImage(
+              child: UniversalImage(
                 AssetPaths.icSetting,
                 width: 20,
                 color: AppColors.getColor(ColorKey.grey100),
@@ -144,7 +144,7 @@ class _HeadlineWidget extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                PrimaryAssetImage(
+                UniversalImage(
                   index.isEven
                       ? AssetPaths.imgPlaceholder1
                       : AssetPaths.imgPlaceholder2,
@@ -167,7 +167,7 @@ class _HeadlineWidget extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  PrimaryAssetImage(
+                  UniversalImage(
                     AssetPaths.icChat,
                     width: 16,
                     color: AppColors.getColor(ColorKey.grey50),
