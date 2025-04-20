@@ -18,7 +18,7 @@ class Search2Page extends StatelessWidget {
           PrimaryAppBar(
             hideLeading: true,
             heightAppBar: 64,
-            titleWidget: TextFields(
+            titleWidget: InputField(
               hintText: 'Search',
               autofocus: true,
               fillColor: AppColors.getColor(ColorKey.grey10),

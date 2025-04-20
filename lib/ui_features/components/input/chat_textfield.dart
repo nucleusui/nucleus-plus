@@ -43,7 +43,7 @@ class ChatTextfield extends StatelessWidget {
               ),
           const SizedBox(width: 16),
           const Expanded(
-            child: TextFields(
+            child: InputField(
               hintText: 'Placeholder text',
             ),
           ),

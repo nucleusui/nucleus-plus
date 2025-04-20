@@ -24,7 +24,7 @@ class _Login2PageState extends State<Login2Page> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          TextFields(
+          InputField(
             controller: emailController,
             labelText: "Email",
             hintText: "example@org.com",
@@ -32,7 +32,7 @@ class _Login2PageState extends State<Login2Page> {
             validator: FormValidator.email,
           ),
           const SizedBox(height: 20),
-          TextFields(
+          InputField(
             controller: passwordController,
             labelText: "Password",
             isPassword: true,

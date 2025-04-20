@@ -98,7 +98,7 @@ class _Email2PageState extends State<Email2Page> {
     return Scaffold(
       appBar: PrimaryAppBar(
         hideLeading: true,
-        titleWidget: TextFields(
+        titleWidget: InputField(
           hintText: 'Search',
           fillColor: AppColors.getColor(ColorKey.grey10),
           borderRadius: BorderRadius.circular(100),

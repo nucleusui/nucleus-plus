@@ -51,7 +51,7 @@ class _Shop2PageState extends State<Shop2Page> {
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Padding(
           padding: const EdgeInsets.all(16),
-          child: TextFields(
+          child: InputField(
             hintText: 'Search',
             fillColor: AppColors.getColor(ColorKey.grey10),
             borderRadius: BorderRadius.circular(100),

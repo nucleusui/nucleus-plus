@@ -99,7 +99,7 @@ class _Feedback2PageState extends State<Feedback2Page> {
               const SizedBox(height: 8),
               const Text('Additional Comments', style: AssetStyles.h4),
               const SizedBox(height: 16),
-              const TextFields(
+              const InputField(
                 minLines: 4,
                 height: null,
                 maxLines: 10,

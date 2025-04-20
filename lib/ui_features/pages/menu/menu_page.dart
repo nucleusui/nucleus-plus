@@ -118,7 +118,7 @@ class _MenuPageState extends State<MenuPage> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: TextFields(
+          child: InputField(
             hintText: 'Search screen',
             controller: searchController,
             prefixIcon: UniversalImage(
@@ -153,7 +153,6 @@ class _MenuPageState extends State<MenuPage> {
                             f.title.toLowerCase().contains(value.toLowerCase()))
                         .isNotEmpty;
               }).toList();
-              print(searchList);
               setState(() {});
             },
           ),

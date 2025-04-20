@@ -66,7 +66,7 @@ class _Feedback1PageState extends State<Feedback1Page> {
             );
           }),
           const SizedBox(height: 10),
-          const TextFields(
+          const InputField(
             minLines: 4,
             height: null,
             maxLines: 10,

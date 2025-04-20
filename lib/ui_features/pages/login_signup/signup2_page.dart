@@ -43,7 +43,7 @@ class _Signup2PageState extends State<Signup2Page> {
                 .copyWith(color: AppColors.getColor(ColorKey.grey60)),
           ),
           const SizedBox(height: 24),
-          TextFields(
+          InputField(
             controller: emailController,
             labelText: "Email",
             hintText: "example@org.com",

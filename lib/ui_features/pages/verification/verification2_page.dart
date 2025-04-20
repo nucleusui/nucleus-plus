@@ -29,7 +29,7 @@ class Verification2Page extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          const TextFields(
+          const InputField(
             autofocus: true,
             hintText: "Text you just entered",
             textInputType: TextInputType.number,

@@ -79,7 +79,7 @@ class _Feedback3PageState extends State<Feedback3Page> {
                   setInnerState(() => rating = value),
             ),
             const SizedBox(height: 16),
-            const TextFields(
+            const InputField(
               minLines: 4,
               maxLines: 10,
               height: null,

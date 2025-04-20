@@ -31,7 +31,7 @@ class _AccountSetup4PageState extends State<AccountSetup4Page> {
                 .copyWith(color: AppColors.getColor(ColorKey.grey60)),
           ),
           const SizedBox(height: 30),
-          TextFields(
+          InputField(
             controller: locationController,
             prefixIcon: UniversalImage(
               AssetPaths.icMapPin,

@@ -66,7 +66,7 @@ class _Map1PageState extends State<Map1Page> with TickerProviderStateMixin {
           top: kToolbarHeight,
           left: 16,
           right: 16,
-          child: TextFields(
+          child: InputField(
             hintText: 'Search',
             fillColor: AppColors.getColor(ColorKey.background),
             borderRadius: BorderRadius.circular(100),

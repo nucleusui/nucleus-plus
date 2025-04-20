@@ -92,7 +92,7 @@ class _FlagReport1PageState extends State<FlagReport1Page> {
                 );
               }),
               const SizedBox(height: 10),
-              const TextFields(
+              const InputField(
                 minLines: 4,
                 height: null,
                 maxLines: 10,

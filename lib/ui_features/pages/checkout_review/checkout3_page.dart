@@ -127,23 +127,23 @@ class _Checkout3PageState extends State<Checkout3Page> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const Text('Email', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const TextFields(initialValue: 'james@nucleus-ui.com'),
+              const InputField(initialValue: 'james@nucleus-ui.com'),
               const SizedBox(height: 24),
               const Text('Card information', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const TextFields(initialValue: '1234 1234 1234'),
+              const InputField(initialValue: '1234 1234 1234'),
               const SizedBox(height: 10),
               const Row(children: [
-                Expanded(child: TextFields(hintText: 'MM/YY')),
+                Expanded(child: InputField(hintText: 'MM/YY')),
                 SizedBox(width: 10),
-                Expanded(child: TextFields(hintText: 'CVC')),
+                Expanded(child: InputField(hintText: 'CVC')),
               ]),
               const SizedBox(height: 10),
-              const TextFields(initialValue: 'James Ryan'),
+              const InputField(initialValue: 'James Ryan'),
               const SizedBox(height: 24),
               const Text('Country', style: AssetStyles.h4),
               const SizedBox(height: 8),
-              const TextFields(
+              const InputField(
                 initialValue: 'Indonesia',
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 10, top: 2),

@@ -27,7 +27,7 @@ class Login1Page extends StatelessWidget {
             style: AssetStyles.pMd.copyWith(height: 0.8),
           ),
           const SizedBox(height: 28),
-          TextFields(
+          InputField(
             controller: numberController,
             prefixIcon: const CountryDropdown(),
             hintText: "Placeholder text",

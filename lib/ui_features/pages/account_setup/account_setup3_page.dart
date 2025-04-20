@@ -58,7 +58,7 @@ class _AccountSetup3PageState extends State<AccountSetup3Page> {
             style: AssetStyles.h2,
           ),
           const SizedBox(height: 12),
-          TextFields(
+          InputField(
             autofocus: true,
             controller: emailController,
             hintText: "Text you just entered",
